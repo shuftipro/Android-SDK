@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_gradient"
+        android:layout_width="match_parent"
+        app:layout_heightPercent="30%"
+        >
+
+        <ImageView
+            android:id="@+id/iv_top_grad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_gradient" />
+
+        <TextView
+            android:id="@+id/tv_verify_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="ID Card Verification"
+            android:textColor="#101F41"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/icon_button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        app:backgroundTint="@android:color/white"
+        app:elevation="8dp"
+        app:fabSize="mini"
+        app:layout_marginBottomPercent="2%"
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/ic_passport" />
+
+    <View
+        android:id="@+id/view_blocker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/iv_cross"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_cross" />
+
+    <TextView
+        android:id="@+id/tv_cust_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon_button"
+        android:layout_centerHorizontal="true"
+        android:text="Enter your Customer Details"
+        android:textColor="@color/dividerColor"
+        android:textSize="18sp" />
+
+    <!--  <android.support.v4.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@+id/tv_cust_details"
+          app:layout_marginTopPercent="2%"
+          >-->
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_cust_details"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_marginTopPercent="2%"
+        >
+
+        <EditText
+            android:id="@+id/et_first_name"
+            android:layout_width="match_parent"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="First Name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <EditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_first_name"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Last Name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <EditText
+            android:id="@+id/et_dob"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_last_name"
+            android:background="@drawable/rounded_edit_text"
+            android:enabled="true"
+            android:hint="DOB (YYYY-MM-DD)"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <View
+            android:id="@+id/dob_et_blocker"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_last_name"
+            android:enabled="true"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+
+        <EditText
+            android:id="@+id/et_card_first_six_digit"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_country_name"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Card First 6 digits"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <EditText
+            android:id="@+id/et_card_last_four_digit"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_card_first_six_digit"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Card Last 4 digits"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+
+
+        <EditText
+            android:id="@+id/et_country_name"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_dob"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Country Code(Example: UK)"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <EditText
+            android:id="@+id/et_phone_no"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_card_last_four_digit"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Phone Number (+4400000000)"
+            android:imeOptions="actionGo"
+            android:inputType="phone"
+            android:paddingLeft="@dimen/padding_ets"
+            android:paddingRight="@dimen/padding_ets"
+            app:layout_heightPercent="12%"
+            app:layout_marginBottomPercent="3%" />
+
+        <Button
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/et_phone_no"
+            android:background="@drawable/rounded_button"
+            android:text="Proceed"
+            android:textAllCaps="false"
+            android:textColor="@color/btnTextColor"
+            app:layout_heightPercent="13%"
+            app:layout_marginTopPercent="2%" />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:id="@+id/rl_top_most">
+
+    </RelativeLayout>
+
+
+</android.support.percent.PercentRelativeLayout>

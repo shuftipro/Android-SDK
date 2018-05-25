@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ShuftiPro Demo</string>
+    <string name="validation_name">Required field</string>
+    <string name="validation_name_length">Value cannot be less than 2 characters</string>
+    <string name="err_name">Invalid Input</string>
+</resources>

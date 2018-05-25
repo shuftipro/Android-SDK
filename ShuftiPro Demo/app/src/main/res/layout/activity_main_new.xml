@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:id="@+id/rl_top_gradient">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_top_grad"
+            android:src="@drawable/img_gradient"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+
+            />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_shufti_logo"
+            android:id="@+id/iv_logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logo"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Choose Your Method \nFor Verification"
+            android:gravity="center"
+            android:id="@+id/tv_choose_method"
+            android:textColor="@color/dividerColor"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rl_top_gradient">
+
+
+        <View
+            android:id="@+id/view_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dividerColor"
+            android:layout_centerVertical="true"
+            android:elevation="2dp"/>
+
+        <View
+            android:id="@+id/view_vertical"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/dividerColor"
+            android:layout_centerHorizontal="true"
+            android:elevation="2dp"/>
+
+        <ImageView
+            android:id="@+id/iv_id_card"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_card_id"
+            android:layout_above="@+id/tv_id_card"
+            android:layout_toLeftOf="@+id/view_vertical"
+            android:layout_marginRight="20dp"
+             />
+
+        <TextView
+            android:id="@+id/tv_id_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Card"
+            android:textColor="@color/dividerColor"
+            android:layout_above="@+id/view_horizontal"
+            android:layout_toLeftOf="@+id/view_vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_driving_license"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_card_driving"
+            android:layout_toRightOf="@+id/view_vertical"
+            android:layout_above="@+id/tv_driving_license"
+            android:layout_marginLeft="18dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_driving_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driving Licence"
+            android:textColor="@color/dividerColor"
+            android:layout_above="@+id/view_horizontal"
+            android:layout_toRightOf="@+id/view_vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_passport"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_passport"
+            android:visibility="visible"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/view_horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_passport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Passport"
+            android:textColor="@color/dividerColor"
+            android:layout_below="@+id/iv_passport"
+            android:layout_toLeftOf="@+id/view_vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginTop="2dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_credit_card"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_credit_card"
+            android:visibility="visible"
+            android:layout_below="@+id/view_horizontal"
+            android:layout_toRightOf="@+id/view_vertical"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="18dp"/>
+
+        <TextView
+            android:id="@+id/tv_credit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card"
+            android:textColor="@color/dividerColor"
+            android:layout_below="@+id/iv_credit_card"
+            android:layout_toRightOf="@+id/view_vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="2dp"
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_sample_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </RelativeLayout>
+
+</RelativeLayout>

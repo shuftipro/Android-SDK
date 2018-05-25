@@ -46,11 +46,12 @@ Shufti Pro supports two modes of verification:<br />
 
 ## Integration: 
 See the sample project provided to learn the most common use. Make sure to build on real device.
-
-import com.shufti.pro.sdk.Shuftipro; <br />
+```
+import com.shufti.pro.sdk.Shuftipro;
 import com.shufti.pro.sdk.interfaces.ShuftiVerifyListener;
 ```
-//Make an instance 
+Make an instance 
+```
 Shuftipro instance = Shuftipro(clientId: "your-clientId",
                                secretKey: "your-secretKey");
 ```
@@ -171,7 +172,7 @@ Response of verification can be logged via the code given below. You can see thi
 | SP27 | Request is already processed. |
 
 ## Sample project setup
-Will be provided soon.
+In DetailFragment.java file add your **Client ID** on line 86 and **Secret Key** on line 87, thats it!
 > **Note:** Run project on a real device.
 
 # Test IDs
