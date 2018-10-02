@@ -1,30 +1,24 @@
 
 package com.example.saudali.shuftipro_demo.activities;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.example.saudali.shuftipro.Shuftipro;
 import com.example.saudali.shuftipro.listeners.ShuftiVerifyListener;
 import com.example.saudali.shuftipro.utils.Utils;
-import com.example.saudali.shuftipro_demo.DbConstants;
 import com.example.saudali.shuftipro_demo.Helpers;
 import com.example.saudali.shuftipro_demo.R;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener{
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener{
 
     private RelativeLayout faceRelativeLayout,docRelativeLayout,addressRelativeLayout;
     private ImageView faceCheckImageView,docCheckImageView,addressCheckImageView;
@@ -33,9 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isAddressChecked = false;
     private Button continueButton;
 
-    private final String TAG = MainActivity.class.getSimpleName();
-    private String clientId;
-    private String secretKey;
+    private final String TAG = HomeActivity.class.getSimpleName();
+    private String clientId = "your-client-Id";
+    private String secretKey = "your-secret_key";
 
 
     @Override
@@ -44,13 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-        //Getting data from the Login Activity
-        Intent intent = getIntent();
-        if (intent != null){
-            clientId = intent.getStringExtra(DbConstants.CLIENT_ID);
-            secretKey = intent.getStringExtra(DbConstants.SECRET_KEY);
-        }
 
         //Initializing views
         faceRelativeLayout = findViewById(R.id.faceRelativeLayout);
@@ -128,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                  isFaceChecked,isDocChecked,true,true,true,
                 true,"","","","","",isAddressChecked,"",
                 "",true,true,true,false,
-                "",MainActivity.this, MainActivity.this);
+                "",HomeActivity.this, HomeActivity.this);
     }
 
     @Override
