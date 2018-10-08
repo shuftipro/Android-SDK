@@ -1,4 +1,4 @@
-package com.example.saudali.shuftipro_demo.activities;
+package com.shufti.shuftipro.shuftipro_demo.activities;
 
 import android.content.Intent;
 import android.os.CountDownTimer;

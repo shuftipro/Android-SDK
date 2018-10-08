@@ -1,4 +1,4 @@
-package com.example.saudali.shuftipro_demo;
+package com.shufti.shuftipro.shuftipro_demo;
 
 import android.app.AlertDialog;
 import android.content.Context;

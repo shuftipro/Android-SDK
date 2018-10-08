@@ -1,5 +1,5 @@
 
-package com.example.saudali.shuftipro_demo.activities;
+package com.shufti.shuftipro.shuftipro_demo.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import com.example.saudali.shuftipro.Shuftipro;
 import com.example.saudali.shuftipro.listeners.ShuftiVerifyListener;
 import com.example.saudali.shuftipro.utils.Utils;
-import com.example.saudali.shuftipro_demo.Helpers;
+import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.example.saudali.shuftipro_demo.R;
 
 import java.util.HashMap;

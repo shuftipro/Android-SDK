@@ -1,19 +1,14 @@
-package com.example.saudali.shuftipro_demo.cloud;
+package com.shufti.shuftipro.shuftipro_demo.cloud;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.util.Base64;
 import android.util.Log;
 
-import com.example.saudali.shuftipro.cloud.HttpConnectionHandler;
 import com.example.saudali.shuftipro.listeners.NetworkListener;
 
-
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
