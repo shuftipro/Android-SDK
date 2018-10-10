@@ -47,10 +47,7 @@ Shufti Pro supports four modes of verification:<br />
 
 ## Integration: 
 See the sample project provided to learn the most common use. Make sure to build on real device.
-```
-import com.shufti.pro.sdk.Shuftipro;
-import com.shufti.pro.sdk.interfaces.ShuftiVerifyListener;
-```
+
 Make an instance 
 ```
 Shuftipro instance = Shuftipro(clientId: "your-clientId",
