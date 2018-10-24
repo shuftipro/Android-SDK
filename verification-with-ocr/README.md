@@ -310,7 +310,7 @@ The Shufti Pro Verification API will send a JSON response if a status request is
 * <h3>event</h3>
 
 	This is the request event which shows status of request. Event is changed in every response. Please consult 
-	[here](https://github.com/shuftipro/Android-SDK/blob/master/status_codes.md) for more information
+	[here](status_codes.md) for more information
 
 <aside class="notice">
 Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the request is invalid.
