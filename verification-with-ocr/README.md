@@ -59,21 +59,21 @@ For **Sample** verification request
 instance.shuftiproVerification(reference: "17374217",country: "GB", 
 				      language: "EN", email: "example@gmail.com",
 				      callback_url: "your-callback_url",
-                      redirect_url: "your-redirect_url",
+                                      redirect_url: "your-redirect_url",
 				      isToMakeFaceVerification: true,
-                      isToPerformDocumentationVerification: true, 
+                                      isToPerformDocumentationVerification: true, 
 				      isSupportPassportType: true,
-				      isSupportIdCardType: true,    				    	     					   	      						  isSupportDrivingLicenseType: true,
+				      isSupportIdCardType: true,    				    	     					   	      isSupportDrivingLicenseType: true,
 				      isSupportCreditCardType: true,
 				      nameOnDocument: true, 
 				      dob: true,
 				      documentNumber: true,
 				      expiryDate: true,
 				      issueDate: true,
-                      isToPerformAddressVerification: true, 
+                                      isToPerformAddressVerification: true, 
 				      fullAddress: true, 
 				      name: true,
-				      isUtilityBillSupportedType: true, 					      					      							  isIdCardSupportedType: true,
+				      isUtilityBillSupportedType: true, 					      					      isIdCardSupportedType: true,
 				      isBankStatementSupportedType: true,
 				      parentActivity: "your-caller-activity",
 				      ShuftiVerifyListener: new ShuftiVerifyListener(){
@@ -331,8 +331,9 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 ## Complete sample request
 ```sh
 
-Shuftipro.getInstance(clientId, secretKey).shuftiproVerification("17374217", "GB",                      "EN", "abc@gmail.com", "www.url.com", "www.url.com", true, true, true,                          true, true, true, true, true, true, true, false, true, true, false, true, true, true,
-             MainActivity.this, MainActivity.this);
+Shuftipro.getInstance(clientId, secretKey).shuftiproVerification("17374217", "GB", "EN", "abc@gmail.com", 
+"www.url.com", "www.url.com", true, true, true, true, true, true, true, true, true, true, false, true, 
+true, false, true, true, true, MainActivity.this, MainActivity.this);
 
 ```
 
