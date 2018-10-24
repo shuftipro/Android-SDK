@@ -15,8 +15,8 @@ Off-site verification means that the customer will not come on Shufti Pro’s si
     
 * ### With OCR
 In off-site verification with OCR means that the merchant has not provided us proofs (images/videos) and also no data in some keys. In this verification Shufti Pro will perform extraction of data from those proofs and finally verify the data. 
-Consult [This Document](verification-with-ocr/README.md) for complete Off-site Verification with OCR. 
+Consult [This Document](verification-with-ocr/) for complete Off-site Verification with OCR. 
 	
 * ### Without OCR
 If Merchant gives us the data in keys as well as all the proofs required then Shufti Pro just have to verify the data. No customer interaction takes place in this kind of verification.
-Consult [This Document](off-site_without_ocr/off-site_without_ocr.md) for complete Off-site Verification without OCR.
+Consult [This Document](verification-without-ocr/) for complete Off-site Verification without OCR.
