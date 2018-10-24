@@ -328,7 +328,7 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 
 ```
 
-## Complete sample request
+## Complete Sample Request
 ```sh
 
 Shuftipro.getInstance(clientId, secretKey).shuftiproVerification("17374217", "GB", "EN", "abc@gmail.com", 
