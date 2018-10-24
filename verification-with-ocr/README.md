@@ -56,33 +56,25 @@ Shuftipro instance = Shuftipro(clientId: "your-clientId",
 ## Sample Request
 For **Sample** verification request
 ```sh
-instance.shuftiproVerification(reference: "17374217",country: "PK", 
+instance.shuftiproVerification(reference: "17374217",country: "GB", 
 				      language: "EN", email: "example@gmail.com",
 				      callback_url: "your-callback_url",
-                                      redirect_url: "your-redirect_url",
+                      redirect_url: "your-redirect_url",
 				      isToMakeFaceVerification: true,
-                                      isToPerformDocumentationVerification: true, 
+                      isToPerformDocumentationVerification: true, 
 				      isSupportPassportType: true,
-				      isSupportIdCardType: true,    				    	     					   	      isSupportDrivingLicenseType: true,
+				      isSupportIdCardType: true,    				    	     					   	      						  isSupportDrivingLicenseType: true,
 				      isSupportCreditCardType: true,
-				      isToVerifyNameOnDoc: true,
-				      doc_first_name: "John",
-				      doc_last_name: "Doe",
-				      doc_middle_name: "",
-				      dob: "12-09-1992",
-				      documentNumber: "ABC1234XYZ098",
-				      expiryDate: "2025-12-20",
-				      issueDate: "2015-12-20",
-                                      isToPerformAddressVerification: true,
-				      isUtilityBillSupportedType: true, 					      					      isIdCardSupportedType: true,
+				      nameOnDocument: true, 
+				      dob: true,
+				      documentNumber: true,
+				      expiryDate: true,
+				      issueDate: true,
+                      isToPerformAddressVerification: true, 
+				      fullAddress: true, 
+				      name: true,
+				      isUtilityBillSupportedType: true, 					      					      							  isIdCardSupportedType: true,
 				      isBankStatementSupportedType: true,
-				      fullAddress: "This is my address", 
-				      isToVerifyNameOnAddress: true,
-				      doc_first_name: "John",
-				      doc_last_name: "Dev",
-				      doc_middle_name: "",
-				      isToPerformConsentVerification: true,
-				      textToBeVerify: "My custom text",
 				      parentActivity: "your-caller-activity",
 				      ShuftiVerifyListener: new ShuftiVerifyListener(){
 				 
@@ -91,7 +83,8 @@ instance.shuftiproVerification(reference: "17374217",country: "PK",
 					
 						String event = responseSet.get("event");
 				   		if(event.equalsIgnoreCase("verification.accepted")){
-						//Do anything you want.. I am showing a toast message
+						
+							//Do anything you want.. I am showing a toast message
 				       		Toast.makeText(this, "Status : Verified...", Toast.LENGTH_LONG).show();
 						}
 						else{
@@ -160,216 +153,127 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Minimum: **6 characters**  
 	Maximum: **250 characters**
 
-	Once an on-site verification is complete, User is redirected to this link after showing the results.
+	Once verification is complete, User is redirected to this link after showing the results.
 	
 * ## isFaceVerification
 
 	Required: **No**  
 	Type: **boolean** 
 
-	Set value to true for face verification.
+	Set value to **true** for face verification.
 	
 * ## isToPerformDocumentationVerification
 
 	Required: **No**  
 	Type: **boolean** 
 
-	Set value to true for documentation verification.	
+	Set value to **true** for documentation verification.
 
 * ## isSupportPassportType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using passport.	
+	If you set it **true** user will be able to verify data using passport.	
 
 * ## isSupportIdCardType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using Id card.
+	If you set it **true** user will be able to verify data using Id card.
 
 * ## isSupportDrivingLicenseType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using driving lisence.
+	If you set it **true** user will be able to verify data using driving lisence.
 
 * ## isSupportCreditDebitCardType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using credit/debit card.
+    If you set it **true** user will be able to verify data using credit/debit card.
 
-* ## isToVerifyNameOnDoc
+* ## nameOnDocument
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true first and last name will be verified with the provided proof.
-	
-* ## doc_first_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters** 
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
-	Example **John'O Harra**
-
-* ## doc_middle_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters**
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark.  
-	Example **Carter-Joe**
-
-* ## last_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters**
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
-	Example **John, Huricane Jr.**
+    Set **true** to perform fisrst and last name extraction from provided proofs.
 
 * ## dob
 
 	Required: **No**  
-	Type: **String**  
-	Format: **yyyy-mm-dd**  
+	Type: **boolean**  
 
-	Provide a valid date. Please note that the date should be before today. Example 1990-12-31
+   Set **true** to perform dob extraction from provided proofs.
 
 * ## documentNumber
 
 	Required: **No**  
 	Type: **String**  
-	Minimum: **2 characters**  
-	Maximum: **100 characters** 
-	
-	Allowed Characters are numbers, alphabets, dots, dashes, spaces, underscores and commas. Examples 35201-0000000-0, 	ABC1234XYZ098
+
+  Set **true** to perform document number extraction from provided proofs.
 
 * ## expiryDate
 
 	Required: **No**  
-	Type: **String**  
-	Format: **yyyy-mm-dd**  
+	Type: **boolean**  
 
-	Provide a valid date. Please note that the date should be after today. Example 2025-12-31
+  Set **true** to perform expiry date extraction from provided proofs.
 
 * ## issueDate
 
 	Required: **No**  
-	Type: **String**  
-	Format: **yyyy-mm-dd**  
+	Type: **boolean**  
 
-	Provide a valid date. Please note that the date should be after today. Example 2025-12-31
+  Set **true** to perform issue date extraction from provided proofs.
+
 	
 * ## isToPerformAddressVerification
 
 	Required: **No**  
 	Type: **boolean** 
 
-	Set value to true for address verification verification.
+	Set value to **true** for address verification verification.
 
 * ## isUtilityBillSupportedType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using utility bills.
+	If you set it **true** user will be able to verify data using utility bills.
 
 * ## isIdCardSupportedType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using Id card.
+	If you set it **true** user will be able to verify data using Id card.
 
 * ## isBankStatementSupportedType
 
 	Required: **No**  
 	Type: **boolean** 
 
-	If you set it true user will be able to verify data using bank statements.
+	If you set it **true** user will be able to verify data using bank statements.
 	
 * ## fullAddress
 
 	Required: **No**  
-	Type: **String**  
-	Minimum: **2 characters**  
-	Maximum: **250 characters** 
-
-	Allowed Characters are numbers, alphabets, dots, dashes, spaces, underscores, hashes and commas. Leave empty to perform data extraction from provided proofs.
-
-* ## isToVerifyNameOnAddress
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it true first and last name will be verified with the provided proof.
-	
-* ## add_first_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters** 
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
-	Example **John'O Harra**
-
-* ## add_middle_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters**
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark.  
-	Example **Carter-Joe**
-
-* ## add_last_name
-
-	Required: **No**  
-	Type: **string**  
-	Minimum: **2 characters**  
-	Maximum: **32 chracters**
-
-	Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
-	Example **John, Huricane Jr.**
-
-* ## fuzzy_match
-
-	Required: **No**  
 	Type: **boolean**  
 
-	Provide true for enabling a fuzzy match of the name. Enabling fuzzy matching attempts to find a match which is not a 100% accurate.
-	
-* ## isToPerformConsentVerification
+	Set **true** to perform full address extraction from provided proofs. Allowed Characters are numbers, alphabets, dots, dashes, spaces, underscores, hashes and commas.
 
+* ## name
 	Required: **No**  
 	Type: **boolean**
-	
-	Set value to true for consent verification.
-	
-* ## textToBeVerified
 
-	Required: **No**  
-	Type: **String**  
-	Minimum: **2 characters**  
-	Maximum: **100 characters** 
-	
-	Provide text in the string format which will be verified from a given proof.
+  Set **true** to extract name from provided proofs.
+
 
 ## Response Logging
 
@@ -417,26 +321,18 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 ```json
 {
   "reference": "17374217",
-  "event": "request.invalid",
-  "error": {
-    "service": "document",
-    "key": "dob",
-    "message": "The dob does not match the format Y-m-d."
-  },
+  "event": "request.declined",
+  "error": "",
   "verification_url": ""
 }
-```
 
-## Sample project setup
-In HomeActivity.java file add your **Client ID** on line 31 and **Secret Key** on line 32, thats it!
-> **Note:** Run project on a real device.
+```
 
 ## Complete sample request
 ```sh
-Shuftipro.getInstance(clientId, secretKey).shuftiproVerification(“reference”, “GB”, “EN”, “abc@gamil.com”l,
-	“www.url.com”, ”www.url.om”, true, true, true, true, true, true, true, "John","Doe", "", "1992-10-10",
-	"ABC1234XYZ098", "2025-12-20", "2015-12-20", true, true, true, true, "London UK", false, "", "", "",
-	true,false, "", MainActivity.this, MainActivity.this);
+
+Shuftipro.getInstance(clientId, secretKey).shuftiproVerification("17374217", "GB",                      "EN", "abc@gmail.com", "www.url.com", "www.url.com", true, true, true,                          true, true, true, true, true, true, true, false, true, true, false, true, true, true,
+             MainActivity.this, MainActivity.this);
 
 ```
 
