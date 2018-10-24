@@ -6,17 +6,16 @@ Shufti Pro has designed this Verification API document for its customers that ha
 
 **Shufti Pro’s AI & HI hybrid technology ensures 99.6% accurate results and quickest response time.**
 
-Shufti Pro’s API supports two verification types, i.e. on-site and off-site. 
-
+Shufti Pro’s API supports verification with and without OCR.
 
 ## Verification
-Off-site verification means that the customer will not come on Shufti Pro’s site to get verified. They will do it through the merchant’s platform. Merchant will collect the information and send us the data for verification. Merchant provides us with the proofs (images/videos). We will not collect them directly from the user. 
+In order to get verified, customers will have themselves verified through their mobile phones. They will do it through the merchant’s mobile application. Merchant will collect the information and send us the data for verification. The Merchant shall provide us with the proofs(Videos). We will not collect them directly from the user.
 
-    
+
 * ### With OCR
-In off-site verification with OCR means that the merchant has not provided us proofs (images/videos) and also no data in some keys. In this verification Shufti Pro will perform extraction of data from those proofs and finally verify the data. 
-Consult [This Document](verification-with-ocr/) for complete Off-site Verification with OCR. 
-	
+In verification with OCR, it means that the merchant has not provided us proofs (images/videos) and also no data in some keys. In this verification Shufti Pro will perform extraction of data from those proofs and finally verify the data.
+Consult [This Document](verification-with-ocr) for the Verification with OCR.
+    
 * ### Without OCR
-If Merchant gives us the data in keys as well as all the proofs required then Shufti Pro just have to verify the data. No customer interaction takes place in this kind of verification.
-Consult [This Document](verification-without-ocr/) for complete Off-site Verification without OCR.
+In verification without OCR, merchant gives us the data in keys as well as all the proofs required then Shufti Pro just have to verify the data. No customer interaction takes place in this kind of verification.
+Consult [This Document](verification-without-ocr) for the Verification without OCR.
