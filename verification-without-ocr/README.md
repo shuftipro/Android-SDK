@@ -382,17 +382,17 @@ String error = responseSet.get("error");
 Log.e("LoggingResp", error);
 
 //To get the status of request
- String event = responseSet.get("event");
- 
-	if(event.equalsIgnoreCase("verification.accepted")){
-	
-	//Verification accepted do whatever you want to do
-		Log.i("LoggingResp", event);
-	}else{
-	
-	//Verification declined do whatever you want to do
-	Log.i("LoggingResp", event);
-	}
+String event = responseSet.get("event");
+
+if (event.equalsIgnoreCase("verification.accepted")) {
+
+  //Verification accepted do whatever you want to do
+  Log.i("LoggingResp", event);
+} else {
+
+  //Verification declined do whatever you want to do
+  Log.i("LoggingResp", event);
+}
 
 ```
 **Note:** Run project on a real device.
