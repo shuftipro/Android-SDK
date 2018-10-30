@@ -331,6 +331,10 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 
 ```
 
+## Sample project setup
+In HomeActivity.java file add your **Client ID** on line 32 and **Secret Key** on line 33. Thats it!
+> **Note:** Run project on a real device.
+
 ## Complete Sample Request
 ```sh
 
