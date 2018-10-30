@@ -95,6 +95,7 @@ instance.shuftiproVerification(reference: "17374217",country: "GB",
 						//Do anything you want.. I am showing a toast message
 				      		 String message = responseSet.get("message");
 				      	 	Toast.makeText(this, "Status : Not Verified", Toast.LENGTH_LONG).show();
+						}
 				   }});
 ```
 
