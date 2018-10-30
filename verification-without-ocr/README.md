@@ -53,8 +53,8 @@ import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
 ```
 Make an instance 
 ```
-Shuftipro instance = Shuftipro(clientId: "your-clientId",
-                               secretKey: "your-secretKey");
+Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey");
+
 ```
 ## Sample Request
 For **Sample** verification request
