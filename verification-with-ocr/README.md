@@ -26,7 +26,7 @@ Followings are minimum requirements for SDK:
 
 ## SDK Installation Guide
 1. Select File → New → New Module → Import .jar/Aar package from top menu of Android Studio.
-2. Select the provided 'shufti_pro.aar' file.
+2. Select the provided 'shuftipro-sdk.aar' file.
 3. Right click on 'app module' → Select 'Module setting'.
 4. Select 'Dependencies' from the right pane.
 5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
