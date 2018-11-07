@@ -26,7 +26,7 @@ Followings are minimum requirements for SDK:
 
 ## SDK Installation Guide
 1. Select File → New → New Module → Import .jar/Aar package from top menu of Android Studio.
-2. Select the provided 'shufti_pro.aar' file.
+2. Select the provided 'shuftipro-sdk.aar' file.
 3. Right click on 'app module' → Select 'Module setting'.
 4. Select 'Dependencies' from the right pane.
 5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
@@ -377,10 +377,8 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Provide text in the string format which will be verified from a given proof.
 	
 * ## Asyncronous Feedback
-	Required: **Yes**  
-	Type: **boolean**
 	
-	If async value is set to **true** you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
+	If **async** value is set to **true** in the instance you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
 
 ## Response Logging
 
