@@ -281,7 +281,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **boolean**
 	
-If async value is set to **true** you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
+	If async value is set to **true** you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
 
 ## Response Logging
 
