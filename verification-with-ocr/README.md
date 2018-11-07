@@ -53,7 +53,7 @@ import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
 ```
 Make an instance 
 ```
-Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey");
+Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey", async: false);
 ```
 ## Sample Request
 For **Sample** verification request
@@ -277,6 +277,11 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
   Set **true** to extract name from provided proofs.
 
+* ## Asyncronous Feedback
+	Required: **Yes**  
+	Type: **boolean**
+	
+If async value is set to **true** you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
 
 ## Response Logging
 
@@ -338,7 +343,7 @@ In HomeActivity.java file add your **Client ID** on line 32 and **Secret Key** o
 ## Complete Sample Request
 ```sh
 
-Shuftipro.getInstance(clientId, secretKey).shuftiproVerification("17374217", "GB", "EN", "abc@gmail.com", 
+Shuftipro.getInstance(clientId, secretKey, false).shuftiproVerification("17374217", "GB", "EN", "abc@gmail.com", 
 "www.url.com", "www.url.com", true, true, true, true, true, true, true, true, true, true, false, true, 
 true, false, true, true, true, MainActivity.this, MainActivity.this);
 
@@ -356,6 +361,12 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 
 ## Contact
 If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
+
+## Revision History
+
+Date            | Description 
+--------------- | ------------
+07 Nov 2018     | Add async key in the sdk.
 
 ## Copyright
 2016-18 © Shufti Pro Ltd.
