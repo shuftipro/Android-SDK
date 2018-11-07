@@ -53,7 +53,7 @@ import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
 ```
 Make an instance 
 ```
-Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey");
+Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey",async: false);
 
 ```
 ## Sample Request
@@ -375,6 +375,12 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Maximum: **100 characters** 
 	
 	Provide text in the string format which will be verified from a given proof.
+	
+* ## Asyncronous Feedback
+	Required: **Yes**  
+	Type: **boolean**
+	
+	If async value is set to **true** you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
 
 ## Response Logging
 
@@ -453,6 +459,12 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 
 ## Contact
 If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
+
+## Revision History
+
+Date            | Description 
+--------------- | ------------
+07 Nov 2018     | Add async key in the sdk.
 
 ## Copyright
 2016-18 © Shufti Pro Ltd.
