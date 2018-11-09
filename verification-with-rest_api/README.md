@@ -136,7 +136,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
             documentationObject.put("proof", "");
             documentationObject.put("supported_types", new JSONArray(doc_supported_types));
 
-            //Set parameter in the requested object
+            //Set parameters in the requested object
             documentationObject.put("name", "");
             documentationObject.put("dob", "");
             documentationObject.put("document_number", "");
