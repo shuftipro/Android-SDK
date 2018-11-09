@@ -55,10 +55,9 @@ Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: 
 ## Sample Request
 For **Sample** verification request
 ```sh
-instance.shuftiproVerification(
-					  JSONObject: "your-requested-json-object"
-				      parentActivity: "your-caller-activity",
-				      ShuftiVerifyListener: new ShuftiVerifyListener(){
+instance.shuftiproVerification(JSONObject: "your-requested-json-object"      
+			       parentActivity: "your-caller-activity",
+			       ShuftiVerifyListener: new ShuftiVerifyListener(){
 				 
 					@Override
 					public void verificationStatus(HashMap<String, String> responseSet) {
@@ -124,8 +123,9 @@ All verification services are optional. You can provide Shufti Pro a single serv
             ex.printStackTrace();
         }
 
-		//Now, making an instance and calling the verification method
-        Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
+	//Now, making an instance and calling the verification method
+        
+	Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
         instance.shuftiproVerification(jsonObject, HomeActivity.this, HomeActivity.this);
 ```
 	
