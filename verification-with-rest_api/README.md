@@ -62,8 +62,8 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
 					@Override
 					public void verificationStatus(HashMap<String, String> responseSet) {
 						
-							//I'm printing response here
-							Log.d("Response", responseSet.toString());
+						//I'm printing response here
+						Log.d("Response", responseSet.toString());
 				   }});
 ```
 
