@@ -99,7 +99,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	This is the reference of your activity which implement the ShuftiVerifyListener interface.
 	
 
-## Sample Face Request
+## Sample Request
 ```sh
 	JSONObject jsonObject = new JSONObject();
 	try {
@@ -114,7 +114,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
             ex.printStackTrace();
         }
 
-        //I am adding face object, you may add whatever you want
+        //Creating face object
         JSONObject faceObject = new JSONObject();
         try {
             faceObject.put("proof", "");
@@ -122,9 +122,33 @@ All verification services are optional. You can provide Shufti Pro a single serv
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+	
+	//Creating document object
+        JSONObject documentationObject = new JSONObject();
+        ArrayList<String> doc_supported_types = new ArrayList<String>();
+
+        doc_supported_types.add("passport");
+        doc_supported_types.add("id_card");
+        doc_supported_types.add("driving_license");
+        doc_supported_types.add("credit_or_debit_card");
+
+        try {
+            documentationObject.put("proof", "");
+            documentationObject.put("supported_types", new JSONArray(doc_supported_types));
+
+            //Set parameter in the requested object
+            documentationObject.put("name", "");
+            documentationObject.put("dob", "");
+            documentationObject.put("document_number", "");
+            documentationObject.put("expiry_date", "");
+            documentationObject.put("issue_date", "");
+
+            jsonObject.put("document", documentationObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
 	//Now, making an instance and calling the verification method
-        
 	Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
         instance.shuftiproVerification(jsonObject, HomeActivity.this, HomeActivity.this);
 ```
