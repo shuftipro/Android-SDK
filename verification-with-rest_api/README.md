@@ -22,7 +22,7 @@ Followings are minimum requirements for SDK:
 
 ## SDK Installation Guide
 1. Select File → New → New Module → Import .jar/Aar package from top menu of Android Studio.
-2. Select the provided 'shuftipro_sdk.aar' file.
+2. Select the provided 'shuftipro-sdk.aar' file.
 3. Right click on 'app module' → Select 'Module setting'.
 4. Select 'Dependencies' from the right pane.
 5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
@@ -81,7 +81,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. For more information click [here](https://github.com/shuftipro/RESTful-API-v1.3/blob/master/on-site_with_ocr/on-site_with_ocr.md).
 
-All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys.
+	All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys.
 
 
 * ## parentActivity
