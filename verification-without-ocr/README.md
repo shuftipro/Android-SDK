@@ -61,8 +61,8 @@ For **Sample** verification request
 ```sh
 instance.shuftiproVerification(reference: "17374217",country: "PK", 
 				      language: "EN", email: "example@gmail.com",
-				      callback_url: "your-callback_url",
-                                      redirect_url: "your-redirect_url",
+				      callbackUrl: "your-callback_url",
+                                      redirectUrl: "your-redirect_url",
 				      isToMakeFaceVerification: true,
                                       isToPerformDocumentationVerification: true, 
 				      isSupportPassportType: true,
@@ -104,7 +104,8 @@ instance.shuftiproVerification(reference: "17374217",country: "PK",
 				      	 	Toast.makeText(this, "Status : Not Verified", Toast.LENGTH_LONG).show();
 						
 						}
-				   }});
+					}
+				});
 ```
 
 
@@ -149,7 +150,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 	This field represents email of the end-user. If it is missing in a request, than Shuftpro will ask the user for its email in an on-site request.
 
-* ## callback_url
+* ## callbackUrl
 
 	Required: **Yes**  
 	Type: **string**  
@@ -158,7 +159,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 	During a verification request, we make several server to server calls to keep you updated about the verification state. This way you can update the request status at your end even if the customer is lost midway through the process.
 
-* ## redirect_url
+* ## redirectUrl
 
 	Required: **No**  
 	Type: **string**  
