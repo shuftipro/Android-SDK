@@ -437,6 +437,10 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 }
 ```
 
+## Sample project setup
+In HomeActivity.java file add your **Client ID** on line 34 and **Secret Key** on line 35. Thats it!
+> **Note:** Run project on a real device.
+
 ## Complete Sample Request
 ```sh
 Shuftipro.getInstance(clientId, secretKey).shuftiproVerification(“reference”, “GB”, “EN”, “abc@gamil.com”l,
