@@ -153,6 +153,10 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
         instance.shuftiproVerification(jsonObject, HomeActivity.this, HomeActivity.this);
 ```
+
+## Sample project setup
+In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** on line 37. Thats it!
+> **Note:** Run project on a real device.
 	
 # Test IDs
 Shufti Pro provides the users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information. <br><br>
