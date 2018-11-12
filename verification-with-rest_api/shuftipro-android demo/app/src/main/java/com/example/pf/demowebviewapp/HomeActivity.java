@@ -63,9 +63,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startVerification() {
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
+            showErrorMessageDialog(getString(R.string.credentials_missing), getString(R.string.ok));
+        }
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
         instance.shuftiproVerification(getJsonObject(), HomeActivity.this, HomeActivity.this);
-
     }
 
     private JSONObject getJsonObject() {
@@ -193,8 +195,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //If none of verification is requested display alert message
             if (!isFaceChecked && !isDocChecked && !isAddressChecked) {
-                String message = "Please, select one or more methods of verification.";
-                showErrorMessageDialog(message, "Ok");
+                showErrorMessageDialog(getString(R.string.select_methods), getString(R.string.ok));
             } else {
                 startVerification();
             }
@@ -207,7 +208,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setPositiveButton(button_text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                HomeActivity.this.finish();
+                dialogInterface.dismiss();
             }
         });
 
@@ -218,10 +219,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void verificationStatus(HashMap<String, String> responseSet) {
         //In case of any error or response this method will invoke. Please check your logcat if request do not process.
-        Log.e("Callback : ", responseSet.toString());
-        String error = responseSet.get("error");
-        if (error != null && !error.isEmpty()) {
-            showErrorMessageDialog(error,"OK");
-        }
+        Log.e("Callback From SDK: ", responseSet.toString());
+        uncheckAllOptions();
+    }
+
+    private void uncheckAllOptions() {
+        isFaceChecked = false;
+        faceCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+        isDocChecked = false;
+        docCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+        isAddressChecked = false;
+        addressCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
     }
 }
