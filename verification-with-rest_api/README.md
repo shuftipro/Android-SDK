@@ -80,7 +80,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **JSONObject**  
 
-	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. For more information click [here](https://github.com/shuftipro/RESTful-API-v1.3/blob/master/on-site_with_ocr/on-site_with_ocr.md).
+	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/blob/master/on-site_with_ocr/on-site_with_ocr.md) for more information.
 
 	All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys.
 
@@ -153,6 +153,42 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
         instance.shuftiproVerification(jsonObject, HomeActivity.this, HomeActivity.this);
 ```
+
+## Response Logging
+
+Response of verification can be logged via the code given below. You can see this in LogCat at runtime. Write this code in Response listener of SDK:
+```sh
+
+//To view the errors of request
+String error = responseSet.get("error");
+
+Log.e("LoggingResp", error);
+
+//To get the status of request
+String event = responseSet.get("event");
+
+if (event.equalsIgnoreCase("verification.accepted")) {
+
+  //Verification accepted do whatever you want to do
+  Log.i("LoggingResp", event);
+} else {
+
+  //Verification declined do whatever you want to do
+  Log.i("LoggingResp", event);
+}
+
+```
+
+## Status Response
+The Shufti Pro Verification API will send a JSON response if a status request is made.
+
+* <h3>reference</h3>
+	Your unique request reference, which you provided us at the time of request, so that you can identify the response in relation to the request made.
+
+* <h3>event</h3>
+
+	This is the request event which shows status of request. Event is changed in every response. Please consult 
+	[here](status_codes.md) for more information
 
 ## Sample project setup
 In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** on line 37. Thats it!
