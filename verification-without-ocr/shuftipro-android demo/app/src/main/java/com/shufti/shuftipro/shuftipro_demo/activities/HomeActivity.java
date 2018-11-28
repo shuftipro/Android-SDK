@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -23,13 +22,12 @@ import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener {
 
-    private RelativeLayout faceRelativeLayout;
-    private boolean isFaceChecked = false, isDocChecked = false, isAddressChecked = false;
-    private boolean isToVerifyName = false;
-    private ImageView faceCheckImageView;
-    private EditText firstNameEditText, lastNameEditText, dobEditText, docNumberEditText, issueDateEditText, expiryDateEditText, addressEditText;
+    private RelativeLayout faceRelativeLayout, docRelativeLayout, addressRelativeLayout;
+    private ImageView faceCheckImageView, docCheckImageView, addressCheckImageView;
+    private boolean isFaceChecked = false;
+    private boolean isDocChecked = false;
+    private boolean isAddressChecked = false;
     private Button continueButton;
-    private String firstName, lastName, dob, doc_number, issue_date, expiry_date, address;
 
     private String clientId = ""; //Set your client Id here
     private String secretKey = ""; //Set your secret key here.
@@ -43,24 +41,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         //Initializing views
         faceRelativeLayout = findViewById(R.id.faceRelativeLayout);
+        docRelativeLayout = findViewById(R.id.docRelativeLayout);
+        addressRelativeLayout = findViewById(R.id.addressRelativeLayout);
         faceCheckImageView = findViewById(R.id.faceCheckImageView);
-        firstNameEditText = findViewById(R.id.firstNameEditText);
-        lastNameEditText = findViewById(R.id.lastNameEditText);
-        dobEditText = findViewById(R.id.dobEditText);
-        docNumberEditText = findViewById(R.id.docNumberEditText);
-        issueDateEditText = findViewById(R.id.issueDateEditText);
-        expiryDateEditText = findViewById(R.id.expiryDateEditText);
-        addressEditText = findViewById(R.id.addressEditText);
+        docCheckImageView = findViewById(R.id.docCheckImageView);
+        addressCheckImageView = findViewById(R.id.addressCheckImageView);
         continueButton = findViewById(R.id.continueButton);
 
         //Setting click listeners for the layouts
         faceRelativeLayout.setOnClickListener(this);
+        docRelativeLayout.setOnClickListener(this);
+        addressRelativeLayout.setOnClickListener(this);
         continueButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
         if (v == faceRelativeLayout) {
             if (!isFaceChecked) {
                 isFaceChecked = true;
@@ -70,41 +66,33 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 faceCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
             }
         }
-
+        if (v == docRelativeLayout) {
+            if (!isDocChecked) {
+                isDocChecked = true;
+                docCheckImageView.setImageResource(R.drawable.check_radio_icon);
+            } else {
+                isDocChecked = false;
+                docCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+            }
+        }
+        if (v == addressRelativeLayout) {
+            if (!isAddressChecked) {
+                isAddressChecked = true;
+                addressCheckImageView.setImageResource(R.drawable.check_radio_icon);
+            } else {
+                isAddressChecked = false;
+                addressCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+            }
+        }
         if (v == continueButton) {
 
-            firstName = firstNameEditText.getText().toString();
-            lastName = lastNameEditText.getText().toString();
-            dob = dobEditText.getText().toString();
-            doc_number = docNumberEditText.getText().toString();
-            issue_date = issueDateEditText.getText().toString();
-            expiry_date = expiryDateEditText.getText().toString();
-            address = addressEditText.getText().toString();
-
             //If none of verification is requested display alert message
-            if (!isFaceChecked && firstName.isEmpty() && lastName.isEmpty() && dob.isEmpty() && doc_number.isEmpty()
-                    && issue_date.isEmpty() && expiry_date.isEmpty() && address.isEmpty()) {
-                showErrorMessageDialog("Please choose your method of verification.");
-                return;
+            if (!isFaceChecked && !isDocChecked && !isAddressChecked) {
+                String message = "Please, select one or more methods of verification.";
+                Helpers.displayAlertMessage(this, message);
+            } else {
+                requestSDKForVerification();
             }
-
-            //Check if user has check for document verification
-            if (!firstName.isEmpty() || !lastName.isEmpty() || !dob.isEmpty() || !doc_number.isEmpty() ||
-                    !issue_date.isEmpty() || !expiry_date.isEmpty()) {
-
-                isDocChecked = true;
-
-                if (!firstName.isEmpty()) {
-                    isToVerifyName = true;
-                }
-            }
-
-            //Check if user has check for document verification
-            if (!address.isEmpty()) {
-                isAddressChecked = true;
-            }
-
-            requestSDKForVerification();
         }
     }
 
@@ -122,47 +110,33 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         if (clientId.isEmpty() || secretKey.isEmpty()) {
 
-            showErrorMessageDialog("Please provide client id and secret key before proceed.");
+            showErrorMessageDialog("PLease provide client id and secret key before proceed.");
             return;
         }
-
-        Shuftipro.getInstance(clientId, secretKey, false).shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
+        Shuftipro.getInstance(clientId, secretKey,false).shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
                 isFaceChecked, isDocChecked, true, true, true,
-                true, isToVerifyName, firstName, lastName, "", dob,
-                doc_number, expiry_date, issue_date, isAddressChecked, true,
-                true, true, address, isToVerifyName, firstName,
-                lastName, "", false, false, "", HomeActivity.this,
-                HomeActivity.this);
+                true, true, true, true, true, true, isAddressChecked,
+                true, true, true, true, true,
+                HomeActivity.this, HomeActivity.this);
     }
 
-    //SDK callback function invoked on response
     @Override
     public void verificationStatus(HashMap<String, String> responseSet) {
 
-        //In case of any error or response, this method will invoke. Please check your logcat if request do not process.
-        Log.e("Callback From SDK : ", responseSet.toString());
+        //In case of any error or response this method will invoke. Please check your logcat if request do not process.
+        Log.e("Callback : ", responseSet.toString());
         uncheckAllOptions();
     }
 
-    //Deselect all of the pre selected values
     private void uncheckAllOptions() {
         isFaceChecked = false;
-        isDocChecked = false;
-        isAddressChecked = false;
-        isToVerifyName = false;
-
         faceCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
-
-        firstNameEditText.setText("");
-        lastNameEditText.setText("");
-        dobEditText.setText("");
-        docNumberEditText.setText("");
-        issueDateEditText.setText("");
-        expiryDateEditText.setText("");
-        addressEditText.setText("");
+        isAddressChecked = false;
+        addressCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+        isDocChecked = false;
+        docCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
     }
 
-    //Display an alert dialog to show the error messages
     public void showErrorMessageDialog(String message) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setMessage(message);
@@ -175,4 +149,5 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setCancelable(false);
         alertDialog.show();
     }
+
 }

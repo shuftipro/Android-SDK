@@ -11,27 +11,26 @@
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:background="@color/heading_color"
         android:orientation="horizontal"
-        android:padding="35dp">
+        android:padding="35dp"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Fill in your details"
+            android:text="Choose your \n Method of Verification"
             android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="30dp">
 
         <RelativeLayout
             android:id="@+id/faceRelativeLayout"
@@ -39,182 +38,147 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:orientation="horizontal"
-            android:padding="6dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/faceImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/grey_color"
+                android:padding="8dp"
+                android:src="@drawable/face_selection_icon" />
 
             <TextView
                 android:id="@+id/faceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@+id/faceImageView"
+                android:layout_toLeftOf="@+id/faceCheckImageView"
+                android:layout_toRightOf="@+id/faceImageView"
+                android:layout_toStartOf="@+id/faceCheckImageView"
                 android:gravity="start"
                 android:text="Face Verification"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/faceCheckImageView"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:src="@drawable/uncheck_radio_icon" />
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/docRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_marginTop="5dp">
+            android:layout_below="@+id/faceRelativeLayout"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/docImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/grey_color"
+                android:padding="8dp"
+                android:src="@drawable/doc_selection_icon" />
 
             <TextView
                 android:id="@+id/docTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@+id/docImageView"
+                android:layout_toLeftOf="@+id/docCheckImageView"
+                android:layout_toRightOf="@+id/docImageView"
+                android:layout_toStartOf="@+id/docCheckImageView"
                 android:gravity="start"
-                android:text="Document"
+                android:text="Document Verification"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:weightSum="1">
+            <ImageView
+                android:id="@+id/docCheckImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/uncheck_radio_icon" />
 
-                <EditText
-                    android:id="@+id/firstNameEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="First Name"
-                    android:padding="3dp"/>
+        </RelativeLayout>
 
-                <EditText
-                    android:id="@+id/lastNameEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="Last Name"
-                    android:padding="3dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:weightSum="1">
-
-                <EditText
-                    android:id="@+id/dobEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="DOB"
-                    android:padding="3dp" />
-
-                <EditText
-                    android:id="@+id/docNumberEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="Document No"
-                    android:padding="3dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:weightSum="1">
-
-                <EditText
-                    android:id="@+id/issueDateEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="Issue Date"
-                    android:padding="3dp" />
-
-                <EditText
-                    android:id="@+id/expiryDateEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/border"
-                    android:hint="Expiry Date"
-                    android:padding="3dp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/addressRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_below="@+id/docRelativeLayout"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/addressImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/grey_color"
+                android:padding="8dp"
+                android:src="@drawable/address_selection_icon" />
 
             <TextView
                 android:id="@+id/addressTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@+id/addressImageView"
+                android:layout_toLeftOf="@+id/addressCheckImageView"
+                android:layout_toRightOf="@+id/addressImageView"
+                android:layout_toStartOf="@+id/addressCheckImageView"
                 android:gravity="start"
-                android:text="Address"
+                android:text="Address Verification"
                 android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/addressEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/border"
-                android:hint="Address"
-                android:padding="3dp"
-                android:layout_marginTop="10dp"/>
+            <ImageView
+                android:id="@+id/addressCheckImageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/uncheck_radio_icon" />
 
-        </LinearLayout>
-
-    </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
     <Button
+        android:padding="10dp"
         android:id="@+id/continueButton"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/camera_click_views_colors"
-        android:padding="10dp"
         android:text="Continue"
         android:textAllCaps="false"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

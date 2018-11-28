@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Initializing views
         faceRelativeLayout = findViewById(R.id.faceRelativeLayout);
         docRelativeLayout = findViewById(R.id.docRelativeLayout);
-        addressRelativeLayout = findViewById(R.id.addressRelativeLayout); 
+        addressRelativeLayout = findViewById(R.id.addressRelativeLayout);
         faceCheckImageView = findViewById(R.id.faceCheckImageView);
         docCheckImageView = findViewById(R.id.docCheckImageView);
         addressCheckImageView = findViewById(R.id.addressCheckImageView);
@@ -108,16 +108,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Get unique reference
         final String reference = Utils.getUniqueReference(this);
 
-        if (clientId.isEmpty() || secretKey.isEmpty()){
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
 
             showErrorMessageDialog("PLease provide client id and secret key before proceed.");
             return;
         }
-        Shuftipro.getInstance(clientId, secretKey).shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
+        Shuftipro.getInstance(clientId, secretKey,false).shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
                 isFaceChecked, isDocChecked, true, true, true,
-                true,true,true,true,true,true,isAddressChecked,
-                true,true,true,true,true,
-                HomeActivity.this,HomeActivity.this);
+                true, true, true, true, true, true, isAddressChecked,
+                true, true, true, true, true,
+                HomeActivity.this, HomeActivity.this);
     }
 
     @Override
@@ -143,7 +143,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setPositiveButton("OK", new android.content.DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 uncheckAllOptions();
-               dialogInterface.dismiss();
+                dialogInterface.dismiss();
             }
         });
         alertDialog.setCancelable(false);
