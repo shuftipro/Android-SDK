@@ -13,9 +13,7 @@ In order to get verified, customers will have themselves verified through their 
 
 
 * ### With OCR
-In verification with OCR, it means that the merchant has not provided us proofs (images/videos) and also no data in some keys. In this verification Shufti Pro will perform extraction of data from those proofs and finally verify the data.
-Consult [This Document](verification-with-ocr) for the Verification with OCR.
+During verification with OCR, an end-user or Shufti Pro customer simply provides identity documents to Shufti Pro for verification. The smart system of Shufti Pro extracts credentials automatically from the provided documents and verify them as well. Consult [This Document](verification-with-ocr) to understand the technical requirements to perform verification with OCR.
     
 * ### Without OCR
-In verification without OCR, merchant gives us the data in keys as well as all the proofs required then Shufti Pro just have to verify the data. No customer interaction takes place in this kind of verification.
-Consult [This Document](verification-without-ocr) for the Verification without OCR.
+During verification without OCR, Shufti Pro customers or end-user is required to provide not only verification data but also provide proof of that data as well in the form of identity documents. Consult [This Document](verification-without-ocr) to understand the technical requirements to perform verification without OCR.
