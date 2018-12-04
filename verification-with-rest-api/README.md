@@ -57,7 +57,7 @@ dependencies {
 }
 ```
 
-### Maven:
+### or Maven:
 Step 1. Add the JitPack repository to your build file
 
 ```sh
