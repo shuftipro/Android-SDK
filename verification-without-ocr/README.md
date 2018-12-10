@@ -40,7 +40,7 @@ Application uses the following permissions which you may have to add in privacy 
 Shufti Pro offers 4 Verification services without OCR on its Mobile SDK. You can either choose all 4 of them or can opt to use only one of them for mobile verification of your customers/users.
 All the technical details and verification request parameters are explained below for each verification service.<br />
 
-##1- Face Verification
+## 1- Face Verification
 
 In order to perform a face verification, the native camera of the smartphone is used. Liveness detection and many other techniques are used to ensure that only an authentic facial proof is used for Face Verification.
 
@@ -60,14 +60,14 @@ To perform document verification, create an instance of ```DocumentVerification`
 ```
 DocumentVerification documentVerification = DocumentVerification.getInstance();
 ```
- #### Document Type
+ ### Document Type
 
 Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is mandatory to perform Document Verification.
 
 ``` 
 documentVerification.setSupportedTypes("DOCUMENTTYPES");
 ```
-#### Name Verification
+### Name Verification
 
 For Name Verification, use ```setFirstName```, ```setMiddleName```& ```setLastName```. First Name is mandatory, while the middle and last name is optional. Maximum 32 characters allowed including alphabets, - (dash), comma, space, dot and single quotation mark.
 
@@ -76,7 +76,7 @@ documentVerification.setFirstName("John");
 documentVerification.setMiddleName("");
 documentVerification.setLastName("Doe");
 ```
-#### Dob Verification
+### Dob Verification
 
 For DoB Verification, Use ```setDob```. The allowed format is yyyy-mm-dd.
 
@@ -84,7 +84,7 @@ For DoB Verification, Use ```setDob```. The allowed format is yyyy-mm-dd.
 documentVerification.setDob("1998-11-01");
 ```
 
-#### Document Number Verification
+### Document Number Verification
 
 For Document Number Verification, use ```setDocumentNumber```. Allowed Characters limit is between 2 and 100.
 
@@ -92,7 +92,7 @@ For Document Number Verification, use ```setDocumentNumber```. Allowed Character
 documentVerification.setDocumentNumber("12668899755");
 ```
 
-#### Expiry Date Verification
+### Expiry Date Verification
 
 For Expiry Date Verification, Use ```setExpiryDate```. The  allowed format is yyyy-mm-dd.
 
@@ -100,7 +100,7 @@ For Expiry Date Verification, Use ```setExpiryDate```. The  allowed format is yy
 documentVerification.setExpiryDate("2019-11-01");
 ```
 
-#### Issue Date Verification
+### Issue Date Verification
 
 For Issue Date Verification, Use ```setIssueDate```. The allowed format is yyyy-mm-dd.
 
@@ -118,7 +118,7 @@ To perform Address Verification, create an instance of ```AddressVerification```
 AddressVerification addressVerification = AddressVerification.getInstance();
 ```
 
-#### Document Type
+### Document Type
 
 Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-type). This is mandatory to perform Address Verification.
 
@@ -126,14 +126,14 @@ Use ```setSupportedTypes``` to pass list of  [supported document types](#support
 addressVerification.setSupportedTypes("DOCUMENTTYPES");
 ```
 
-#### Address Verification
+### Address Verification
 
 For Address Verification, use ```setFullAddress```. Character limit ranges between 2 and 250 characters.
 
 ```
 addressVerification.setFullAddress("3339 Maryland Avenue, Largo, Florida");
 ```
-#### Name Verification
+### Name Verification
 
 For Name Verification, use ```setFirstName```, ```setMiddleName```& ```setLastName```. First Name is mandatory, while the middle and last name is optional. Maximum 32 characters allowed including alphabets, - (dash), comma, space, dot and single quotation mark.
 ```
@@ -141,7 +141,7 @@ addressVerification.setFirstName("John");
 addressVerification.setMiddleName("");
 addressVerification.setLastName("Doe");
 ```
-#### Fuzzy Match
+### Fuzzy Match
 
 To use Fuzzy Match, set **True** for ```setFuzzyMatch```. Enabling fuzzy matching attempts to find a match which is not 100% accurate. (edited)
 
@@ -152,7 +152,7 @@ addressVerification.setFuzzyMatch(true);
 ## 4- Consent  Verification
 Shufti Pro performs Consent Verification with the help of handwritten and printed document. Any form of text written on a document or a note can be easily verified through this service.
 
-#### Document Type
+### Document Type
 
 Use ```setSupportedTypes``` to pass list of supported document types. This is mandatory to perform Consent Verification.
 
@@ -160,7 +160,7 @@ Use ```setSupportedTypes``` to pass list of supported document types. This is ma
 consentVerification.setSupportedTypes("DOCUMENTTYPES");
 ```
 
-#### Text Verification
+### Text Verification
 For Text verification, Use ```setConsentText```. Allowed Characters limit is between 2 and 100.
 ```
 consentVerification.setConsentText("This is a customized text");
