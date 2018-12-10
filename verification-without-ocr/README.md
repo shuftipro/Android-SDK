@@ -246,12 +246,13 @@ After making an instnace,  you are required to perform a method call for all the
 
 ```
 shuftipro.shuftiproVerification(reference, country, lng, email, callbackUrl, redirectUrl,
-                faceVerification, documentVerification, addressVerification, consentVerification, 				  this, new ShuftiVerifyListener() {
+                faceVerification, documentVerification, addressVerification, consentVerification, this,
+		new ShuftiVerifyListener() {
                     @Override
                     public void verificationStatus(HashMap<String, String> responseSet) {
 
-						//I'm printing my response you can do whatever you want to do
-						Log.e("Response", responseSet.toString());
+				//I'm printing my response you can do whatever you want to do
+				Log.e("Response", responseSet.toString());
                     }
                 });
 ```
