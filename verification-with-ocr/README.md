@@ -40,7 +40,7 @@ Application uses the following permissions which you may have to add in privacy 
 Shufti Pro offers 3 Verification services with OCR on its Mobile SDK. You can either choose all 3 of them or can opt to use only one of them for mobile verification of your customers/users.
 All the technical details and verification request parameters are explained below for each verification service.<br />
 
-##1- Face Verification
+## 1- Face Verification
 
 In order to perform a face verification, the native camera of the smartphone is used. Liveness detection and many other techniques are used to ensure that only an authentic facial proof is used for Face Verification.
 
@@ -51,7 +51,7 @@ FaceVerification faceVerification = FaceVerification.getInstance();
 faceVerification.setFaceVerification(true);
 ```
 
-##2- Document Verification
+## 2- Document Verification
 
 In order to perform Document Verification, User has to display their identity document in front of their phone camera. Shufti Pro currently supports ID cards, passports & driving license. Shufti Pro can even verify credit cards and debit cards as well.
 
@@ -60,21 +60,21 @@ To perform document verification, create an instance of ```DocumentVerification`
 ```
 DocumentVerification documentVerification = DocumentVerification.getInstance();
 ```
- ####Document Type
+ ### Document Type
 
 Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is mandatory to perform Document Verification.
 
 ``` 
 documentVerification.setSupportedTypes("DOCUMENTTYPES");
 ```
-####Name Extraction
+### Name Extraction
 
 For Name Extraction, set ```extractName``` to **TRUE**
 
 ``` 
 documentVerification.extractName(true);
 ```
-####Dob Extraction
+### Dob Extraction
 
 For Dob Extraction, set ```extractDob``` to **TRUE**
 
@@ -82,7 +82,7 @@ For Dob Extraction, set ```extractDob``` to **TRUE**
 documentVerification.extractDob(true);
 ```
 
-####Document Number Extraction
+### Document Number Extraction
 
 For Document Number Extraction, set ```extractDocumentNumber``` to **TRUE**
 
@@ -90,21 +90,21 @@ For Document Number Extraction, set ```extractDocumentNumber``` to **TRUE**
 documentVerification.extractDocumentNumber(true);
 ```
 
-####Expiry Date Extraction
+### Expiry Date Extraction
 
 For Expiry Date Extraction, set ```extractExpiryDate``` to **TRUE**
 ``` 
 documentVerification.extractExpiryDate(true);
 ```
 
-####Issue Date Extraction
+### Issue Date Extraction
 
 For Issue Date Extraction, set ```extractIssueDate``` to **TRUE**
 ``` 
 documentVerification.extractIssueDate(true);
 ```
 
-##3- Address Verification
+## 3- Address Verification
 
 Address Verification is performed by Shufti Pro with the help of address printed on the official identity documents. In addition to ID cards, driving licenses and passports, Shufti Pro can verify the address of an end-user with the help of bank statements and utility bills as well, that are no older than 3 months.
 
@@ -114,7 +114,7 @@ To perform Address Verification, create an instance of ```AddressVerification```
 AddressVerification addressVerification = AddressVerification.getInstance();
 ```
 
-####Document Type
+### Document Type
 
 Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-types). This is mandatory to perform Address Verification.
 
@@ -122,14 +122,14 @@ Use ```setSupportedTypes``` to pass list of  [supported document types](#support
 addressVerification.setSupportedTypes("DOCUMENTTYPES");
 ```
 
-####Address Extraction
+### Address Extraction
 
 For Address Extraction, set  ```extractFullAddress``` to **TRUE**
 
 ```
 addressVerification.extractFullAddress(true);
 ```
-####Name Extraction
+### Name Extraction
 
 For Name Extraction, set  ```extractName``` to **TRUE**
 
@@ -137,7 +137,7 @@ For Name Extraction, set  ```extractName``` to **TRUE**
 addressVerification.extractName(true);
 ```
 
-##Request Parameters 
+## Request Parameters 
 
 It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of four services which include face, document, address, consent.
 
