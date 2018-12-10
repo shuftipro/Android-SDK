@@ -231,7 +231,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	
 	If ```async``` value is set to **TRUE** while creating Shuftipro instance you will instantly get the user's control back so you do not have to wait for the verification results. When a request is completed you will automatically get a callback.
 
-##Get Started with SDK
+## Get Started with SDK
 
 See the sample project provided to learn the most common use. Make sure to build on real device.
 ```
