@@ -14,10 +14,14 @@ import android.widget.RelativeLayout;
 
 import com.shufti.sdk.shuftipro.Shuftipro;
 import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
+import com.shufti.sdk.shuftipro.models.AddressVerification;
+import com.shufti.sdk.shuftipro.models.DocumentVerification;
+import com.shufti.sdk.shuftipro.models.FaceVerification;
 import com.shufti.sdk.shuftipro.utils.Utils;
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener {
@@ -88,8 +92,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //If none of verification is requested display alert message
             if (!isFaceChecked && !isDocChecked && !isAddressChecked) {
-                String message = "Please, select one or more methods of verification.";
-                Helpers.displayAlertMessage(this, message);
+                Helpers.displayAlertMessage(this, getString(R.string.select_service));
             } else {
                 requestSDKForVerification();
             }
@@ -98,33 +101,83 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void requestSDKForVerification() {
 
-        //Creating constructor parameters
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
+
+            showErrorMessageDialog(getString(R.string.provide_credentials));
+            return;
+        }
+
+        sendVerificationRequest();
+    }
+
+    private void sendVerificationRequest() {
+
+        final String reference = Utils.getUniqueReference(this);
         final String country = "GB";
         final String lng = "EN";
         final String email = "yourmail@gmail.com";
         final String callback_url = "https://www.yourdomain.com";
         final String redirect_url = "https://www.yourdomain.com";
 
-        //Get unique reference
-        final String reference = Utils.getUniqueReference(this);
+        Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
 
-        if (clientId.isEmpty() || secretKey.isEmpty()) {
+        /*
 
-            showErrorMessageDialog("PLease provide client id and secret key before proceed.");
-            return;
-        }
-        Shuftipro.getInstance(clientId, secretKey,false).shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
-                isFaceChecked, isDocChecked, true, true, true,
-                true, true, true, true, true, true, isAddressChecked,
-                true, true, true, true, true,
-                HomeActivity.this, HomeActivity.this);
+         * FOR FACE VERIFICATION SERVICE
+         * Make an instance and set the face verification to true
+
+         */
+
+        FaceVerification faceVerification = FaceVerification.getInstance();
+        faceVerification.setFaceVerification(true);
+
+        /*
+
+         * FOR DOCUMENTATION VERIFICATION SERVICE
+         * Make an instance and set the supported types & required fields for verification
+
+         */
+
+        DocumentVerification documentVerification = DocumentVerification.getInstance();
+        ArrayList<String> doc_supported_types = new ArrayList<>();
+        doc_supported_types.add("id_card");
+        doc_supported_types.add("credit_or_debit_card");
+        doc_supported_types.add("passport");
+        doc_supported_types.add("driving_license");
+
+        documentVerification.setSupportedTypes(doc_supported_types);
+        documentVerification.extractName(true);
+        documentVerification.extractDob(true);
+        documentVerification.extractDocumentNumber(true);
+        documentVerification.extractExpiryDate(true);
+        documentVerification.extractIssueDate(true);
+
+        /*
+
+         * FOR ADDRESS VERIFICATION SERVICE
+         * Make an instance, set the supported types & required fields for verification
+
+         */
+
+        AddressVerification addressVerification = AddressVerification.getInstance();
+        ArrayList<String> supported_types = new ArrayList<>();
+        supported_types.add("id_card");
+        supported_types.add("passport");
+        supported_types.add("bank_statement");
+        supported_types.add("utility_bill");
+        addressVerification.setSupportedTypes(supported_types);
+        addressVerification.extractFullAddress(true);
+        addressVerification.extractName(true);
+
+        instance.shuftiproVerification(reference,country,lng,email,callback_url,redirect_url,
+                faceVerification,documentVerification,addressVerification,this,this);
     }
 
     @Override
     public void verificationStatus(HashMap<String, String> responseSet) {
 
         //In case of any error or response this method will invoke. Please check your logcat if request do not process.
-        Log.e("Callback : ", responseSet.toString());
+        Log.e("Response : ", responseSet.toString());
         uncheckAllOptions();
     }
 
@@ -140,7 +193,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void showErrorMessageDialog(String message) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setMessage(message);
-        alertDialog.setPositiveButton("OK", new android.content.DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(getString(R.string.ok), new android.content.DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 uncheckAllOptions();
                 dialogInterface.dismiss();
@@ -149,5 +202,4 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setCancelable(false);
         alertDialog.show();
     }
-
 }
