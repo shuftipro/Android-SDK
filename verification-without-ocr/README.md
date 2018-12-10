@@ -143,7 +143,7 @@ addressVerification.setLastName("Doe");
 ```
 ### Fuzzy Match
 
-To use Fuzzy Match, set **True** for ```setFuzzyMatch```. Enabling fuzzy matching attempts to find a match which is not 100% accurate. (edited)
+To use Fuzzy Match, set **True** for ```setFuzzyMatch```. Enabling fuzzy matching attempts to find a match which is not 100% accurate.
 
 ```
 addressVerification.setFuzzyMatch(true);
