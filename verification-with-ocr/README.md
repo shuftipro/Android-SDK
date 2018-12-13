@@ -25,9 +25,8 @@ Followings are minimum requirements for SDK:
 ## Permissions:
 Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
 1. Camera
-2. Internet
-3. Recording Audio
-4. External Storage
+2. Recording Audio
+3. External Storage
 
 ## Integration
 Shufti Pro is offering two distinct formats of integration to its customers. If you want to add Shufti Pro as a project module, you can integrate our SDK. If you are not looking for an additional project module, then you always have the option to choose Gradle packages (Library Module) for integration. Please make sure that you use only **ONE** format for integration.
