@@ -22,19 +22,70 @@ Followings are minimum requirements for SDK:
 - Internet connection
 - Camera
 
-## SDK Installation Guide
-1. Select File → New → New Module → Import .jar/Aar package from top menu of Android Studio.
-2. Select the provided 'shuftipro-sdk.aar' file.
-3. Right click on 'app module' → Select 'Module setting'.
-4. Select 'Dependencies' from the right pane.
-5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
-
 ## Permissions:
 Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
 1. Camera
 2. Internet
 3. Recording Audio
 4. External Storage
+
+## Integration
+Shufti Pro is offering two distinct formats of integration to its customers. If you want to add Shufti Pro as a project module, you can integrate our SDK. If you are not looking for an additional project module, then you always have the option to choose Gradle packages (Library Module) for integration. Please make sure that you use only **ONE** format for integration.
+
+### SDK Installation Guide
+1. Select File → New → New Module → Import .aar package from top menu of Android Studio.
+2. Select the provided 'shuftipro-sdk.aar' file.
+3. Right click on 'app module' → Select 'Module setting'.
+4. Select 'Dependencies' from the right pane.
+5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
+
+### Gradle Packages Installation Guide
+If you are not looking to integrate our entire SDK into your project/mobile application, then you have the option to use Gradle package. 
+
+You can opt for Gradle or even use Maven for this purpose. Below are the quick start instructions for package integration. Please make sure that you choose only **ONE** package to integrate Shufti Pro into your project.
+
+### Gradle:
+Step 1. Add it in your root build.gradle:
+
+```sh
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Step 2. Add the dependency:
+
+```sh 
+dependencies {
+
+       implementation 'com.github.shuftipro:Android-OCR-Verification:1.0.1'
+}
+```
+
+### or Maven:
+Step 1. Add the JitPack repository to your build file
+
+```sh
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+</repositories>
+
+```
+Step 2. Add the dependency
+
+```sh
+<dependency>
+	    <groupId>com.github.shuftipro</groupId>
+	    <artifactId>Android-OCR-Verification</artifactId>
+	    <version>1.0.1</version>
+</dependency>
+```
 
 ## Verifications:
 Shufti Pro offers 3 Verification services with OCR on its Mobile SDK. You can either choose all 3 of them or can opt to use only one of them for mobile verification of your customers/users.
