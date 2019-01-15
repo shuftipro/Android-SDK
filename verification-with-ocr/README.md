@@ -362,5 +362,11 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 ## Contact
 If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
 
+## Revision History
+
+Date            | Description 
+--------------- | ------------
+15 Jan 2019     | Added progress bar to show status of async call.
+
 ## Copyright
 2016-18 © Shufti Pro Ltd.
