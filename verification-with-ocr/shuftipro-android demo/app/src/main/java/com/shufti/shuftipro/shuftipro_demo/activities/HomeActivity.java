@@ -170,7 +170,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         addressVerification.extractName(true);
 
         instance.shuftiproVerification(reference,country,lng,email,callback_url,redirect_url,
-                faceVerification,documentVerification,addressVerification,this,this);
+                isFaceChecked ? faceVerification: null, isDocChecked? documentVerification: null,
+                isAddressChecked ? addressVerification : null,this,this);
     }
 
     @Override
