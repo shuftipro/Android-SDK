@@ -19,13 +19,14 @@ import com.shufti.sdk.shuftipro.models.AddressVerification;
 import com.shufti.sdk.shuftipro.models.ConsentVerification;
 import com.shufti.sdk.shuftipro.models.DocumentVerification;
 import com.shufti.sdk.shuftipro.models.FaceVerification;
+import com.shufti.sdk.shuftipro.models.ShuftiproVerification;
 import com.shufti.sdk.shuftipro.utils.Utils;
 import com.shufti.shuftipro.shuftipro_demo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RelativeLayout faceRelativeLayout;
     private boolean isFaceChecked = false, isDocChecked = false, isAddressChecked = false;
@@ -102,10 +103,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     isToVerifyName = true;
                 }
             }
+            else {
+                isDocChecked = false;
+
+            }
 
             //Check if user has check for document verification
             if (!FullAddress.isEmpty()) {
                 isAddressChecked = true;
+            }
+            else
+            {
+                isAddressChecked = false;
             }
 
             requestSDKForVerification();
@@ -201,20 +210,29 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         consent_supported_types.add("printed");
 
         consentVerification.setSupportedTypes(consent_supported_types);
-        consentVerification.setConsentText("This is my customize text");
+        consentVerification.setConsentText("This is my customized text");
 
         //Make an instance and method call
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
-        instance.shuftiproVerification(reference, country, lng, email, callback_url, redirect_url,
-                isFaceChecked ? faceVerification : null, isDocChecked ? documentVerification : null,
-                isAddressChecked ? addressVerification : null, null, this, this);
+
+
+        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+            @Override
+            public void verificationStatus(HashMap<String, String> responseSet) {
+                Log.e("Response", responseSet.toString());
+            }
+        });
+        requestBuilder.withFaceVerification(isFaceChecked? faceVerification : null);
+        requestBuilder.withAddressVerification(isAddressChecked? addressVerification : null);
+        requestBuilder.withDocumentVerification(isDocChecked? documentVerification : null);
+        requestBuilder.withConsentVerification(null);
+        requestBuilder.withEmail(email);
+        requestBuilder.withLanguage(lng);
+        requestBuilder.withRedirectUrl(redirect_url);
+        instance.shuftiproVerification(requestBuilder.buildShuftiModel());
+
     }
 
-    @Override
-    public void verificationStatus(HashMap<String, String> responseSet) {
-
-        Log.e("Response", responseSet.toString());
-    }
 
     //Deselect all of the pre selected values
     private void uncheckAllOptions() {
@@ -241,7 +259,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void resetAllFields() {
-
         firstNameEditText.setText("");
         lastNameEditText.setText("");
         dobEditText.setText("");

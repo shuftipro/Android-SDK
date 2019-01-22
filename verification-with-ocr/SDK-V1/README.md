@@ -1,15 +1,14 @@
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.2/master/assets/banner.jpg)](https://www.shuftipro.com/)
 
 # What Is This?
-Shufti Pro is an Identity Verification software as a service that enables enterprises and individuals to secure their KYC and AML compliance. With quick, and realtime results, it acts as a security measure for sound risk assessment by using Face Verification, Document Verification, Information Authentication, and PEP's, Criminals and Money Laundering Checks. It is the go-to option for Payment Systems, FinTECH industry, Crypto, Banks, Lending Economy & Trading platforms.
+Shufti Pro is an Identity Verification software as a service that enables enterprises and individuals to secure their KYC and AML compliance. With quick, and realtime results, it acts as a security measure for sound risk assessment by using Face Verification, Document Verification, Address Verification, Biometric Consent Verification and Handwritten Note Verification. It is the go-to option for Payment Systems, FinTECH industry, Crypto, Banks, Lending Economy, Trading platforms and  any other business that wants to eradicate financial risk and identity theft risk from their business practices.
 
-# Table of contents
-* [Basic Setup](#basic-setup)
+## Table of contents
 * [General Requirements](#general-requirements)
 * [SDK Installation Guide](#sdk-installation-guide)
 * [Permissions](#permissions)
-* [Integration](#integration)
-* [Sample Request](#sample-request)
+* [Verifications](#verifications)
+* [Get Started with SDK](#get-started-with-sdk)
 * [Response Logging](#response-logging)
 * [Status Response](#status-response)
 * [Sample Project Setup](#sample-project-setup)
@@ -17,90 +16,178 @@ Shufti Pro is an Identity Verification software as a service that enables enterp
 * [Contact](#contact)
 * [Copyright](#copyright)
 
-# Basic Setup
 ## General Requirements
 Followings are minimum requirements for SDK:
-- API Level 15  and higher
+- Android 4.4 (API level 19) or higher
 - Internet connection
 - Camera
 
-## SDK Installation Guide
-1. Select File → New → New Module → Import .jar/Aar package from top menu of Android Studio.
+## Permissions:
+Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
+1. Camera
+2. Recording Audio
+3. External Storage
+
+## Integration
+Shufti Pro is offering two distinct formats of integration to its customers. If you want to add Shufti Pro as a project module, you can integrate our SDK. If you are not looking for an additional project module, then you always have the option to choose Gradle packages (Library Module) for integration. Please make sure that you use only **ONE** format for integration.
+
+### SDK Installation Guide
+1. Select File → New → New Module → Import .aar package from top menu of Android Studio.
 2. Select the provided 'shuftipro-sdk.aar' file.
 3. Right click on 'app module' → Select 'Module setting'.
 4. Select 'Dependencies' from the right pane.
 5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
-## Permissions:
-Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
-1. Camera
-2. Internet
-3. Recording Audio
-4. External Storage
+### Gradle Packages Installation Guide
+If you are not looking to integrate our entire SDK into your project/mobile application, then you have the option to use Gradle package. 
+
+You can opt for Gradle or even use Maven for this purpose. Below are the quick start instructions for package integration. Please make sure that you choose only **ONE** package to integrate Shufti Pro into your project.
+
+### Gradle:
+Step 1. Add it in your root build.gradle:
+
+```sh
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Step 2. Add the dependency:
+
+```sh 
+dependencies {
+
+       implementation 'com.github.shuftipro:Android-OCR-Verification:1.0.1'
+}
+```
+
+### or Maven:
+Step 1. Add the JitPack repository to your build file
+
+```sh
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+</repositories>
+
+```
+Step 2. Add the dependency
+
+```sh
+<dependency>
+	    <groupId>com.github.shuftipro</groupId>
+	    <artifactId>Android-OCR-Verification</artifactId>
+	    <version>1.0.1</version>
+</dependency>
+```
 
 ## Verifications:
-Shufti Pro supports four modes of verification:<br />
-**1. Face Verification**<br />
-**2. Document Verification**<br/>
-**3. Address Verification**</br>
-**4. Consent Verification**
+Shufti Pro offers 3 Verification services with OCR on its Mobile SDK. You can either choose all 3 of them or can opt to use only one of them for mobile verification of your customers/users.
+All the technical details and verification request parameters are explained below for each verification service.<br />
 
-## Integration: 
-See the sample project provided to learn the most common use. Make sure to build on real device.
+## 1- Face Verification
+
+In order to perform a face verification, the native camera of the smartphone is used. Liveness detection and many other techniques are used to ensure that only an authentic facial proof is used for Face Verification.
+
+To perform face verification, create an instance for the ```FaceVerification```. Set face verification to **TRUE**
+
 ```
-import com.shufti.sdk.shuftipro.Shuftipro;
-import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
-```
-Make an instance 
-```
-Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey", async: false);
-```
-## Sample Request
-For **Sample** verification request
-```sh
-instance.shuftiproVerification(reference: "17374217",country: "GB", 
-				      language: "EN", email: "example@gmail.com",
-				      callbackUrl: "your-callback_url",
-                                      redirectUrl: "your-redirect_url",
-				      isToMakeFaceVerification: true,
-                                      isToPerformDocumentationVerification: true, 
-				      isSupportPassportType: true,
-				      isSupportIdCardType: true,    				    	     					   	      isSupportDrivingLicenseType: true,
-				      isSupportCreditCardType: true,
-				      nameOnDocument: true, 
-				      dob: true,
-				      documentNumber: true,
-				      expiryDate: true,
-				      issueDate: true,
-                                      isToPerformAddressVerification: true, 
-				      fullAddress: true, 
-				      name: true,
-				      isUtilityBillSupportedType: true, 					      					      isIdCardSupportedType: true,
-				      isBankStatementSupportedType: true,
-				      parentActivity: "your-caller-activity",
-				      ShuftiVerifyListener: new ShuftiVerifyListener(){
-				 
-					@Override
-					public void verificationStatus(HashMap<String, String> responseSet) {
-					
-						String event = responseSet.get("event");
-				   		if(event.equalsIgnoreCase("verification.accepted")){
-						
-							//Do anything you want.. I am showing a toast message
-				       		Toast.makeText(this, "Status : Verified...", Toast.LENGTH_LONG).show();
-						}
-						else{
-						
-						//Do anything you want.. I am showing a toast message
-				      		 String message = responseSet.get("message");
-				      	 	Toast.makeText(this, "Status : Not Verified", Toast.LENGTH_LONG).show();
-						}
-				         }
-       			             });
+FaceVerification faceVerification = FaceVerification.getInstance();
+faceVerification.setFaceVerification(true);
 ```
 
+## 2- Document Verification
 
-# Request Parameters 
+In order to perform Document Verification, User has to display their identity document in front of their phone camera. Shufti Pro currently supports ID cards, passports & driving license. Shufti Pro can even verify credit cards and debit cards as well.
+
+To perform document verification, create an instance of ```DocumentVerification``` and follow these steps
+
+```
+DocumentVerification documentVerification = DocumentVerification.getInstance();
+```
+ ### Document Type
+
+Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is mandatory to perform Document Verification.
+
+``` 
+documentVerification.setSupportedTypes("DOCUMENTTYPES");
+```
+### Name Extraction
+
+For Name Extraction, set ```extractName``` to **TRUE**
+
+``` 
+documentVerification.extractName(true);
+```
+### Dob Extraction
+
+For Dob Extraction, set ```extractDob``` to **TRUE**
+
+``` 
+documentVerification.extractDob(true);
+```
+
+### Document Number Extraction
+
+For Document Number Extraction, set ```extractDocumentNumber``` to **TRUE**
+
+``` 
+documentVerification.extractDocumentNumber(true);
+```
+
+### Expiry Date Extraction
+
+For Expiry Date Extraction, set ```extractExpiryDate``` to **TRUE**
+``` 
+documentVerification.extractExpiryDate(true);
+```
+
+### Issue Date Extraction
+
+For Issue Date Extraction, set ```extractIssueDate``` to **TRUE**
+``` 
+documentVerification.extractIssueDate(true);
+```
+
+## 3- Address Verification
+
+Address Verification is performed by Shufti Pro with the help of address printed on the official identity documents. In addition to ID cards, driving licenses and passports, Shufti Pro can verify the address of an end-user with the help of bank statements and utility bills as well, that are no older than 3 months.
+
+To perform Address Verification, create an instance of ```AddressVerification``` and follow these steps
+
+``` 
+AddressVerification addressVerification = AddressVerification.getInstance();
+```
+
+### Document Type
+
+Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-types). This is mandatory to perform Address Verification.
+
+``` 
+addressVerification.setSupportedTypes("DOCUMENTTYPES");
+```
+
+### Address Extraction
+
+For Address Extraction, set  ```extractFullAddress``` to **TRUE**
+
+```
+addressVerification.extractFullAddress(true);
+```
+### Name Extraction
+
+For Name Extraction, set  ```extractName``` to **TRUE**
+
+```
+addressVerification.extractName(true);
+```
+
+## Request Parameters 
 
 It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of four services which include face, document, address, consent.
 
@@ -159,134 +246,42 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 	Once verification is complete, User is redirected to this link after showing the results.
 	
-* ## isFaceVerification
 
-	Required: **No**  
-	Type: **boolean** 
-
-	Set value to **true** for face verification.
-	
-* ## isToPerformDocumentationVerification
-
-	Required: **No**  
-	Type: **boolean** 
-
-	Set value to **true** for documentation verification.
-
-* ## isSupportPassportType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using passport.	
-
-* ## isSupportIdCardType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using Id card.
-
-* ## isSupportDrivingLicenseType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using driving lisence.
-
-* ## isSupportCreditDebitCardType
-
-	Required: **No**  
-	Type: **boolean** 
-
-    If you set it **true** user will be able to verify data using credit/debit card.
-
-* ## nameOnDocument
-
-	Required: **No**  
-	Type: **boolean** 
-
-    Set **true** to perform fisrst and last name extraction from provided proofs.
-
-* ## dob
-
-	Required: **No**  
-	Type: **boolean**  
-
-   Set **true** to perform dob extraction from provided proofs.
-
-* ## documentNumber
-
-	Required: **No**  
-	Type: **String**  
-
-  Set **true** to perform document number extraction from provided proofs.
-
-* ## expiryDate
-
-	Required: **No**  
-	Type: **boolean**  
-
-  Set **true** to perform expiry date extraction from provided proofs.
-
-* ## issueDate
-
-	Required: **No**  
-	Type: **boolean**  
-
-  Set **true** to perform issue date extraction from provided proofs.
-
-	
-* ## isToPerformAddressVerification
-
-	Required: **No**  
-	Type: **boolean** 
-
-	Set value to **true** for address verification verification.
-
-* ## isUtilityBillSupportedType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using utility bills.
-
-* ## isIdCardSupportedType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using Id card.
-
-* ## isBankStatementSupportedType
-
-	Required: **No**  
-	Type: **boolean** 
-
-	If you set it **true** user will be able to verify data using bank statements.
-	
-* ## fullAddress
-
-	Required: **No**  
-	Type: **boolean**  
-
-	Set **true** to perform full address extraction from provided proofs. Allowed Characters are numbers, alphabets, dots, dashes, spaces, underscores, hashes and commas.
-
-* ## name
-	Required: **No**  
-	Type: **boolean**
-
-  Set **true** to extract name from provided proofs.
 
 * ## Asyncronous Feedback
 	
-	If **async** value is set to **true** while creating instance you'll instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you'll automatically get a callback.
+	If ```async``` value is set to **TRUE** while creating instance you will instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you will automatically get a callback.
 
+## Get Started with SDK
+
+See the sample project provided to learn the most common use. Make sure to build on real device.
+```
+import com.shufti.sdk.shuftipro.Shuftipro;
+import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
+```
+Make an instance 
+```
+Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey", async: false);
+```
+Now you are required to perform a method call for all the verification services that you want to perform and for those authentication services that are not desired to be performed, pass a ```null``` value.
+
+```
+shuftipro.shuftiproVerification(reference, country, lng, email, callbackUrl, redirectUrl,
+                faceVerification, documentVerification, addressVerification, this,
+		new ShuftiVerifyListener() {
+                    @Override
+                    public void verificationStatus(HashMap<String, String> responseSet) {
+                              
+			//I'm printing my response you can do whatever you want to do
+			Log.e("Response", responseSet.toString());
+                    }
+                });
+```
 ## Response Logging
 
 Response of verification can be logged via the code given below. You can see this in LogCat at runtime. Write this code in Response listener of SDK:
-```sh
 
+```sh
 //To view the errors of request
 String error = responseSet.get("error");
 
@@ -304,7 +299,6 @@ if (event.equalsIgnoreCase("verification.accepted")) {
   //Verification declined do whatever you want to do
   Log.i("LoggingResp", event);
 }
-
 ```
 **Note:** Run project on a real device.
 
@@ -312,6 +306,7 @@ if (event.equalsIgnoreCase("verification.accepted")) {
 The Shufti Pro Verification API will send a JSON response if a status request is made.
 
 * <h3>reference</h3>
+
 	Your unique request reference, which you provided us at the time of request, so that you can identify the response in relation to the request made.
 
 * <h3>event</h3>
@@ -335,18 +330,24 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 
 ```
 
+## Supported Document Types
+
+Address | Document | Consent |
+--------------- | ------------ | ------------ |
+id_card | id_card | handwritten 
+passport  | passport  | printed  
+driving_license | driving_lisence
+utility_bill | credit_or_debit_card 
+bank_statement |
+rent_agreement |
+employer_letter |
+insurance_agreement | 
+tax_bill |
+
+
 ## Sample project setup
-In HomeActivity.java file add your **Client ID** on line 32 and **Secret Key** on line 33. Thats it!
+In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** on line 37. Thats it!
 > **Note:** Run project on a real device.
-
-## Complete Sample Request
-```sh
-
-Shuftipro.getInstance(clientId, secretKey, false).shuftiproVerification("17374217", "GB", "EN", "abc@gmail.com", 
-"www.url.com", "www.url.com", true, true, true, true, true, true, true, true, true, true, false, true, 
-true, false, true, true, true, MainActivity.this, MainActivity.this);
-
-```
 
 # Test IDs
 Shufti Pro provides the users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information. <br><br>
@@ -365,7 +366,7 @@ If you have any questions/queries regarding implementation of SDK please feel fr
 
 Date            | Description 
 --------------- | ------------
-07 Nov 2018     | Add async key in the sdk.
+15 Jan 2019     | Added progress bar to show status of async call.
 
 ## Copyright
 2016-18 © Shufti Pro Ltd.

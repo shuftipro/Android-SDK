@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/shuftipro-anddroid with_ocr_client.iml" filepath="$PROJECT_DIR$/shuftipro-anddroid with_ocr_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shuftipro-anddroid with_ocr.iml" filepath="$PROJECT_DIR$/shuftipro-anddroid with_ocr.iml" />
       <module fileurl="file://$PROJECT_DIR$/shuftipro-sdk/shuftipro-sdk.iml" filepath="$PROJECT_DIR$/shuftipro-sdk/shuftipro-sdk.iml" />
     </modules>
   </component>

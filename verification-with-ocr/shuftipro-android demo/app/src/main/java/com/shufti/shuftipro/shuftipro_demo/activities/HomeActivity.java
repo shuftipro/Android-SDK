@@ -17,6 +17,7 @@ import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
 import com.shufti.sdk.shuftipro.models.AddressVerification;
 import com.shufti.sdk.shuftipro.models.DocumentVerification;
 import com.shufti.sdk.shuftipro.models.FaceVerification;
+import com.shufti.sdk.shuftipro.models.ShuftiproVerification;
 import com.shufti.sdk.shuftipro.utils.Utils;
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;
@@ -169,14 +170,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         addressVerification.extractFullAddress(true);
         addressVerification.extractName(true);
 
-        instance.shuftiproVerification(reference,country,lng,email,callback_url,redirect_url,
-                isFaceChecked ? faceVerification: null, isDocChecked? documentVerification: null,
-                isAddressChecked ? addressVerification : null,this,this);
+        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+            @Override
+            public void verificationStatus(HashMap<String, String> responseSet) {
+                Log.e("Response", responseSet.toString());
+            }
+        });
+
+        requestBuilder.withFaceVerification(isFaceChecked?faceVerification:null);
+        requestBuilder.withAddressVerification(isAddressChecked?addressVerification:null);
+        requestBuilder.withDocumentVerification(isDocChecked?documentVerification:null);
+        requestBuilder.withLanguage(lng);
+        requestBuilder.withRedirectUrl(redirect_url);
+        requestBuilder.withEmail(email);
+        instance.shuftiproVerification(requestBuilder.buildShuftiModel());
     }
 
     @Override
     public void verificationStatus(HashMap<String, String> responseSet) {
-
         //In case of any error or response this method will invoke. Please check your logcat if request do not process.
         Log.e("Response : ", responseSet.toString());
         uncheckAllOptions();
