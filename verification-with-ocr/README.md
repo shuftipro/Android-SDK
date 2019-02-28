@@ -317,4 +317,4 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
 
 ## Copyright
-2016-18 © Shufti Pro Ltd.
+2018-19 © Shufti Pro Ltd.
