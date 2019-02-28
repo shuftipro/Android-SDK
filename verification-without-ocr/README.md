@@ -245,20 +245,20 @@ After making an instance, you are required to perform a method call to provide a
 Note: You have to provide all the necessary parameters and at least one service parameter in order to run a verification request.
 
 ```
- ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
                 Log.e("Response", responseSet.toString());
             }
         });
-                requestBuilder.withFaceVerification(faceVerification);
-                requestBuilder.withAddressVerification(addressVerification);
-                requestBuilder.withDocumentVerification(documentVerification);
-                requestBuilder.withConsentVerification(consentVerification);
-                requestBuilder.withEmail(email);
-                requestBuilder.withLanguage(lng);
-                requestBuilder.withRedirectUrl(redirectUrl);
-                instance.shuftiproVerification(requestBuilder.buildShuftiModel());
+	requestBuilder.withFaceVerification(faceVerification);
+	requestBuilder.withAddressVerification(addressVerification);
+	requestBuilder.withDocumentVerification(documentVerification);
+	requestBuilder.withConsentVerification(consentVerification);
+	requestBuilder.withEmail(email);
+	requestBuilder.withLanguage(lng);
+	requestBuilder.withRedirectUrl(redirectUrl);
+	instance.shuftiproVerification(requestBuilder.buildShuftiModel());
 ```
 ## Response Logging
 
