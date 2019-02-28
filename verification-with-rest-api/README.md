@@ -82,8 +82,8 @@ Step 2. Add the dependency
 ## Integration: 
 See the sample project provided to learn the most common use. Make sure to build on real device.
 ```
-import com.shufti.sdk.shuftipro.Shuftipro;
-import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
+import com.shufti.shuftipro.Shuftipro;
+import com.shufti.shuftipro.listeners.ShuftiVerifyListener;
 ```
 Make an instance 
 ```
