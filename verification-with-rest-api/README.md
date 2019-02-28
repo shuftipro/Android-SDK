@@ -96,11 +96,11 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
 			       parentActivity: "your-caller-activity",
 			       ShuftiVerifyListener: new ShuftiVerifyListener(){
 				 
-					@Override
-					public void verificationStatus(HashMap<String, String> responseSet) {
-						
-					//I'm printing response here
-					Log.d("Response", responseSet.toString());
+				      @Override
+				      public void verificationStatus(HashMap<String, String> responseSet) {
+
+				      //I'm printing response here
+				      Log.d("Response", responseSet.toString());
 				   }
 			       });
 ```
