@@ -283,7 +283,6 @@ if (event.equalsIgnoreCase("verification.accepted")) {
   Log.i("LoggingResp", event);
 }
 ```
-**Note:** Run project on a real device.
 
 ## Status Response
 The Shufti Pro Verification API will send a JSON response if a status request is made.
