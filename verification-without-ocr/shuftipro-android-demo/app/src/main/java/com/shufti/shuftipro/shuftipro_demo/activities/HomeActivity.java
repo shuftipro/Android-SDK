@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView faceCheckImageView;
     private EditText firstNameEditText, lastNameEditText, dobEditText, docNumberEditText, issueDateEditText, expiryDateEditText, addressEditText;
     private Button continueButton;
-    private String firstName, lastName, dob, documentNmber, issueDate, expiryDate, FullAddress;
+    private String firstName, lastName, dob, documentNumber, issueDate, expiryDate, fullAddress;
 
     private String clientId = ""; //Set your client Id here
     private String secretKey = ""; //Set your secret key here.
@@ -81,54 +81,40 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             firstName = firstNameEditText.getText().toString();
             lastName = lastNameEditText.getText().toString();
             dob = dobEditText.getText().toString();
-            documentNmber = docNumberEditText.getText().toString();
+            documentNumber = docNumberEditText.getText().toString();
             issueDate = issueDateEditText.getText().toString();
             expiryDate = expiryDateEditText.getText().toString();
-            FullAddress = addressEditText.getText().toString();
+            fullAddress = addressEditText.getText().toString();
 
             //If none of verification is requested display alert message
-            if (!isFaceChecked && firstName.isEmpty() && lastName.isEmpty() && dob.isEmpty() && documentNmber.isEmpty()
-                    && issueDate.isEmpty() && expiryDate.isEmpty() && FullAddress.isEmpty()) {
+            if (!isFaceChecked && firstName.isEmpty() && lastName.isEmpty() && dob.isEmpty() && documentNumber.isEmpty()
+                    && issueDate.isEmpty() && expiryDate.isEmpty() && fullAddress.isEmpty()) {
                 showErrorMessageDialog(getString(R.string.methods_of_verifications));
                 return;
             }
 
             //Check if user has check for document verification
-            if (!firstName.isEmpty() || !lastName.isEmpty() || !dob.isEmpty() || !documentNmber.isEmpty() ||
+            if (!firstName.isEmpty() || !lastName.isEmpty() || !dob.isEmpty() || !documentNumber.isEmpty() ||
                     !issueDate.isEmpty() || !expiryDate.isEmpty()) {
-
-                isDocChecked = true;
 
                 if (!firstName.isEmpty()) {
                     isToVerifyName = true;
                 }
-            }
-            else {
+            } else {
                 isDocChecked = false;
-
             }
 
             //Check if user has check for document verification
-            if (!FullAddress.isEmpty()) {
-                isAddressChecked = true;
-            }
-            else
-            {
-                isAddressChecked = false;
-            }
-
+            isAddressChecked = !fullAddress.isEmpty();
             requestSDKForVerification();
         }
     }
 
     private void requestSDKForVerification() {
-
         if (clientId.isEmpty() || secretKey.isEmpty()) {
-
             showErrorMessageDialog(getString(R.string.provide_credentials));
             return;
         }
-
         sendVerificationRequest();
     }
 
@@ -144,20 +130,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         final String reference = Utils.getUniqueReference(this);
 
         /*
-
          * FOR FACE VERIFICATION SERVICE
          * Make an instance and set the face verification to true
-
          */
 
         FaceVerification faceVerification = FaceVerification.getInstance();
         faceVerification.setFaceVerification(true);
 
         /*
-
          * FOR DOCUMENTATION VERIFICATION SERVICE
          * Make an instance and set the supported types & required fields for verification
-
          */
 
         DocumentVerification documentVerification = DocumentVerification.getInstance();
@@ -172,15 +154,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         documentVerification.setMiddleName("");
         documentVerification.setLastName(lastName);
         documentVerification.setDob(dob);
-        documentVerification.setDocumentNumber(documentNmber);
+        documentVerification.setDocumentNumber(documentNumber);
         documentVerification.setIssueDate(issueDate);
         documentVerification.setExpiryDate(expiryDate);
 
         /*
-
          * FOR ADDRESS VERIFICATION SERVICE
          * Make an instance, set the supported types & required fields for verification
-
          */
 
         AddressVerification addressVerification = AddressVerification.getInstance();
@@ -191,17 +171,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         supported_types.add("utility_bill");
 
         addressVerification.setSupportedTypes(supported_types);
-        addressVerification.setFullAddress(FullAddress);
+        addressVerification.setFullAddress(fullAddress);
         addressVerification.setFirstName(firstName);
         addressVerification.setMiddleName("");
         addressVerification.setLastName(lastName);
         addressVerification.setFuzzyMatch(false);
 
         /*
-
          * FOR CONSENT VERIFICATION SERVICE
          * Make an instance, set the supported types & required fields for verification
-
          */
 
         ConsentVerification consentVerification = ConsentVerification.getInstance();
@@ -215,24 +193,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Make an instance and method call
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
 
-
-        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url,
+                this, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
                 Log.e("Response", responseSet.toString());
+                uncheckAllOptions();
             }
         });
-        requestBuilder.withFaceVerification(isFaceChecked? faceVerification : null);
-        requestBuilder.withAddressVerification(isAddressChecked? addressVerification : null);
-        requestBuilder.withDocumentVerification(isDocChecked? documentVerification : null);
+
+        requestBuilder.withFaceVerification(isFaceChecked ? faceVerification : null);
+        requestBuilder.withAddressVerification(isAddressChecked ? addressVerification : null);
+        requestBuilder.withDocumentVerification(isDocChecked ? documentVerification : null);
         requestBuilder.withConsentVerification(null);
         requestBuilder.withEmail(email);
         requestBuilder.withLanguage(lng);
         requestBuilder.withRedirectUrl(redirect_url);
         instance.shuftiproVerification(requestBuilder.buildShuftiModel());
-
     }
-
 
     //Deselect all of the pre selected values
     private void uncheckAllOptions() {

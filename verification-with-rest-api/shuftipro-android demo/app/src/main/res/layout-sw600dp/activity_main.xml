@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Choose your \n Method of Verification"
+            android:text="@string/choose_your_n_method_of_verification"
             android:textColor="@color/black"
             android:textSize="26sp" />
     </LinearLayout>
@@ -59,7 +59,7 @@
                 android:layout_toRightOf="@+id/faceImageView"
                 android:layout_toStartOf="@+id/faceCheckImageView"
                 android:gravity="start"
-                android:text="Face Verification"
+                android:text="@string/face_verification"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -105,7 +105,7 @@
                 android:layout_toRightOf="@+id/docImageView"
                 android:layout_toStartOf="@+id/docCheckImageView"
                 android:gravity="start"
-                android:text="Document Verification"
+                android:text="@string/document_verification"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -151,7 +151,7 @@
                 android:layout_toRightOf="@+id/addressImageView"
                 android:layout_toStartOf="@+id/addressCheckImageView"
                 android:gravity="start"
-                android:text="Address Verification"
+                android:text="@string/address_verification"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -197,7 +197,7 @@
                 android:layout_toRightOf="@+id/consentImageView"
                 android:layout_toStartOf="@+id/consentCheckImageView"
                 android:gravity="start"
-                android:text="Consent Verification"
+                android:text="@string/consent_verification"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
@@ -224,7 +224,7 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:background="@color/camera_click_views_colors"
-        android:text="Continue"
+        android:text="@string/continue_"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24dp"/>

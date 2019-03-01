@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Shufti Pro</string>
-    <string name="select_service">Please, select one or more methods of verification.</string>
-    <string name="provide_credentials">Please provide client id and secret key before proceed.</string>
-    <string name="ok">OK</string>
-</resources>

@@ -2,4 +2,10 @@
     <string name="app_name">Shufti Pro</string>
     <string name="selection_verification">Please, select one or more methods of verification.</string>
     <string name="missing_credentials">Client id or secret key is missing. Please add and try again.</string>
+    <string name="choose_your_n_method_of_verification">Choose your \n Method of Verification</string>
+    <string name="face_verification">Face Verification</string>
+    <string name="document_verification">Document Verification</string>
+    <string name="address_verification">Address Verification</string>
+    <string name="consent_verification">Consent Verification</string>
+    <string name="continue_">Continue</string>
 </resources>

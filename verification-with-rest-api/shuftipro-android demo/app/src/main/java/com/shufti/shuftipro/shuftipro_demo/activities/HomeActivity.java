@@ -1,7 +1,6 @@
 
 package com.shufti.shuftipro.shuftipro_demo.activities;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -107,12 +106,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             if (!isFaceChecked && !isDocChecked && !isAddressChecked && !isConsentChecked) {
                 Helpers.displayAlertMessage(this, getString(R.string.selection_verification));
             } else {
-                sendShuftiproVerificationRequest();
+                sendVerificationRequest();
             }
         }
     }
 
-    private void sendShuftiproVerificationRequest() {
+    private void sendVerificationRequest() {
 
         //Check if client id or secret key is missing
         if (clientId.isEmpty() || secretKey.isEmpty()) {
@@ -144,13 +143,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //Creating face object
-
         JSONObject faceObject = new JSONObject();
 
         try {
 
             faceObject.put("proof", "");
-
             if (isFaceChecked) {
                 jsonObject.put("face", faceObject);
             }
@@ -160,10 +157,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //Creating document object
-
         JSONObject documentationObject = new JSONObject();
         ArrayList<String> doc_supported_types = new ArrayList<String>();
-
         doc_supported_types.add("passport");
         doc_supported_types.add("id_card");
         doc_supported_types.add("driving_license");
@@ -175,7 +170,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentationObject.put("supported_types", new JSONArray(doc_supported_types));
 
             //Set parameter in the requested object if OCR is required.
-
             documentationObject.put("name", "");
             documentationObject.put("dob", "");
             documentationObject.put("document_number", "");
@@ -191,10 +185,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //Creating Address object
-
         JSONObject addressObject = new JSONObject();
         ArrayList<String> address_supported_types = new ArrayList<String>();
-
         address_supported_types.add("id_card");
         address_supported_types.add("utility_bill");
         address_supported_types.add("bank_statement");
@@ -215,9 +207,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
 
-
         //Creating consent object
-
         JSONObject consentObject = new JSONObject();
         ArrayList<String> consent_supported_types = new ArrayList<String>();
         consent_supported_types.add("handwritten");

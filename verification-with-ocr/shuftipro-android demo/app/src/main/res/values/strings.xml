@@ -3,4 +3,9 @@
     <string name="select_service">Please, select one or more methods of verification.</string>
     <string name="provide_credentials">Please provide client id and secret key before proceed.</string>
     <string name="ok">OK</string>
+    <string name="choose_your_n_method_of_verification">Choose your \n Method of Verification</string>
+    <string name="face_verification">Face Verification</string>
+    <string name="document_verification">Document Verification</string>
+    <string name="address_verification">Address Verification</string>
+    <string name="continue_">Continue</string>
 </resources>

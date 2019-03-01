@@ -3,4 +3,15 @@
     <string name="methods_of_verifications">Please choose one or more methods of verification.</string>
     <string name="provide_credentials">Please provide client id and secret key before proceed.</string>
     <string name="ok">OK</string>
+    <string name="fill_in_your_details">Fill in your details</string>
+    <string name="face_verification">Face Verification</string>
+    <string name="document">Document</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="dob">DOB</string>
+    <string name="document_no">Document No</string>
+    <string name="issue_date">Issue Date</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="continue_">Continue</string>
+    <string name="address">Address</string>
 </resources>

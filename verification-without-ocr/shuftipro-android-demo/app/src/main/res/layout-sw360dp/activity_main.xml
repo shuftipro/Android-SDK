@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Fill in your details"
+            android:text="@string/fill_in_your_details"
             android:textColor="@color/black"
             android:textSize="18sp" />
     </LinearLayout>
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:gravity="start"
-                android:text="Face Verification"
+                android:text="@string/face_verification"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="Document"
+                android:text="@string/document"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -99,7 +99,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="First Name"
+                    android:hint="@string/first_name"
                     android:padding="7dp"
                     android:maxLines="1"
                     android:imeOptions="actionNext"/>
@@ -112,7 +112,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Last Name"
+                    android:hint="@string/last_name"
                     android:padding="7dp"
                     android:maxLines="1"
                     android:imeOptions="actionNext"/>
@@ -133,7 +133,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="DOB"
+                    android:hint="@string/dob"
                     android:padding="7dp" />
 
                 <EditText
@@ -144,7 +144,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Document No"
+                    android:hint="@string/document_no"
                     android:padding="7dp" />
 
             </LinearLayout>
@@ -163,7 +163,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Issue Date"
+                    android:hint="@string/issue_date"
                     android:padding="7dp"
                     android:maxLines="1"
                     android:imeOptions="actionNext"/>
@@ -176,7 +176,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Expiry Date"
+                    android:hint="@string/expiry_date"
                     android:padding="7dp"
                     android:maxLines="1"
                     android:imeOptions="actionDone"/>
@@ -196,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="Address"
+                android:text="@string/address"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -206,7 +206,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-                android:hint="Address"
+                android:hint="@string/address"
                 android:padding="7dp"
                 android:layout_marginTop="10dp"
                 android:maxLines="1"
@@ -223,7 +223,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/camera_click_views_colors"
         android:padding="10dp"
-        android:text="Continue"
+        android:text="@string/continue_"
         android:textAllCaps="false"
         android:textColor="@color/white" />
 

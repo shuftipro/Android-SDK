@@ -25,7 +25,7 @@ import com.shufti.shuftipro.shuftipro_demo.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener, ShuftiVerifyListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RelativeLayout faceRelativeLayout, docRelativeLayout, addressRelativeLayout;
     private ImageView faceCheckImageView, docCheckImageView, addressCheckImageView;
@@ -123,20 +123,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
 
         /*
-
          * FOR FACE VERIFICATION SERVICE
          * Make an instance and set the face verification to true
-
          */
 
         FaceVerification faceVerification = FaceVerification.getInstance();
         faceVerification.setFaceVerification(true);
 
         /*
-
          * FOR DOCUMENTATION VERIFICATION SERVICE
          * Make an instance and set the supported types & required fields for verification
-
          */
 
         DocumentVerification documentVerification = DocumentVerification.getInstance();
@@ -154,10 +150,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         documentVerification.extractIssueDate(true);
 
         /*
-
          * FOR ADDRESS VERIFICATION SERVICE
          * Make an instance, set the supported types & required fields for verification
-
          */
 
         AddressVerification addressVerification = AddressVerification.getInstance();
@@ -170,27 +164,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         addressVerification.extractFullAddress(true);
         addressVerification.extractName(true);
 
-        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+        ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url,
+                this, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
+                uncheckAllOptions();
                 Log.e("Response", responseSet.toString());
             }
         });
 
-        requestBuilder.withFaceVerification(isFaceChecked?faceVerification:null);
-        requestBuilder.withAddressVerification(isAddressChecked?addressVerification:null);
-        requestBuilder.withDocumentVerification(isDocChecked?documentVerification:null);
+        requestBuilder.withFaceVerification(isFaceChecked ? faceVerification : null);
+        requestBuilder.withAddressVerification(isAddressChecked ? addressVerification : null);
+        requestBuilder.withDocumentVerification(isDocChecked ? documentVerification : null);
         requestBuilder.withLanguage(lng);
         requestBuilder.withRedirectUrl(redirect_url);
         requestBuilder.withEmail(email);
         instance.shuftiproVerification(requestBuilder.buildShuftiModel());
-    }
-
-    @Override
-    public void verificationStatus(HashMap<String, String> responseSet) {
-        //In case of any error or response this method will invoke. Please check your logcat if request do not process.
-        Log.e("Response : ", responseSet.toString());
-        uncheckAllOptions();
     }
 
     private void uncheckAllOptions() {

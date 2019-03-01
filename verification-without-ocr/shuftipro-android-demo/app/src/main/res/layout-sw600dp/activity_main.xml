@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Fill in your details"
+            android:text="@string/fill_in_your_details"
             android:textColor="@color/black"
             android:textSize="22sp" />
     </LinearLayout>
@@ -37,11 +37,11 @@
             android:id="@+id/faceRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/border"
             android:orientation="horizontal"
             android:padding="15dp">
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:gravity="start"
-                android:text="Face Verification"
+                android:text="@string/face_verification"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="Document"
+                android:text="@string/document"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -99,18 +99,18 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="First Name"
+                    android:hint="@string/first_name"
                     android:padding="15dp" />
 
                 <EditText
                     android:id="@+id/lastNameEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Last Name"
+                    android:hint="@string/last_name"
                     android:padding="15dp" />
 
             </LinearLayout>
@@ -129,18 +129,18 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="DOB"
+                    android:hint="@string/dob"
                     android:padding="15dp" />
 
                 <EditText
                     android:id="@+id/docNumberEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Document No"
+                    android:hint="@string/document_no"
                     android:padding="15dp" />
 
             </LinearLayout>
@@ -159,18 +159,18 @@
                     android:layout_marginRight="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Issue Date"
+                    android:hint="@string/issue_date"
                     android:padding="15dp" />
 
                 <EditText
                     android:id="@+id/expiryDateEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/border"
-                    android:hint="Expiry Date"
+                    android:hint="@string/expiry_date"
                     android:padding="15dp" />
 
             </LinearLayout>
@@ -188,7 +188,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:text="Address"
+                android:text="@string/address"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -199,11 +199,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/border"
-                android:hint="Address"
+                android:hint="@string/address"
                 android:padding="15dp" />
 
         </LinearLayout>
-
     </LinearLayout>
 
     <Button
@@ -213,7 +212,7 @@
         android:layout_alignParentBottom="true"
         android:background="@color/camera_click_views_colors"
         android:padding="10dp"
-        android:text="Continue"
+        android:text="@string/continue_"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp" />
