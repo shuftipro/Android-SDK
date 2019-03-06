@@ -117,7 +117,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **JSONObject**  
 
-	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/tree/master/on-site_with_ocr) for more information.
+	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background checks. Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/tree/master/on-site_with_ocr) for more information.
 
 	All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys.
 
