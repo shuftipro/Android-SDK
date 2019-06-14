@@ -13,15 +13,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.shufti.sdk.shuftipro.Shuftipro;
-import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
-import com.shufti.sdk.shuftipro.models.AddressVerification;
-import com.shufti.sdk.shuftipro.models.ConsentVerification;
-import com.shufti.sdk.shuftipro.models.DocumentVerification;
-import com.shufti.sdk.shuftipro.models.FaceVerification;
-import com.shufti.sdk.shuftipro.models.ShuftiproVerification;
-import com.shufti.sdk.shuftipro.utils.Utils;
+
 import com.shufti.shuftipro.shuftipro_demo.R;
+import com.shutipro.sdk.Shuftipro;
+import com.shutipro.sdk.listeners.ShuftiVerifyListener;
+import com.shutipro.sdk.models.AddressVerification;
+import com.shutipro.sdk.models.ConsentVerification;
+import com.shutipro.sdk.models.DocumentVerification;
+import com.shutipro.sdk.models.FaceVerification;
+import com.shutipro.sdk.models.ShuftiproVerification;
+import com.shutipro.sdk.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,12 +30,12 @@ import java.util.HashMap;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RelativeLayout faceRelativeLayout;
-    private boolean isFaceChecked = false, isDocChecked = false, isAddressChecked = false;
+    private boolean isFaceChecked = false, isDocChecked = false, isAddressChecked = false, isConsentChecked = false;
     private boolean isToVerifyName = false;
     private ImageView faceCheckImageView;
-    private EditText firstNameEditText, lastNameEditText, dobEditText, docNumberEditText, issueDateEditText, expiryDateEditText, addressEditText;
+    private EditText firstNameEditText, lastNameEditText, dobEditText, docNumberEditText, issueDateEditText, expiryDateEditText, addressEditText, consentEditText;
     private Button continueButton;
-    private String firstName, lastName, dob, documentNumber, issueDate, expiryDate, fullAddress;
+    private String firstName, lastName, dob, documentNumber, issueDate, expiryDate, fullAddress, consentText;
 
     private String clientId = ""; //Set your client Id here
     private String secretKey = ""; //Set your secret key here.
@@ -57,6 +58,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         expiryDateEditText = findViewById(R.id.expiryDateEditText);
         addressEditText = findViewById(R.id.addressEditText);
         continueButton = findViewById(R.id.continueButton);
+        consentEditText = findViewById(R.id.consentEditText);
 
         //Setting click listeners for the layouts
         faceRelativeLayout.setOnClickListener(this);
@@ -85,10 +87,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             issueDate = issueDateEditText.getText().toString();
             expiryDate = expiryDateEditText.getText().toString();
             fullAddress = addressEditText.getText().toString();
+            consentText = consentEditText.getText().toString();
 
             //If none of verification is requested display alert message
             if (!isFaceChecked && firstName.isEmpty() && lastName.isEmpty() && dob.isEmpty() && documentNumber.isEmpty()
-                    && issueDate.isEmpty() && expiryDate.isEmpty() && fullAddress.isEmpty()) {
+                    && issueDate.isEmpty() && expiryDate.isEmpty() && fullAddress.isEmpty() && consentText.isEmpty()) {
                 showErrorMessageDialog(getString(R.string.methods_of_verifications));
                 return;
             }
@@ -97,6 +100,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             if (!firstName.isEmpty() || !lastName.isEmpty() || !dob.isEmpty() || !documentNumber.isEmpty() ||
                     !issueDate.isEmpty() || !expiryDate.isEmpty()) {
 
+                isDocChecked = true;
                 if (!firstName.isEmpty()) {
                     isToVerifyName = true;
                 }
@@ -106,6 +110,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             //Check if user has check for document verification
             isAddressChecked = !fullAddress.isEmpty();
+
+            //Check if user has check for consent verification
+            isConsentChecked = !consentText.isEmpty();
             requestSDKForVerification();
         }
     }
@@ -125,6 +132,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         final String email = "yourmail@gmail.com";
         final String callback_url = "https://www.yourdomain.com";
         final String redirect_url = "https://www.yourdomain.com";
+        final String verification_mode = "video";
 
         //Get unique reference using SDK utils (You can use your own reference)
         final String reference = Utils.getUniqueReference(this);
@@ -188,13 +196,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         consent_supported_types.add("printed");
 
         consentVerification.setSupportedTypes(consent_supported_types);
-        consentVerification.setConsentText("This is my customized text");
+        consentVerification.setConsentText(consentText);
 
         //Make an instance and method call
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
 
         ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url,
-                this, new ShuftiVerifyListener() {
+                this, verification_mode, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
                 Log.e("Response", responseSet.toString());
@@ -205,7 +213,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         requestBuilder.withFaceVerification(isFaceChecked ? faceVerification : null);
         requestBuilder.withAddressVerification(isAddressChecked ? addressVerification : null);
         requestBuilder.withDocumentVerification(isDocChecked ? documentVerification : null);
-        requestBuilder.withConsentVerification(null);
+        requestBuilder.withConsentVerification(isConsentChecked ? consentVerification : null);
         requestBuilder.withEmail(email);
         requestBuilder.withLanguage(lng);
         requestBuilder.withRedirectUrl(redirect_url);
@@ -244,5 +252,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         issueDateEditText.setText("");
         expiryDateEditText.setText("");
         addressEditText.setText("");
+        consentEditText.setText("");
     }
 }

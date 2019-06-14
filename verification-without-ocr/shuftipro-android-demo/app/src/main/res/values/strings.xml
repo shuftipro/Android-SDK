@@ -14,4 +14,6 @@
     <string name="expiry_date">Expiry Date</string>
     <string name="continue_">Continue</string>
     <string name="address">Address</string>
+    <string name="consent">Consent</string>
+    <string name="consent_hint">Consent Text</string>
 </resources>

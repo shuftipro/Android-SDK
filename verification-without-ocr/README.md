@@ -224,7 +224,12 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 	Once verification is complete, User is redirected to this link after showing the results.
 	
-
+* ## verification_mode
+    	
+    Required: **Yes**  
+    Type: **string**  
+    	
+    This key specifies the types of proofs that will be provided for verification. If you set the verification_mode to “video”, a 10-second video will be captured of the end-user. If you set the verification_mode to “image”, proofs will be captured in the form of images.
 
 * ## Asyncronous Feedback
 	
@@ -234,8 +239,10 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 See the sample project provided to learn the most common use. Make sure to build on real device.
 ```
-import com.shufti.sdk.shuftipro.Shuftipro;
-import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
+import com.shutipro.sdk.Shuftipro;
+import com.shutipro.sdk.listeners.ShuftiVerifyListener;
+import com.shutipro.sdk.models.ShuftiproVerification;
+
 ```
 Make an instance 
 ```
@@ -245,7 +252,7 @@ After making an instance, you are required to perform a method call to provide a
 Note: You have to provide all the necessary parameters and at least one service parameter in order to run a verification request.
 
 ```
-ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, new ShuftiVerifyListener() {
+ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url, this, verification_mode, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
                 Log.e("Response", responseSet.toString());

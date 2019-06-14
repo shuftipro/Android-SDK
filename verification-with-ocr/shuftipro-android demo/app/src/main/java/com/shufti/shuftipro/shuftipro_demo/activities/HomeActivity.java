@@ -12,15 +12,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.shufti.sdk.shuftipro.Shuftipro;
-import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
-import com.shufti.sdk.shuftipro.models.AddressVerification;
-import com.shufti.sdk.shuftipro.models.DocumentVerification;
-import com.shufti.sdk.shuftipro.models.FaceVerification;
-import com.shufti.sdk.shuftipro.models.ShuftiproVerification;
-import com.shufti.sdk.shuftipro.utils.Utils;
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;
+
+import com.shutipro.sdk.Shuftipro;
+import com.shutipro.sdk.listeners.ShuftiVerifyListener;
+import com.shutipro.sdk.models.AddressVerification;
+import com.shutipro.sdk.models.DocumentVerification;
+import com.shutipro.sdk.models.FaceVerification;
+import com.shutipro.sdk.models.ShuftiproVerification;
+import com.shutipro.sdk.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -119,6 +120,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         final String email = "yourmail@gmail.com";
         final String callback_url = "https://www.yourdomain.com";
         final String redirect_url = "https://www.yourdomain.com";
+        final String verification_mode = "video";
 
         Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
 
@@ -165,7 +167,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         addressVerification.extractName(true);
 
         ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url,
-                this, new ShuftiVerifyListener() {
+                this, verification_mode, new ShuftiVerifyListener() {
             @Override
             public void verificationStatus(HashMap<String, String> responseSet) {
                 uncheckAllOptions();
