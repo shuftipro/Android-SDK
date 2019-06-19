@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:shuftipro-sdk:unspecified@jar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/516153a4944cace580959805fba7b142/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/516153a4944cace580959805fba7b142/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/4b64bba84615b4814041aac4247e2078/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/4b64bba84615b4814041aac4247e2078/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
