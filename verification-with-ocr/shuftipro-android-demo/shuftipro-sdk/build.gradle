@@ -1,2 +1,4 @@
 configurations.maybeCreate("default")
 artifacts.add("default", file('shuftipro-sdk.aar'))
+dependencies {
+}
