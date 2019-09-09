@@ -49,7 +49,7 @@ To perform face verification, create an instance for the ```FaceVerification```.
 
 ```
 FaceVerification faceVerification = FaceVerification.getInstance();
-faceVerification.setFaceVerification(true);
+faceVerification.setFaceVerificationService(true);
 ```
 
 ## 2- Document Verification

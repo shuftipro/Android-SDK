@@ -130,7 +130,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
          */
 
         FaceVerification faceVerification = FaceVerification.getInstance();
-        faceVerification.setFaceVerification(true);
+        faceVerification.setFaceVerificationService(true);
 
         /*
          * FOR DOCUMENTATION VERIFICATION SERVICE
