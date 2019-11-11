@@ -1,7 +1,16 @@
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.2/master/assets/banner.jpg)](https://www.shuftipro.com/)
 
-# What Is This?
-Shufti Pro is an Identity Verification software as a service that enables enterprises and individuals to secure their KYC and AML compliance. With quick, and realtime results, it acts as a security measure for sound risk assessment by using Face Verification, Document Verification, Address Verification, Biometric Consent Verification and Handwritten Note Verification. It is the go-to option for Payment Systems, FinTECH industry, Crypto, Banks, Lending Economy, Trading platforms and  any other business that wants to eradicate financial risk and identity theft risk from their business practices.
+# What is Shufti Pro?
+Shufti Pro is an AI based Identity Verification SaaS (Software as a Service) that offers real-time, global verifications for seamless KYC/AML/KYB compliance. 
+
+It provides businesses with a sound risk-cover and helps prevent fraud with its automated identity verification services including: Face Verification, Document and Address Verification, Biometric Consent and 2 Factor Authentication.
+
+AML screening services enable clients to gain an extra layer of security, by scanning cybercriminals and fraudsters at source. 
+
+An easy to integrate API allows smooth customer onboarding and establishes longstanding trust, while optimising customer processing costs altogether. 
+
+Shufti Pro is the go-to ID authentication solution for digital payment systems, FinTech firms, Cryptocurrency, banks, and trading platforms. Businesses can eradicate financial risk and digital ID theft, and boost operating efficiency all in a matter of seconds.
+
 
 ## Table of contents
 * [General Requirements](#general-requirements)
@@ -16,8 +25,8 @@ Shufti Pro is an Identity Verification software as a service that enables enterp
 * [Contact](#contact)
 * [Copyright](#copyright)
 
-## General Requirements
-Followings are minimum requirements for SDK:
+## General Requirementss
+Minimum requirements for SDK include: 
 - Android 4.4 (API level 19) or higher
 - Internet connection
 - Camera
@@ -27,6 +36,8 @@ Application uses the following permissions which you may have to add in privacy 
 1. Camera
 2. Recording Audio
 3. External Storage
+
+All permissions are handled in SDK.
 
 ### SDK Installation Guide
 1. Select File → New → New Module → Import .aar package from top menu of Android Studio.
@@ -38,14 +49,16 @@ Application uses the following permissions which you may have to add in privacy 
 
 
 ## Verifications:
-Shufti Pro offers 3 Verification services with OCR on its Mobile SDK. You can either choose all 3 of them or can opt to use only one of them for mobile verification of your customers/users.
-All the technical details and verification request parameters are explained below for each verification service.<br />
+Shufti Pro offers three Verification services with OCR on its Mobile SDK. You have the option to choose either all three, or any one of them for mobile verification of your end-users.
+
+Following is a list of all verification services, along with verification request parameters and other technical details.
+<br />
 
 ## 1- Face Verification
 
-In order to perform a face verification, the native camera of the smartphone is used. Liveness detection and many other techniques are used to ensure that only an authentic facial proof is used for Face Verification.
-
-To perform face verification, create an instance for the ```FaceVerification```. Set face verification to **TRUE**
+To conduct a successful face verification, the native camera of the device is used. The liveness detection technique used for facial recognition ensures that authentic facial proof, in the form of biological identifiers, belongs to the actual user. 
+To perform face verification, create an instance for the
+```FaceVerification```. Set face verification to TRUE **TRUE**
 
 ```
 FaceVerification faceVerification = FaceVerification.getInstance();
@@ -54,16 +67,17 @@ faceVerification.setFaceVerificationService(true);
 
 ## 2- Document Verification
 
-In order to perform Document Verification, User has to display their identity document in front of their phone camera. Shufti Pro currently supports ID cards, passports & driving license. Shufti Pro can even verify credit cards and debit cards as well.
+In order to perform Document Verification, the user is required to display identity documents in front of the device’s camera. Shufti Pro’s API currently supports authentication of official ID cards, passports and driving licenses, as well as bank credit and debit cards. 
 
-To perform document verification, create an instance of ```DocumentVerification``` and follow these steps
+To perform document verification, create an instance of
+ ```DocumentVerification``` and follow these steps
 
 ```
 DocumentVerification documentVerification = DocumentVerification.getInstance();
 ```
  ### Document Type
 
-Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is mandatory to perform Document Verification.
+Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is a mandatory step in performing Document Verification.
 
 ``` 
 documentVerification.setSupportedTypes("DOCUMENTTYPES");
@@ -107,9 +121,10 @@ documentVerification.extractIssueDate(true);
 
 ## 3- Address Verification
 
-Address Verification is performed by Shufti Pro with the help of address printed on the official identity documents. In addition to ID cards, driving licenses and passports, Shufti Pro can verify the address of an end-user with the help of bank statements and utility bills as well, that are no older than 3 months.
+Shufti Pro’s API carries out Address Verification by cross-checking addresses printed on official ID documents, driving licenses and passports. The address of an end-user can also be verified using user bank statements and utility bills (no older than 3 months). 
 
-To perform Address Verification, create an instance of ```AddressVerification``` and follow these steps
+To perform Address Verification, create an instance of
+ ```AddressVerification``` and follow these steps
 
 ``` 
 AddressVerification addressVerification = AddressVerification.getInstance();
@@ -140,9 +155,11 @@ addressVerification.extractName(true);
 
 ## Request Parameters 
 
-It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of four services which include face, document, address, consent.
+It is important to note here that each verification option offered by Shufti Pro is an exclusive service, and is activated following the nature of user’s request. Clients can choose one or all of the optional API keys. 
 
-All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys. 
+In case a key is given in document and address verification, and no value is provided, then OCR will be performed for those particular keys. 
+
+ 
 
 * ## reference
 
@@ -151,7 +168,9 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Minimum: **6 characters**  
 	Maximum: **250 characters**  
 
-	This is the unique reference ID of request, which we will send you back with each response, so you can verify the request. Only alphanumeric values are allowed. This reference can be used to get status of already performed verification requests.
+	This is the unique reference ID of request, which Shufti Pro will send back with each response, in order for the request to be verified by the client. 
+	Here, only alphanumeric values are allowed. This reference can also be used to identify the status of verification requests previously performed.
+
 
 
 * ## country
@@ -160,7 +179,8 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Type: **string**  
 	Length: **2 characters**
 
-	Send the 2 characters long [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) country code of where your customer is from. Please consult [Supported Countries](countries.md) for country codes.
+	Submit the 2 characters long [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) country code of the country your customer belongs to. 
+	Please consult [Supported Countries](countries.md) for country codes.
 
 * ## language
 
@@ -168,7 +188,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Type: **string**  
 	Length: **2 characters**
 
-	Send the 2 characters long language code of your preferred language to display the verification screens accordingly. Please consult [Supported Languages](languages.md) for language codes. Default language english will be selected if this key is missing in the request.
+	Send the 2 characters long language code of your preferred language for the verification screens to display accordingly. Please consult [Supported Languages](languages.md) for language codes. English will be selected as the ‘default language’ in case the key is missing in the request.
 
 * ## email
 
@@ -177,7 +197,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Minimum: **6 characters**  
 	Maximum: **128 characters**
 
-	This field represents email of the end-user. If it is missing in a request, than Shuftpro will ask the user for its email in an on-site request.
+	This field represents the email id of the end-user. In case it is missing in a request, the Shufti Pro API will ask the user for its email id.
 
 * ## callbackUrl
 
@@ -186,7 +206,8 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Minimum: **6 characters**  
 	Maximum: **250 characters**
 
-	During a verification request, we make several server to server calls to keep you updated about the verification state. This way you can update the request status at your end even if the customer is lost midway through the process.
+	During a verification request, Shufti Pro makes several server-to-server calls to keep clients updated about the status of verification. This way users can update the request status at their end even if the customer is lost midway through the process.
+
 
 * ## redirectUrl
 
@@ -195,7 +216,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Minimum: **6 characters**  
 	Maximum: **250 characters**
 
-	Once verification is complete, User is redirected to this link after showing the results.
+	Once the verification process is complete, the user is moved to a ‘Redirect URL’ after the results have been displayed.
 	
 
 * ## verification_mode
@@ -203,17 +224,19 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
     Type: **string**  
 	
-	This key specifies the types of proofs that will be provided for verification. If you set the verification_mode to “video”, a 10-second video will be captured of the end-user. If you set the verification_mode to “image”, proofs will be captured in the form of images.
+	This key specifies the types of proof that will be provided for verification. If you set the verification_mode to “video”, a 10-second video of the user will be captured. If you set the verification_mode to “image”, proof will be captured in the form of users’ images.
 
 
 * ## Asyncronous Feedback
 	
-	If ```async``` value is set to **TRUE** while creating instance you will instantly get the user's control back so you don't have to wait for the verification results. When a request is completed you will automatically get a callback.
+	If ```async``` value is set to **TRUE** while creating Shuftipro instance you will instantly get the user's control back so you do not have to wait for the verification results. When a request is completed you will automatically get a callback.
+
 
 
 ## Get Started with SDK
 
 See the sample project provided to learn the most common use. Make sure to build on real device.
+
 ```
 import com.shutipro.sdk.Shuftipro;
 import com.shutipro.sdk.listeners.ShuftiVerifyListener;
@@ -224,8 +247,9 @@ Make an instance
 ```
 Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey", async: false);
 ```
-After making an instance, you are required to perform a method call to provide all the necessary parameters first. After that, you can select the desired verification services you want to perform e.g. face recognition, address verification, document verification, and optional parameters if you want. Any parameter or service you don’t want to perform, please do not mention it in the verification request.
-Note: You have to provide all the necessary parameters and at least one service parameter in order to run a verification request.
+After making an instance, you are required to perform a method call to first provide all the necessary parameters. Then, you can select the desired verification services you want to perform e.g. Face Recognition, Address Verification, Document Verification, and Optional Parameters. Please do not mention any parameters or services that are not required by the user.  
+Note: All necessary parameters and at least one service parameter will need to be provided in order to run a verification request.
+
 
 ```
 ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country,   callback_url, this, verification_mode, new ShuftiVerifyListener() {
@@ -244,6 +268,7 @@ ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.
 ## Response Logging
 
 Response of verification can be logged via the code given below. You can see this in LogCat at runtime. Write this code in Response listener of SDK:
+
 
 ```sh
 //To view the errors of request
@@ -268,14 +293,16 @@ if (event.equalsIgnoreCase("verification.accepted")) {
 ## Status Response
 The Shufti Pro Verification API will send a JSON response if a status request is made.
 
+
 * <h3>reference</h3>
 
-	Your unique request reference, which you provided us at the time of request, so that you can identify the response in relation to the request made.
+	This is the user’s unique request reference provided at the time of request, in order for the unique response to be identified. 
+
 
 * <h3>event</h3>
 
-	This is the request event which shows status of request. Event is changed in every response. Please consult 
-	[here](status_codes.md) for more information
+	The request event shows the status of user’s request, and is different for every response. For more information, click
+	[here](status_codes.md)
 
 <aside class="notice">
 Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the request is invalid.
@@ -295,10 +322,10 @@ Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the
 
 ## Supported Document Types
 
-Address | Document | Consent |
---------------- | ------------ | ------------ |
-id_card | id_card | handwritten 
-passport  | passport  | printed  
+Address | Document | 
+--------------- | ------------ | 
+id_card | id_card 
+passport  | passport  
 driving_license | driving_lisence
 utility_bill | credit_or_debit_card 
 bank_statement |
@@ -313,7 +340,7 @@ In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** o
 > **Note:** Run project on a real device.
 
 # Test IDs
-Shufti Pro provides the users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information. <br><br>
+Shufti Pro provides users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information.  <br><br>
 
 
 [![](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1)](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1) 
@@ -323,7 +350,7 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)
 
 ## Contact
-If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
+If you have any queries regarding the implementation of SDK, please feel free to contact Shufti Pro [tech support](mailto:support@shuftipro.com).
 
 ## Copyright
 2018-19 © Shufti Pro Ltd.
