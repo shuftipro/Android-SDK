@@ -32,11 +32,10 @@ Minimum requirements for SDK include:
 - Camera
 
 ## Permissions:
-Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
+The Shufti Pro application requires permission from your device to access the following:
 1. Camera
 2. Recording Audio
-3. External Storage
-
+3. External Storage<br />
 All permissions are handled in SDK.
 
 ### SDK Installation Guide
@@ -58,7 +57,7 @@ Following is a list of all verification services, along with verification reques
 
 To conduct a successful face verification, the native camera of the device is used. The liveness detection technique used for facial recognition ensures that authentic facial proof, in the form of biological identifiers, belongs to the actual user. 
 To perform face verification, create an instance for the
-```FaceVerification```. Set face verification to TRUE **TRUE**
+```FaceVerification```. Set face verification to **TRUE**
 
 ```
 FaceVerification faceVerification = FaceVerification.getInstance();
@@ -132,7 +131,8 @@ AddressVerification addressVerification = AddressVerification.getInstance();
 
 ### Document Type
 
-Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-types). This is mandatory to perform Address Verification.
+Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-types). This is a mandatory step in performing Address Verification.
+
 
 ``` 
 addressVerification.setSupportedTypes("DOCUMENTTYPES");

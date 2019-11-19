@@ -17,8 +17,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fe48fb0b-e48d-4ba5-bba7-ed0993978a80" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
@@ -32,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_shuftipro_sdk_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_shuftipro_sdk_unspecified_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shuftipro-sdk/shuftipro-sdk.aar" beforeDir="false" afterPath="$PROJECT_DIR$/shuftipro-sdk/shuftipro-sdk.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shuftipro-sdk.aar" beforeDir="false" afterPath="$PROJECT_DIR$/../shuftipro-sdk.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-with-rest-api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-with-rest-api/README.md" afterDir="false" />
@@ -47,8 +46,18 @@
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__artifacts_shuftipro_sdk_unspecified_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__artifacts_shuftipro_sdk_unspecified_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/shuftipro-sdk/shuftipro-sdk.aar" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/shuftipro-sdk/shuftipro-sdk.aar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/shuftipro-sdk/shuftipro-sdk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-android-demo/shuftipro-sdk/shuftipro-sdk.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-sdk.aar" beforeDir="false" afterPath="$PROJECT_DIR$/../../verification-without-ocr/shuftipro-sdk.aar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shufti/shuftipro/shuftipro_demo/activities/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="122" column="47" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="47" />
+            <state relative-caret-position="399">
+              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,13 +123,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/app_launcher.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shufti/shuftipro/shuftipro_demo/activities/HomeActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="81" />
-    <option name="y" value="32" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="828" />
   </component>
@@ -131,6 +141,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -138,37 +150,15 @@
               <item name="shuftipro-android-demo" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
-            <path>
-              <item name="shuftipro-android-demo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="shuftipro-android-demo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="shuftipro_demo" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shuftipro-android-demo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="shuftipro_demo" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="activities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shuftipro-android-demo" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Y5NBAM658TY5GUIF" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-11-19T14:50:24.456Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="Hom&#9;PSI&#9;JAVA://com.shufti.shuftipro.shuftipro_demo.activities.HomeActivity" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -274,8 +264,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="32" width="1440" height="828" extended-state="0" />
-    <editor active="true" />
+    <frame x="-5" y="23" width="1440" height="828" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22031474" />
@@ -306,12 +295,12 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw450dp/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -321,12 +310,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw720dp/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2700">
           <caret line="180" column="39" selection-start-line="180" selection-start-column="39" selection-end-line="180" selection-end-column="39" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/efe36f43079ad2da68eb0e822e4d45dd/jars/classes.jar!/com/shutipro/sdk/activities/ShuftiVerifyActivity.class" />
     <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-sdk.aar/efe36f43079ad2da68eb0e822e4d45dd/jars/classes.jar!/com/shutipro/sdk/Shuftipro.class" />
@@ -405,37 +394,30 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="175" column="43" lean-forward="true" selection-start-line="175" selection-start-column="43" selection-end-line="175" selection-end-column="43" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw360dp/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="571">
           <caret line="177" column="43" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="643">
           <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -464,13 +446,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/app_launcher_round.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shufti/shuftipro/shuftipro_demo/Helpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shuftipro-sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -482,12 +457,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -496,10 +471,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shufti/shuftipro/shuftipro_demo/Helpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shufti/shuftipro/shuftipro_demo/activities/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="122" column="47" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="47" />
+        <state relative-caret-position="399">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

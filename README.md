@@ -27,7 +27,7 @@ During verification without OCR, Shufti Pro customers or end-user is required to
 Additional Shufti Pro [resources](verification-without-ocr) can better guide better in understanding the technical requirements of Verification without OCR.
 
 * ### With Rest Api
-If you opt for mobile verification with Shufti Pro’s Rest API, a web-view built upon HTML 5 will be displayed to the end user. ALl data points and fields are adequately defined in the Rest API. The format for sending verification data will be a JSON object, similar to other mobile verification formats (OCR and Non-OCR). 
+If you opt for mobile verification with Shufti Pro’s Rest API, a web-view built upon HTML 5 will be displayed to the end user. All data points and fields are adequately defined in the Rest API. The format for sending verification data will be a JSON object, similar to other mobile verification formats (OCR and Non-OCR). 
 
 For more details on technical requirements for Verification with Rest API, kindly visit Shufti Pro’s resource page
  [here.](verification-with-rest-api)

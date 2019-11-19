@@ -36,7 +36,7 @@ The Shufti Pro application requires permission from your device to access the fo
 
 1. Camera
 2. Recording Audio
-3. External Storage
+3. External Storage <br />
 All permissions are handled in SDK.
 
 ### SDK Installation Guide
@@ -57,7 +57,7 @@ Following is a list of all verification services, along with verification reques
 To conduct a successful face verification, the native camera of the device is used. The liveness detection technique used for facial recognition ensures that authentic facial proof, in the form of biological identifiers, belongs to the actual user.
 
 To perform face verification, create an instance for the
-e ```FaceVerification```. Set face verification to TRUE
+```FaceVerification```. Set face verification to
  **TRUE**
 
 ```
@@ -138,7 +138,7 @@ AddressVerification addressVerification = AddressVerification.getInstance();
 
 ### Document Type
 
-Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-type). This is mandatory to perform Address Verification.
+Use ```setSupportedTypes``` to pass list of  [supported document types](#supported-document-type). This is a mandatory step in Address Verification.
 
 ``` 
 addressVerification.setSupportedTypes("DOCUMENTTYPES");
@@ -146,7 +146,8 @@ addressVerification.setSupportedTypes("DOCUMENTTYPES");
 
 ### Address Verification
 
-For Address Verification, use ```setFullAddress```. Character limit ranges between 2 and 250 characters.
+For Address Verification, use ```setFullAddress```. The character limit is between 2 and 250 characters.
+
 
 ```
 addressVerification.setFullAddress("3339 Maryland Avenue, Largo, Florida");
@@ -174,7 +175,7 @@ Shufti Pro carries out Consent Verification with the help of handwritten and pri
 
 ### Document Type
 
-Use ```setSupportedTypes``` to pass list of supported document types. This is mandatory to perform Consent Verification.
+Use ```setSupportedTypes``` to pass list of supported document types. This is a mandatory step in performing Consent Verification.
 
 ``` 
 consentVerification.setSupportedTypes("DOCUMENTTYPES");

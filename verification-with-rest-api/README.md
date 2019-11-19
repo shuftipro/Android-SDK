@@ -32,7 +32,7 @@ The following are minimum requirements for SDK:
 The Shufti Pro application requires permission from your device to access the following:
 1. Camera
 2. Internet
-3. External Storage
+3. External Storage<br />
 All permissions are handled in SDK.
 
 ## Verifications:
@@ -41,8 +41,6 @@ Shufti Pro supports four modes of verification:<br />
 **2. Document Verification**<br/>
 **3. Address Verification**<br/>
 **4. Consent Verification**<br/>
-**5. Background Checks**<br/>
-**6. Phone**<br/>
 
 ## Usage: 
 Here is a quick guide to get you started with Shufti Pro integration. Please follow **one** of the following the instructions to integrate Shufti Pro into your project.
@@ -120,7 +118,7 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
 
 It is important to note here that each verification option offered by Shufti Pro is an exclusive service, and is activated following the nature of user’s request. Clients can choose one or all of the optional API keys. In case a key is given in document and address verification, and no value is provided, then OCR will be performed for those particular keys. 
 
-There are a total of six services which include face, document, address, consent, phone and background_checks. 
+There are a total of four services which include face, document, address and consent. 
 
 All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys. 
 
