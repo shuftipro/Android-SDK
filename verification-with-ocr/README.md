@@ -175,12 +175,12 @@ In case a key is given in document and address verification, and no value is pro
 
 * ## country
 
-	Required: **Yes**  
+	Required: **No**  
 	Type: **string**  
 	Length: **2 characters**
 
 	Submit the 2 characters long [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) country code of the country your customer belongs to. 
-	Please consult [Supported Countries](countries.md) for country codes.
+	Please consult [Supported Countries](countries.md) for country codes. `Note: You may pass empty string if you don't want to enforce country verification.`
 
 * ## language
 
