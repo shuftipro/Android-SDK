@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Shufti Pro</string>
     <string name="methods_of_verifications">Please choose one or more methods of verification.</string>
-    <string name="provide_credentials">Please provide client id and secret key before proceed.</string>
+    <string name="provide_credentials">Please provide clientId and secretKey or accessToken before proceed.</string>
     <string name="ok">OK</string>
     <string name="fill_in_your_details">Fill in your details</string>
     <string name="face_verification">Face Verification</string>

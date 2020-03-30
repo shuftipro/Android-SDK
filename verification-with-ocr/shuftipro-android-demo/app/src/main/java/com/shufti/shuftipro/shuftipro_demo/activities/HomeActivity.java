@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;
-
 import com.shutipro.sdk.Shuftipro;
 import com.shutipro.sdk.listeners.ShuftiVerifyListener;
 import com.shutipro.sdk.models.AddressVerification;
@@ -23,20 +22,20 @@ import com.shutipro.sdk.models.FaceVerification;
 import com.shutipro.sdk.models.ShuftiproVerification;
 import com.shutipro.sdk.utils.Utils;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-
     private RelativeLayout faceRelativeLayout, docRelativeLayout, addressRelativeLayout;
     private ImageView faceCheckImageView, docCheckImageView, addressCheckImageView;
     private boolean isFaceChecked = false;
     private boolean isDocChecked = false;
     private boolean isAddressChecked = false;
     private Button continueButton;
-
     private String clientId = ""; //Set your client Id here
     private String secretKey = ""; //Set your secret key here.
+    private String accessToken = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
         //Initializing views
         faceRelativeLayout = findViewById(R.id.faceRelativeLayout);
         docRelativeLayout = findViewById(R.id.docRelativeLayout);
@@ -53,14 +51,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         docCheckImageView = findViewById(R.id.docCheckImageView);
         addressCheckImageView = findViewById(R.id.addressCheckImageView);
         continueButton = findViewById(R.id.continueButton);
-
         //Setting click listeners for the layouts
         faceRelativeLayout.setOnClickListener(this);
         docRelativeLayout.setOnClickListener(this);
         addressRelativeLayout.setOnClickListener(this);
         continueButton.setOnClickListener(this);
-    }
 
+        // optional
+        accessToken = this.getAccessToken();
+
+    }
     @Override
     public void onClick(View v) {
         if (v == faceRelativeLayout) {
@@ -102,9 +102,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void requestSDKForVerification() {
-
-        if (clientId.isEmpty() || secretKey.isEmpty()) {
-
+        if (accessToken.isEmpty() && (clientId.isEmpty() || secretKey.isEmpty())) {
             showErrorMessageDialog(getString(R.string.provide_credentials));
             return;
         }
@@ -122,7 +120,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         final String redirect_url = "https://www.yourdomain.com";
         final String verification_mode = "video";
 
-        Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
+
+        // Make an instance and method call
+        Shuftipro instance;
+
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
+            instance = Shuftipro.getInstance(accessToken, false);
+        } else {
+            instance = Shuftipro.getInstance(clientId, secretKey, false);
+        }
 
         /*
          * FOR FACE VERIFICATION SERVICE
@@ -205,4 +211,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         alertDialog.setCancelable(false);
         alertDialog.show();
     }
+
+
+    /**
+     *
+     * Optional | clientId + secretKey can also be used instead accessToken
+     *
+     * return access token
+     */
+    private String getAccessToken() {
+        String accessToken = "";
+
+        // implement logic to get accessToken from server side
+
+
+        return accessToken;
+    }
+
 }

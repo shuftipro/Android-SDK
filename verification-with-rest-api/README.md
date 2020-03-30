@@ -33,7 +33,7 @@ The Shufti Pro application requires permission from your device to access the fo
 1. Camera
 2. Internet
 3. External Storage<br />
-All permissions are handled in SDK.
+`Note: All permissions are handled in SDK.`
 
 ## Verifications:
 Shufti Pro supports four modes of verification:<br />

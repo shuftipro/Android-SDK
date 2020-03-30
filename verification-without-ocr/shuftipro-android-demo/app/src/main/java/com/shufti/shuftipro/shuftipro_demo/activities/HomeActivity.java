@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private String clientId = ""; //Set your client Id here
     private String secretKey = ""; //Set your secret key here.
+    private String accessToken = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         //Setting click listeners for the layouts
         faceRelativeLayout.setOnClickListener(this);
         continueButton.setOnClickListener(this);
+
+        // optional
+        accessToken = this.getAccessToken();
     }
 
     @Override
@@ -118,7 +122,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void requestSDKForVerification() {
-        if (clientId.isEmpty() || secretKey.isEmpty()) {
+        if (accessToken.isEmpty() && (clientId.isEmpty() || secretKey.isEmpty())) {
             showErrorMessageDialog(getString(R.string.provide_credentials));
             return;
         }
@@ -199,7 +203,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         consentVerification.setConsentText(consentText);
 
         //Make an instance and method call
-        Shuftipro instance = Shuftipro.getInstance(clientId, secretKey, false);
+        Shuftipro instance;
+
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
+            instance = Shuftipro.getInstance(accessToken, false);
+        } else {
+            instance = Shuftipro.getInstance(clientId, secretKey, false);
+        }
+
 
         ShuftiproVerification.RequestBuilder requestBuilder = new ShuftiproVerification.RequestBuilder(reference, country, callback_url,
                 this, verification_mode, new ShuftiVerifyListener() {
@@ -253,5 +264,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         expiryDateEditText.setText("");
         addressEditText.setText("");
         consentEditText.setText("");
+    }
+
+
+
+    /**
+     *
+     * @Optional | clientId + secretKey can also be used instead accessToken
+     *
+     * return access token
+     */
+    private String getAccessToken() {
+        String accessToken = "";
+
+        // implement logic to get accessToken from server side
+
+
+        return accessToken;
     }
 }

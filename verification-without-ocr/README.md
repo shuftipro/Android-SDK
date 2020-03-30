@@ -14,8 +14,8 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 
 ## Table of contents
 * [General Requirements](#general-requirements)
-* [SDK Installation Guide](#sdk-installation-guide)
 * [Permissions](#permissions)
+* [SDK Installation Guide](#sdk-installation-guide)
 * [Verifications](#verifications)
 * [Get Started with SDK](#get-started-with-sdk)
 * [Response Logging](#response-logging)
@@ -37,7 +37,7 @@ The Shufti Pro application requires permission from your device to access the fo
 1. Camera
 2. Recording Audio
 3. External Storage <br />
-All permissions are handled in SDK.
+`Note: All permissions are handled in SDK.`
 
 ### SDK Installation Guide
 1. Select File → New → New Module → Import .aar package from top menu of Android Studio.
@@ -277,9 +277,14 @@ import com.shutipro.sdk.listeners.ShuftiVerifyListener;
 import com.shutipro.sdk.models.ShuftiproVerification;
 
 ```
-Make an instance 
+ Make an instance:<br>
+ Instance can be created in two ways. First is by using `clientId` and `secretKey`, other one is by providing `accessToken`.<br>
+ You can read more about `accessToken`[here](https://api.shuftipro.com/api/docs/#access-token)
 ```
+// using clientID and secretKey
 Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey", async: false);
+// or using accessToken
+Shuftipro instance = Shuftipro.getInstance(accesstoken: "sp-accessToken", async: false);
 ```
 After making an instance, you are required to perform a method call to first provide all the necessary parameters. Then, you can select the desired verification services you want to perform e.g. Face Recognition,Address Verification, Document Verification, and Optional Parameters. Please do not mention any parameters or services that are not required by the user.  
 Note: All necessary parameters and at least one service parameter will need to be provided in order to run a verification request.
