@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -34,6 +35,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button continueButton;
     private String clientId = ""; //Add your client id here.
     private String secretKey = ""; //Add your secret key here.
+    private String accessToken = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         addressRelativeLayout.setOnClickListener(this);
         consentRelativeLayout.setOnClickListener(this);
         continueButton.setOnClickListener(this);
+
+
+        // optional
+        accessToken = this.getAccessToken();
     }
 
     @Override
@@ -113,11 +119,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void sendVerificationRequest() {
 
-        //Check if client id or secret key is missing
-        if (clientId.isEmpty() || secretKey.isEmpty()) {
+        //Check if clientId and secretkey  or accessToken is missing
+        if (accessToken.isEmpty() && (clientId.isEmpty() || secretKey.isEmpty())) {
             Helpers.displayAlertMessage(this, getString(R.string.missing_credentials));
+            return;
         }
-        Shuftipro instance = Shuftipro.getInstance(clientId, secretKey);
+
+        // Make an instance and method call
+        Shuftipro instance;
+
+        if (clientId.isEmpty() || secretKey.isEmpty()) {
+            instance = Shuftipro.getInstance(accessToken);
+        } else {
+            instance = Shuftipro.getInstance(clientId, secretKey);
+        }
+
         JSONObject requestedObject = getJsonObject();
         if (requestedObject != null) {
             instance.shuftiproVerification(getJsonObject(), HomeActivity.this, HomeActivity.this);
@@ -244,5 +260,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         docCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
         isConsentChecked = false;
         consentCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
+    }
+
+
+    /**
+     *
+     * Optional | clientId + secretKey can also be used instead accessToken
+     *
+     * return access token
+     */
+    private String getAccessToken() {
+        String accessToken = "";
+
+        // implement logic to get accessToken from server side
+
+
+        return accessToken;
     }
 }
