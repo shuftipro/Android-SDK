@@ -156,6 +156,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         documentVerification.extractDocumentNumber(true);
         documentVerification.extractExpiryDate(true);
         documentVerification.extractIssueDate(true);
+   //   documentVerification.setFetchEnhancedData(true);
 
         /*
          * FOR ADDRESS VERIFICATION SERVICE

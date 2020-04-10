@@ -169,6 +169,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         documentVerification.setDocumentNumber(documentNumber);
         documentVerification.setIssueDate(issueDate);
         documentVerification.setExpiryDate(expiryDate);
+    //  documentVerification.setFetchEnhancedData(true);
 
         /*
          * FOR ADDRESS VERIFICATION SERVICE
@@ -275,7 +276,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
      * return access token
      */
     private String getAccessToken() {
-        String accessToken = "";
+        String accessToken = "fjdabf";
 
         // implement logic to get accessToken from server side
 

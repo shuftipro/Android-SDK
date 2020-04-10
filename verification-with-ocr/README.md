@@ -74,6 +74,15 @@ To perform document verification, create an instance of
 ```
 DocumentVerification documentVerification = DocumentVerification.getInstance();
 ```
+
+ ### Fetch Enhanced Data
+
+Use ```setFetchEnhancedData``` for enabling enhanced data extraction for the document. Shufti Pro provides its customers with the facility of extracting enhanced data features using OCR technology. Now, instead of extracting just personal information input fields, Shufti Pro can fetch all the additional information comprising more than 100 data points from the official ID documents supporting 150 languages. For example height, place_of_birth, nationality, marital_status, weight, etc.(additional charges apply) Extrated data will be returned in object under the key additional_data in case of verification.accepted or verification.declined. For Details on additional_data object go to [Additional Data](https://api.shuftipro.com/api/docs/#additional-data)
+``` 
+documentVerification.setFetchEnhancedData(true);
+```
+
+
  ### Document Type
 
 Use ```setSupportedTypes``` to pass list of [supported document types](#supported-document-types). This is a mandatory step in performing Document Verification.

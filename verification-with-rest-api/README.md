@@ -134,7 +134,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **JSONObject**  
 
-	This is the json object which we will be sent in the verifiction request.  Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/tree/master/on-site_with_ocr) for more information.
+	This is the json object which we will be sent in the verification request.  Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/tree/master/on-site_with_ocr) for more information.
 
 
 
@@ -197,6 +197,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
             documentationObject.put("document_number", "");
             documentationObject.put("expiry_date", "");
             documentationObject.put("issue_date", "");
+            documentationObject.put("fetch_enhanced_data", "1");
 
             jsonObject.put("document", documentationObject);
         } catch (JSONException e) {
