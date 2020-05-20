@@ -61,7 +61,7 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-     implementation 'com.github.shuftipro:Shuftipro-Verification:1.1.0'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.0'
 }
 ```
 
@@ -83,7 +83,7 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.1.0</version>
+	    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -99,9 +99,10 @@ import com.shufti.shuftipro.listeners.ShuftiVerifyListener;
  Instance can be created in two ways. First is by using `clientId` and `secretKey`, other one is by providing `accessToken`.<br>
  You can read more about `accessToken`[here](https://api.shuftipro.com/api/docs/#access-token)
 ```
-// using clientId and secretKey
+//using clientId and secretKey
 Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: "your-secretKey");
-// or using accessToken
+
+//or using accessToken
 Shuftipro instance = Shuftipro.getInstance(accesstoken: "sp-accessToken");
 ```
 ## Sample Request
