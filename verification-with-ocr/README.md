@@ -340,7 +340,7 @@ Address | Document |
 --------------- | ------------ | 
 id_card | id_card 
 passport  | passport  
-driving_license | driving_lisence
+driving_license | driving_licence
 utility_bill | credit_or_debit_card 
 bank_statement |
 rent_agreement |

@@ -372,7 +372,7 @@ Address | Document | Consent |
 --------------- | ------------ | ------------ |
 id_card | id_card | handwritten 
 passport  | passport  | printed  
-driving_license | driving_lisence
+driving_license | driving_licence
 utility_bill | credit_or_debit_card 
 bank_statement |
 rent_agreement |
