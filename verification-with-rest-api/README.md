@@ -61,7 +61,7 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.2'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.3'
 }
 ```
 
@@ -83,7 +83,7 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.2.2</version>
+	    <version>1.2.3</version>
 </dependency>
 ```
 
