@@ -1,16 +1,7 @@
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.2/master/assets/banner.jpg)](https://www.shuftipro.com/)
 
-# What is Shufti Pro?
-Shufti Pro is an AI based Identity Verification SaaS (Software as a Service) that offers real-time, global verifications for seamless KYC/AML/KYB compliance. 
-
-It provides businesses with a sound risk-cover and helps prevent fraud with its automated identity verification services including: Face Verification, Document and Address Verification, Biometric Consent and 2 Factor Authentication.
-
-AML screening services enable clients to gain an extra layer of security, by scanning cybercriminals and fraudsters at source. 
-
-An easy to integrate API allows smooth customer onboarding and establishes longstanding trust, while optimising customer processing costs altogether. 
-
-Shufti Pro is the go-to ID authentication solution for digital payment systems, FinTech firms, Cryptocurrency, banks, and trading platforms. Businesses can eradicate financial risk and digital ID theft, and boost operating efficiency all in a matter of seconds. 
-
+# What Is This?
+Shufti Pro is an Identity Verification software as a service that enables enterprises and individuals to secure their KYC and AML compliance. With quick, and realtime results, it acts as a security measure for sound risk assessment by using Face Verification, Document Verification, Information Authentication, and PEP's, Criminals and Money Laundering Checks. It is the go-to option for Payment Systems, FinTECH industry, Crypto, Banks, Lending Economy & Trading platforms.
 
 # Table of contents
 * [Basic Setup](#basic-setup)
@@ -23,17 +14,16 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 
 # Basic Setup
 ## General Requirements
-The following are minimum requirements for SDK:
+Followings are minimum requirements for SDK:
 - API Level 21  and higher
 - Internet connection
-- Device with Camera
+- Camera
 
 ## Permissions:
-The Shufti Pro application requires permission from your device to access the following:
+Application uses the following permissions which you may have to add in privacy policy of the app. All permissions are handled in SDK.
 1. Camera
 2. Internet
-3. External Storage<br />
-`Note: All permissions are handled in SDK.`
+3. External Storage
 
 ## Verifications:
 Shufti Pro supports four modes of verification:<br />
@@ -41,9 +31,11 @@ Shufti Pro supports four modes of verification:<br />
 **2. Document Verification**<br/>
 **3. Address Verification**<br/>
 **4. Consent Verification**<br/>
+**5. Background Checks**<br/>
+**6. Phone**<br/>
 
 ## Usage: 
-Here is a quick guide to get you started with Shufti Pro integration. Please follow **one** of the following the instructions to integrate Shufti Pro into your project.
+Below are the quick start instructions. Please follow **one** of the following the instructions to integrate Shufti Pro into your project.
 
 ### Gradle:
 Step 1. Add it in your root build.gradle:
@@ -61,11 +53,11 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.3'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.4'
 }
 ```
 
-### or Maven:
+### Maven:
 Step 1. Add the JitPack repository to your build file
 
 ```sh
@@ -83,17 +75,16 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.2.3</version>
+	    <version>1.2.4</version>
 </dependency>
 ```
 
 ## Integration: 
-Take a look at the sample project and learn the most common use of the API. Make sure to build on a real device.
+See the sample project provided to learn the most common use. Make sure to build on real device.
 ```
-import com.shufti.shuftipro.Shuftipro;
-import com.shufti.shuftipro.listeners.ShuftiVerifyListener;
+import com.shufti.sdk.shuftipro.Shuftipro;
+import com.shufti.sdk.shuftipro.listeners.ShuftiVerifyListener;
 ```
-
 
  Make an instance:<br>
  Instance can be created in two ways. First is by using `clientId` and `secretKey`, other one is by providing `accessToken`.<br>
@@ -106,17 +97,17 @@ Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: 
 Shuftipro instance = Shuftipro.getInstance(accesstoken: "sp-accessToken");
 ```
 ## Sample Request
-For a sample verification request, enter the following: 
+For **Sample** verification request
 ```sh
 instance.shuftiproVerification(JSONObject: "your-requested-json-object"      
 			       parentActivity: "your-caller-activity",
 			       ShuftiVerifyListener: new ShuftiVerifyListener(){
 				 
-				      @Override
-				      public void verificationStatus(HashMap<String, String> responseSet) {
-
-				      //I'm printing response here
-				      Log.d("Response", responseSet.toString());
+					@Override
+					public void verificationStatus(HashMap<String, String> responseSet) {
+						
+					//I'm printing response here
+					Log.d("Response", responseSet.toString());
 				   }
 			       });
 ```
@@ -124,9 +115,7 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
 
 # Request Parameters 
 
-It is important to note here that each verification option offered by Shufti Pro is an exclusive service, and is activated following the nature of user’s request. Clients can choose one or all of the optional API keys. In case a key is given in document and address verification, and no value is provided, then OCR will be performed for those particular keys. 
-
-There are a total of four services which include face, document, address and consent. 
+It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. 
 
 All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys. 
 
@@ -135,9 +124,9 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **JSONObject**  
 
-	This is the json object which we will be sent in the verification request.  Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/tree/master/on-site_with_ocr) for more information.
+	This is the json object which we will be sent in the verifiction request.  It is important to note here that each service module is independent of other and each one of them is activated according to the nature of request received from you. There are a total of six services which include face, document, address, consent, phone and background_checks. Please consult [here](https://github.com/shuftipro/RESTful-API-v1.3/blob/master/on-site_with_ocr/on-site_with_ocr.md) for more information.
 
-
+	All verification services are optional. You can provide Shufti Pro a single service or mixture of several services for verifications. All keys are optional too. If a key is given in document or address sevice and no value is provided then OCR will be performed for those keys.
 
 
 * ## parentActivity
@@ -152,7 +141,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 	Required: **Yes**  
 	Type: **Interface**  
 
-	This is the reference of your activity which is implemented in the ShuftiVerifyListener interface.
+	This is the reference of your activity which implement the ShuftiVerifyListener interface.
 	
 
 ## Sample Request
@@ -198,7 +187,6 @@ All verification services are optional. You can provide Shufti Pro a single serv
             documentationObject.put("document_number", "");
             documentationObject.put("expiry_date", "");
             documentationObject.put("issue_date", "");
-            documentationObject.put("fetch_enhanced_data", "1");
 
             jsonObject.put("document", documentationObject);
         } catch (JSONException e) {
@@ -239,19 +227,19 @@ if (event.equalsIgnoreCase("verification.accepted")) {
 The Shufti Pro Verification API will send a JSON response if a status request is made.
 
 * <h3>reference</h3>
-	A unique reference will be provided at the time of request, so that you can identify the response in relation to the request made.
+	Your unique request reference, which you provided us at the time of request, so that you can identify the response in relation to the request made.
 
 * <h3>event</h3>
 
-	The request event shows the status of user’s request, and is different for every response. For more information, click
-	[here](status_codes.md)
+	This is the request event which shows status of request. Event is changed in every response. Please consult 
+	[here](status_codes.md) for more information
 
 ## Sample project setup
 In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** on line 37. Thats it!
 > **Note:** Run project on a real device.
 	
 # Test IDs
-Shufti Pro provides the users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information.  <br><br>
+Shufti Pro provides the users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information. <br><br>
 
 
 [![](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1)](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1) 
@@ -261,7 +249,13 @@ Shufti Pro provides the users with a number of test documents. Customers may use
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)
 
 ## Contact
-If you have any queries regarding the implementation of SDK, please feel free to contact Shufti Pro [tech support](mailto:support@shuftipro.com).
+If you have any questions/queries regarding implementation of SDK please feel free to contact our [tech support](mailto:support@shuftipro.com).
 
 ## Copyright
-2018-20 © Shufti Pro Ltd.
+2016-20 © Shufti Pro Ltd.
+
+
+Date            | Description 
+--------------- | ------------
+1st June 2020    | Ic_launcher removed from manifests. 
+3rd June 2020    | Result dialog cancelled on backPressed. 
