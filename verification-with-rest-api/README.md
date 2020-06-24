@@ -53,7 +53,7 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.5'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.6'
 }
 ```
 
@@ -75,7 +75,7 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.2.5</version>
+	    <version>1.2.6</version>
 </dependency>
 ```
 
@@ -195,7 +195,7 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
 * ## country
 
-  Required: **Yes**  
+  Required: **No**  
   Type: **string**  
   Length: **2 characters**
 
@@ -608,6 +608,10 @@ The Shufti Pro Verification API will send a JSON response if a status request is
 	This is the request event which shows status of request. Event is changed in every response. Please consult 
 	[here](status_codes.md) for more information
 
+* <h3>response</h3>
+    
+    	This key has the complete response received from ShuftiPro.
+
 ## Sample project setup
 In HomeActivity.java file add your **Client ID** on line 36 and **Secret Key** on line 37. Thats it!
 > **Note:** Run project on a real device.
@@ -629,9 +633,10 @@ If you have any questions/queries regarding implementation of SDK please feel fr
 2016-20 © Shufti Pro Ltd.
 
 
-Date            | Description 
---------------- | ------------
-1st June 2020    | Ic_launcher removed from manifests. 
-3rd June 2020    | Result dialog cancelled on backPressed. 
-9th June 2020    | Privacy Police link opening in external browser
-24th June 2020   | SDK Documentation updated
+Date              | Description 
+---------------   | ------------
+1st  June 2020    | Ic_launcher removed from manifests. 
+3rd  June 2020    | Result dialog cancelled on backPressed. 
+9th  June 2020    | Privacy Police link opening in external browser.
+24th June 2020    | SDK Documentation updated.
+24th June 2020    | complete response return in callback.
