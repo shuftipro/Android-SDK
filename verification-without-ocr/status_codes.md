@@ -32,6 +32,8 @@ request.timeout         | Request has timed out after a specific period of time.
 request.unauthorized    | Request is unauthorized. The information provided in authorization header is invalid.|Yes|No
 verification.accepted   | Request was valid and accepted after verification.|Yes|Yes
 verification.declined   | Request was valid and declined after verification.|Yes|Yes
+verification_process_closed   | User cancelled the verification process. Note: This event is only applied for SDK callback |No|Yes
+
 
 <aside class="notice">
   In case of off-site verification, <b>verification.accepted</b> or <b>verification.declined</b> is returned in event when request is valid after verification. 
@@ -100,6 +102,15 @@ verification.declined   | Request was valid and declined after verification.|Yes
   },
   "token": "",
   "verification_url": ""
+}
+```
+
+> verification_process_closed
+
+```json
+{
+  "message":"User cancel the verification process",
+  "verification_process_closed":"1"
 }
 ```
 
