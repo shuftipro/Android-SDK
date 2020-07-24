@@ -53,7 +53,7 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.8'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.9'
 }
 ```
 
@@ -75,7 +75,7 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.2.8</version>
+	    <version>1.2.9</version>
 </dependency>
 ```
 
@@ -96,6 +96,18 @@ Shuftipro instance = Shuftipro.getInstance(clientId: "your-clientId",secretKey: 
 //or using accessToken
 Shuftipro instance = Shuftipro.getInstance(accesstoken: "sp-accessToken");
 ```
+
+ Camera Setting:<br>
+ This option will returns preference for a live media captured camera directly.  <br>
+
+ 
+ 
+```sh
+ 
+  instance.setCaptureEnabled(true);
+
+```
+
 ## Sample Request
 For **Sample** verification request
 ```sh
@@ -641,4 +653,5 @@ Date              | Description
 24th June 2020    | SDK Documentation updated.
 24th June 2020    | complete response return in callback.
 13th July 2020    | Error fixes and code improvement.
-15th July 2020    |   
+15th July 2020    | view up on keyboard show issue fix.  
+16th July 2020    | Direct camera open on input feature added (captureEnabled)  
