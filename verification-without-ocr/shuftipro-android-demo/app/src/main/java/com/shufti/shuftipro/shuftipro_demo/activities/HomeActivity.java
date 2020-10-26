@@ -42,8 +42,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button continueButton;
     private String firstName, lastName, dob, documentNumber, issueDate, expiryDate, fullAddress, consentText;
 
-    private String clientId = "L3nF3hZYrV07itEna5GWaWJbuABlaFfWO8FlecT0ucXrWcbHQJ1595921709"; //Set your client Id here
-    private String secretKey = "$2y$10$/Vpw4S5iP2S2Mp8HonS3surtfJe0aS4x4jNmtKRq4nPRCpDdp06/2"; //Set your secret key here.
+    private String clientId = "client Id here"; //Set your client Id here
+    private String secretKey = "secret key here"; //Set your secret key here.
     private String accessToken = "";
 
 
