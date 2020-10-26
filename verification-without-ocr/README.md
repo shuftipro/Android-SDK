@@ -35,8 +35,7 @@ Minimum requirements for SDK include:
 The Shufti Pro application requires permission from your device to access the following:
 
 1. Camera
-2. Recording Audio
-3. External Storage <br />
+2. External Storage <br />
 `Note: All permissions are handled in SDK.`
 
 ### SDK Installation Guide
@@ -180,6 +179,13 @@ addressVerification.setFuzzyMatch(true);
 
 ## 4- Consent  Verification
 Shufti Pro carries out Consent Verification with the help of handwritten and printed documents. Any form of written text submitted by the user, such as a document or a note can be easily verified through this service. 
+
+To perform consent verification, create an instance of ```ConsentVerification``` and follow these steps
+
+```
+ConsentVerification consentVerification = ConsentVerification.getInstance();
+
+```
 
 ### Document Type
 
@@ -404,3 +410,4 @@ If you have any queries regarding the implementation of SDK, please feel free to
 Date            | Description 
 --------------- | ------------
 3rd June 2020   | Result dialog cancelled on backPressed.
+26th Ocr 2020   | Update Design.

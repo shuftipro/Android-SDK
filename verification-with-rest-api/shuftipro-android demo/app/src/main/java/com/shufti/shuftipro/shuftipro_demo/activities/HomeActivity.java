@@ -33,8 +33,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isAddressChecked = false;
     private boolean isConsentChecked = false;
     private Button continueButton;
-    private String clientId = ""; //Add your client id here.
-    private String secretKey = ""; //Add your secret key here.
+    private String clientId = ""; //Set your client Id here
+    private String secretKey = ""; //Set your secret Key here
     private String accessToken = "";
 
     @Override
@@ -147,7 +147,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         try {
             String reference = Utils.getUniqueReference(this);
             jsonObject.put("reference", reference);
-            jsonObject.put("country", "GB");
+            jsonObject.put("country", "");
             jsonObject.put("language", "EN");
             jsonObject.put("email", "yourmail@gmail.com");
             jsonObject.put("callback_url", "https://www.yourdomain.com");
@@ -247,7 +247,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void verificationStatus(HashMap<String, String> hashMap) {
-        Log.e("Response from SDK: \n ", hashMap.toString());
+        Log.e("Response:", hashMap.toString());
         uncheckAllOptions();
     }
 

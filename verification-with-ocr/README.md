@@ -34,8 +34,7 @@ Minimum requirements for SDK include:
 ## Permissions:
 The Shufti Pro application requires permission from your device to access the following:
 1. Camera
-2. Recording Audio
-3. External Storage<br />
+2. External Storage<br />
 `Note: All permissions are handled in SDK.`
 
 ### SDK Installation Guide
@@ -372,3 +371,4 @@ If you have any queries regarding the implementation of SDK, please feel free to
 Date            | Description 
 --------------- | ------------
 3rd June 2020   | Result dialog cancelled on backPressed.
+26th Oct 2020   | Update Design.

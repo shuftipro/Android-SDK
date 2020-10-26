@@ -113,12 +113,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void sendVerificationRequest() {
 
         final String reference = Utils.getUniqueReference(this);
-        final String country = "GB";
+        final String country = "";
         final String lng = "EN";
         final String email = "yourmail@gmail.com";
         final String callback_url = "https://www.yourdomain.com";
         final String redirect_url = "https://www.yourdomain.com";
-        final String verification_mode = "video";
+        final String verification_mode = "image";
 
 
         // Make an instance and method call
@@ -156,7 +156,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         documentVerification.extractDocumentNumber(true);
         documentVerification.extractExpiryDate(true);
         documentVerification.extractIssueDate(true);
-   //   documentVerification.setFetchEnhancedData(true);
+        //   documentVerification.setFetchEnhancedData(true);
 
         /*
          * FOR ADDRESS VERIFICATION SERVICE
@@ -191,7 +191,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         instance.shuftiproVerification(requestBuilder.buildShuftiModel());
     }
 
-    private void uncheckAllOptions() {
+    private void uncheckAllOptions()
+    {
         isFaceChecked = false;
         faceCheckImageView.setImageResource(R.drawable.uncheck_radio_icon);
         isAddressChecked = false;

@@ -1,1 +1,3 @@
-include ':app', ':shuftipro-sdk'
+include ':shuftipro-sdk'
+include ':shuftipro-release'
+include ':app'

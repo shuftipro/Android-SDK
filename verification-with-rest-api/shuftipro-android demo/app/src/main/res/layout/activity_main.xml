@@ -7,36 +7,41 @@
     android:background="@color/white"
     tools:context="com.shufti.shuftipro.shuftipro_demo.activities.HomeActivity">
 
-    <LinearLayout
-        android:id="@+id/mainContainer"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/heading_color"
-        android:orientation="horizontal"
-        android:padding="30dp"
-        android:layout_alignParentTop="true">
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/verification"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/charcol_blue"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/choose_your_n_method_of_verification"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_above="@id/checkbox"
+        android:text="@string/verification_method"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/charcol_blue"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="20sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:padding="30dp">
+        android:id="@+id/checkbox"
+        android:padding="10dp">
 
         <RelativeLayout
             android:id="@+id/faceRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
+            android:background="@drawable/borders"
             android:orientation="horizontal"
             android:layout_marginTop="20dp">
 
@@ -44,7 +49,6 @@
                 android:id="@+id/faceImageView"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/face_selection_icon" />
 
@@ -60,7 +64,8 @@
                 android:layout_toStartOf="@+id/faceCheckImageView"
                 android:gravity="start"
                 android:text="@string/face_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -83,14 +88,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/faceRelativeLayout"
             android:layout_marginTop="20dp"
-            android:background="@drawable/border"
+            android:background="@drawable/borders"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/docImageView"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/doc_selection_icon" />
 
@@ -106,7 +110,8 @@
                 android:layout_toStartOf="@+id/docCheckImageView"
                 android:gravity="start"
                 android:text="@string/document_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -129,14 +134,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/docRelativeLayout"
             android:layout_marginTop="20dp"
-            android:background="@drawable/border"
+            android:background="@drawable/borders"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/addressImageView"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/address_selection_icon" />
 
@@ -152,7 +156,8 @@
                 android:layout_toStartOf="@+id/addressCheckImageView"
                 android:gravity="start"
                 android:text="@string/address_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -175,16 +180,15 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/addressRelativeLayout"
             android:layout_marginTop="20dp"
-            android:background="@drawable/border"
+            android:background="@drawable/borders"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/consentImageView"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
-                android:src="@drawable/consent_icon" />
+                android:src="@drawable/doc_selection_icon" />
 
             <TextView
                 android:id="@+id/consentTextView"
@@ -193,7 +197,8 @@
                 android:layout_centerVertical="true"
                 android:gravity="start"
                 android:text="@string/consent_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="15sp"
                 android:layout_marginLeft="8dp"
                 android:layout_toEndOf="@+id/consentImageView"
@@ -214,6 +219,7 @@
                 android:src="@drawable/uncheck_radio_icon" />
 
         </RelativeLayout>
+
     </RelativeLayout>
 
     <Button
@@ -221,10 +227,53 @@
         android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/camera_click_views_colors"
-        android:text="@string/continue_"
+        android:layout_above="@id/terms_and_condition_retake"
+        android:background="@drawable/blue_round_button"
+        android:layout_margin="20dp"
+        android:text="@string/start_verification"
         android:textAllCaps="false"
         android:textColor="@color/white"/>
 
+    <LinearLayout
+        android:id="@+id/terms_and_condition_retake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="©"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:gravity="center_vertical"
+            android:text="Powered by"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/shufti_tm_retake"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/small_logo" />
+    </LinearLayout>
+
 </RelativeLayout>
+
+
+
+

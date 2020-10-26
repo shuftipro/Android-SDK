@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context="com.shufti.shuftipro.shuftipro_demo.activities.SplashActivity"
-    android:background="@color/white">
+    android:background="@drawable/background_image">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:src="@drawable/splash_image"/>
 
 </RelativeLayout>

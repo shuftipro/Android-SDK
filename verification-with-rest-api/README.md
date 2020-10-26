@@ -53,7 +53,7 @@ Step 2. Add the dependency:
 
 ```sh 
 dependencies {
-      implementation 'com.github.shuftipro:Shuftipro-Verification:1.2.10'
+      implementation 'com.github.shuftipro:Shuftipro-Verification:1.3.0'
 }
 ```
 
@@ -75,7 +75,7 @@ Step 2. Add the dependency
 <dependency>
 	    <groupId>com.github.shuftipro</groupId>
 	    <artifactId>Shuftipro-Verification</artifactId>
-	    <version>1.2.10</version>
+	    <version>1.3.0</version>
 </dependency>
 ```
 
@@ -171,6 +171,31 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
             documentationObject.put("issue_date", "");
 
             jsonObject.put("document", documentationObject);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+	//Creating document two object
+        JSONObject documentationTwo = new JSONObject();
+        ArrayList<String> doc_two_supported_types = new ArrayList<String>();
+
+        doc_two_supported_types.add("passport");
+        doc_two_supported_types.add("id_card");
+        doc_two_supported_types.add("driving_license");
+        doc_two_supported_types.add("credit_or_debit_card");
+
+        try {
+            documentationTwo.put("proof", "");
+            documentationTwo.put("supported_types", new JSONArray(doc_two_supported_types));
+
+            //Set parameters in the requested object
+            documentationTwo.put("name", "");
+            documentationTwo.put("dob", "");
+            documentationTwo.put("document_number", "");
+            documentationTwo.put("expiry_date", "");
+            documentationTwo.put("issue_date", "");
+
+            jsonObject.put("document_two", documentationTwo);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -365,7 +390,126 @@ All verification services are optional. You can provide Shufti Pro a single serv
 Extrated data will be returned in object under the key additional_data in case of verification.accepted or verification.declined.
 For Details on additional_data object go to [Additional Data](https://api.shuftipro.com/api/docs/#additional-data)
 
-<!-- -------------------------------------------------------------------------------- -->
+<!-- ---------------------------------------------------------------------------------->
+
+
+* ## Document Two Service
+
+  Document Two Service is provided to verify the personal details of a user from more than 1 document e.g. If you have verified the DOB & Name of a user from their ID Card, you can use Document Two Service to verify the Credit Card Number of your customer.
+
+  Just like the “Document Service”, the supported formats for this service are also passports, ID Cards, driving licenses and debit/credit cards and more than one document type can be selected as well.  
+
+  * <h3>supported_types</h3>
+
+  Required: **Yes**  
+  Type: **Array**
+
+  You can provide any one, two or more types of documents to verify the identity of user. For example, if you opt for both passport and driving license, then your user will be given an opportunity to verify data from either of these two documents. All supported types are listed below.
+
+  Supported Types      |
+  ---------------------|
+  passport             |
+  id_card            |
+  driving_license    |
+  credit_or_debit_card |
+
+  **Example 1** ["driving_license"]  
+  **Example 2** ["id_card", "credit_or_debit_card", "passport"]
+
+  * <h3>name</h3>
+
+  Required: **No**  
+  Type: **object**
+
+  In name object used in document service, first_name and last_name are extracted from the document uploaded if name is empty. 
+
+  * <h4>first_name</h4>
+  Required: **No**  
+  Type: **string**  
+  Minimum: **2 characters**  
+  Maximum: **32 chracters** 
+
+  Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
+  Example **John'O Harra**
+
+  * <h4>middle_name</h4>
+
+  Required: **No**  
+  Type: **string**  
+  Minimum: **2 characters**  
+  Maximum: **32 chracters**
+
+  Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark.  
+  Example **Carter-Joe**
+
+  * <h4>last_name</h4>
+
+  Required: **No**  
+  Type: **string**  
+  Minimum: **2 characters**  
+  Maximum: **32 chracters**
+
+  Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
+  Example **John, Huricane Jr.**
+
+  * <h4>fuzzy_match</h4>
+
+  Required: **No**  
+  Type: **string**  
+  Value Accepted: **1**
+
+  Provide 1 for enabling a fuzzy match of the name. Enabling fuzzy matching attempts to find a match which is not a 100% accurate.
+
+  * <h3>dob</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Format: **yyyy-mm-dd**
+
+  Leave empty to perform data extraction from uploaded proofs. Provide a valid date. Please note that the date should be before today. 
+  Example 1990-12-31
+
+  * <h3>document_number</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Minimum: **2 characters**  
+  Maximum: **100 chracters**
+
+  Leave empty to perform data extraction from the proof which will be uploaded by end-users. Allowed Characters are numbers, alphabets, dots, dashes, spaces, underscores and commas. 
+  Examples 35201-0000000-0, ABC1234XYZ098
+
+  * <h3>issue_date</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Format: **yyyy-mm-dd**
+
+  Leave empty to perform data extraction from the proof which will be uploaded by end-users. Provide a valid date. Please note that the date should be before today. 
+  Example 2015-12-31
+
+  * <h3>expiry_date</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Format: **yyyy-mm-dd**
+
+  Leave empty to perform data extraction from the proof which will be uploaded by end-users. Provide a valid date. Please note that the date should be after today. 
+  Example 2025-12-31
+  
+  * <h3>fetch_enhanced_data</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Accepted value: **1**
+
+  Provide 1 for enabling enhanced data extraction for the document. Shufti Pro provides its customers with the facility of extracting enhanced data features using OCR technology. Now, instead of extracting just personal information input fields, Shufti Pro can fetch all the additional information comprising more than 100 data points from the official ID documents supporting 150 languages. For example height, place_of_birth, nationality, marital_status, weight, etc.(additional charges apply)
+Extrated data will be returned in object under the key additional_data in case of verification.accepted or verification.declined.
+For Details on additional_data object go to [Additional Data](https://api.shuftipro.com/api/docs/#additional-data)
+
+
+
+<!-------------------------------------------------------------------------------->
 * ## address
 
   Address of an individual can be verified from the document but they have to enter it before it can be verified from an applicable document image.
@@ -655,3 +799,4 @@ Date              | Description
 13th July 2020    | Error fixes and code improvement.
 15th July 2020    | view up on keyboard show issue fix.  
 16th July 2020    | Direct camera open on input feature added (captureEnabled)  
+26th Oct 2020    | Update Design.  

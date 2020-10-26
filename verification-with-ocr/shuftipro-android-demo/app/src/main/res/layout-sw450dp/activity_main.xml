@@ -7,28 +7,33 @@
     android:background="@color/white"
     tools:context="com.shufti.shuftipro.shuftipro_demo.activities.HomeActivity">
 
-    <LinearLayout
-        android:id="@+id/mainContainer"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/heading_color"
-        android:orientation="horizontal"
-        android:padding="45dp"
-        android:layout_alignParentTop="true">
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="@string/verification"
+        android:textColor="@color/charcol_blue"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/choose_your_n_method_of_verification"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/verification_method"
+        android:layout_marginStart="30dp"
+        android:layout_above="@id/checkbox"
+        android:textColor="@color/charcol_blue"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="30sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/checkbox"
         android:layout_centerInParent="true"
         android:padding="30dp">
 
@@ -44,7 +49,6 @@
                 android:id="@+id/faceImageView"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/face_selection_icon" />
 
@@ -60,7 +64,8 @@
                 android:layout_toStartOf="@+id/faceCheckImageView"
                 android:gravity="start"
                 android:text="@string/face_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -90,7 +95,6 @@
                 android:id="@+id/docImageView"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/doc_selection_icon" />
 
@@ -106,7 +110,8 @@
                 android:layout_toStartOf="@+id/docCheckImageView"
                 android:gravity="start"
                 android:text="@string/document_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -136,7 +141,6 @@
                 android:id="@+id/addressImageView"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="@color/grey_color"
                 android:padding="8dp"
                 android:src="@drawable/address_selection_icon" />
 
@@ -152,7 +156,8 @@
                 android:layout_toStartOf="@+id/addressCheckImageView"
                 android:gravity="start"
                 android:text="@string/address_verification"
-                android:textColor="@color/black"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -175,11 +180,51 @@
         android:id="@+id/continueButton"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/camera_click_views_colors"
-        android:text="@string/continue_"
+        android:layout_above="@id/terms_and_condition_retake"
+        android:background="@drawable/blue_round_button"
+        android:text="@string/start_verification"
         android:textAllCaps="false"
+        android:fontFamily="@font/opensans_semibold"
+        android:layout_margin="20dp"
         android:textColor="@color/white"
         android:textSize="18sp"/>
+
+    <LinearLayout
+        android:id="@+id/terms_and_condition_retake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="©"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:gravity="center_vertical"
+            android:text="Powered by"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/shufti_tm_retake"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_shufti_tm" />
+    </LinearLayout>
 
 </RelativeLayout>

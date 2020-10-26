@@ -13,4 +13,7 @@
     <color name="colorTopBarTut1">#FFFFFFFF</color>
     <color name="outline_color">#d3d3d3</color>
     <color name="heading_color">#eaeaea</color>
+
+    <color name="borders">#EFF1F6</color>
+    <color name="charcol_blue">#1D2C42</color>
 </resources>
