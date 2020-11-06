@@ -33,8 +33,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isDocChecked = false;
     private boolean isAddressChecked = false;
     private Button continueButton;
-    private String clientId = ""; //Set your client Id here
-    private String secretKey = ""; //Set your secret key here.
+    private String clientId = "L3nF3hZYrV07itEna5GWaWJbuABlaFfWO8FlecT0ucXrWcbHQJ1595921709"; //Set your client Id here
+    private String secretKey = "449rTKx6QLlvWFOu2W6nGAYkBMlLYQe9"; //Set your secret key here.
     private String accessToken = "";
 
     @Override
