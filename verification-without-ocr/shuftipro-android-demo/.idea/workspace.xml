@@ -46,8 +46,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_30_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-23T13:49:47.503Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="0533125056000799" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-13T10:40:23.076Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="string&#9;FILE&#9;file:///Users/maqsoodulhassan/Documents/projects/sp/android-sdk/final_sdk/Android-SDK/verification-without-ocr/shuftipro-android-demo/app/src/main/res/values/strings.xml&#10;HttpConnectionHandler&#9;PSI&#9;JAVA://com.shufti.sdk.shuftipro.cloud.HttpConnectionHandler&#10;HttpUrlConnection&#9;PSI&#9;JAVA://java.net.HttpURLConnection&#10;Splas&#9;FILE&#9;file:///Users/saudali/Desktop/Android-SDK/verification-without-ocr/shuftipro-android-demo/app/src/main/res/layout/activity_splash.xml&#10;strings&#9;FILE&#9;file:///Users/saudali/Desktop/Android-SDK/verification-without-ocr/shuftipro-android-demo/app/src/main/res/values/strings.xml&#10;Hom&#9;PSI&#9;JAVA://com.shufti.shuftipro.shuftipro_demo.activities.HomeActivity" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -56,7 +56,7 @@
     <property name="device.picker.selection" value="Nexus_5X_API_27" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="memory.settings.postsync.last.time.stamp" value="1604663124502" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1605183894812" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />

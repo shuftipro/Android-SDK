@@ -169,6 +169,7 @@ instance.shuftiproVerification(JSONObject: "your-requested-json-object"
             documentationObject.put("document_number", "");
             documentationObject.put("expiry_date", "");
             documentationObject.put("issue_date", "");
+            documentationObject.put("backside_proof_required", "");
 
             jsonObject.put("document", documentationObject);
         } catch (JSONException e) {
@@ -379,6 +380,15 @@ All verification services are optional. You can provide Shufti Pro a single serv
 
   Leave empty to perform data extraction from the proof which will be uploaded by end-users. Provide a valid date. Please note that the date should be after today. 
   Example 2025-12-31
+
+  * <h3>backside_proof_required</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: 0, 1<br>
+  Default Value: 0
+
+  If the value of this parameter is set to 1, Shufti Pro will require the end-user to capture/upload both sides of the document to verify the identity. Enabling this parameter will also activate the front and back sides document match feature, which will verify if captured/uploaded front and back sides belong to the same document.
   
   * <h3>fetch_enhanced_data</h3>
 

@@ -191,6 +191,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentationObject.put("document_number", "");
             documentationObject.put("expiry_date", "");
             documentationObject.put("issue_date", "");
+            documentationObject.put("backside_proof_required", "");
 
             if (isDocChecked) {
                 jsonObject.put("document", documentationObject);

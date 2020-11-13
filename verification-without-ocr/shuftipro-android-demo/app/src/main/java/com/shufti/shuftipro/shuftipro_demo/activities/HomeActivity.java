@@ -42,8 +42,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private Button continueButton;
     private String firstName, lastName, dob, documentNumber, issueDate, expiryDate, fullAddress, consentText;
 
-    private String clientId = "client Id here"; //Set your client Id here
-    private String secretKey = "secret key here"; //Set your secret key here.
+    private String clientId = ""; //Set your client Id here
+    private String secretKey = ""; //Set your secret key here.
     private String accessToken = "";
 
 
@@ -415,7 +415,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         final String email = "yourmail@gmail.com";
         final String callback_url = "https://www.yourdomain.com";
         final String redirect_url = "https://www.yourdomain.com";
-        final String verification_mode = "video";
+        final String verification_mode = "image";
 
         //Get unique reference using SDK utils (You can use your own reference)
         final String reference = Utils.getUniqueReference(this);
