@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Shufti Pro</string>
+    <string name="methods_of_verifications">Please choose one or more methods of verification.</string>
+    <string name="provide_credentials">Please provide clientId and secretKey or accessToken before proceed.</string>
+    <string name="ok">OK</string>
+    <string name="fill_in_your_details">Fill in your details below</string>
+    <string name="face_verification">Face Verification</string>
+    <string name="doc_verification">Document Verification</string>
+    <string name="address_verification">Address Verification</string>
+    <string name="consent_verification">Consent Verification</string>
+    <string name="document">Document</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="dob">DOB</string>
+    <string name="document_no">Document No</string>
+    <string name="issue_date">Issue Date</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="continue_">Continue</string>
+    <string name="address">Address</string>
+    <string name="consent">Consent</string>
+    <string name="verification">Verification Services</string>
+    <string name="consent_hint">Consent Text</string>
+</resources>

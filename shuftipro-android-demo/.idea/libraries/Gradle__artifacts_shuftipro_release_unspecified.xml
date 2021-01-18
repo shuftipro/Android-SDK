@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:shuftipro-release:unspecified">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-release.aar/a987e12eb122bf15dfb7271c9ef051c9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-release.aar/a987e12eb122bf15dfb7271c9ef051c9/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/shuftipro-release.aar/a987e12eb122bf15dfb7271c9ef051c9/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

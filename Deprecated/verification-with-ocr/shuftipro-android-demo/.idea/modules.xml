@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="shuftipro-android-demo/app" />
+      <module fileurl="file://$PROJECT_DIR$/shuftipro-android-demo.iml" filepath="$PROJECT_DIR$/shuftipro-android-demo.iml" group="shuftipro-android-demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shuftipro-release/shuftipro-release.iml" filepath="$PROJECT_DIR$/.idea/modules/shuftipro-release/shuftipro-release.iml" group="shuftipro-android-demo/shuftipro-release" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/shuftipro-sdk/shuftipro-sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/shuftipro-sdk/shuftipro-sdk.iml" group="shuftipro-android-demo/shuftipro-sdk" />
+    </modules>
+  </component>
+</project>

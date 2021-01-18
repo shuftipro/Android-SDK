@@ -1,0 +1,3 @@
+include ':shuftipro-sdk'
+include ':shuftipro-release'
+include ':app'

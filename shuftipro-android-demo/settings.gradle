@@ -1,0 +1,2 @@
+include ':shuftipro-release'
+include ':app'
