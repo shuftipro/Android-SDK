@@ -1086,3 +1086,4 @@ If you have any queries regarding the implementation of SDK, please feel free to
 Date            | Description 
 --------------- | ------------
 18 Jan 2021     | Added all verfications(verification with OCR, without OCR and restful API) in one sdk.
+09 Feb 2021     | Updated async parameter

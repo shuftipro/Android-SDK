@@ -196,7 +196,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        JSONObject requestObj=getRequestObject();
+        final JSONObject requestObj=getRequestObject();
 
         if(requestObj!=null)
         {
