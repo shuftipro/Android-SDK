@@ -205,6 +205,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 public void verificationStatus(HashMap<String, String> responseSet) {
 
                     Log.e("Response",responseSet.toString());
+                    
                     uncheckAllOptions();
 
                 }
