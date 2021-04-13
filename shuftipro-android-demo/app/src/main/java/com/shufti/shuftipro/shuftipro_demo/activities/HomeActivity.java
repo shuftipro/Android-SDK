@@ -3,7 +3,7 @@ package com.shufti.shuftipro.shuftipro_demo.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;
@@ -229,6 +228,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             jsonObject.put("verification_mode", "image_only");
             jsonObject.put("show_privacy_policy","1");
             jsonObject.put("show_results", "1");
+            jsonObject.put("show_consent", "1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -273,6 +273,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentObject.put("issue_date", "");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("nfc_verification", false);
 
             if(isDocChecked)
             {
@@ -305,6 +306,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "");
+            documentTwoObject.put("nfc_verification", false);
 
             if(isDoc2Checked)
             {
@@ -334,6 +336,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             addressObject.put("full_address", "");
             addressObject.put("name", "");
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("nfc_verification", false);
 
             if(isAddressChecked)
             {

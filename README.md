@@ -14,7 +14,7 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 ## Table of contents
 * [General Requirements](#general-requirements)
 * [Permissions](#permissions)
-* [SDK Installation Guide](#sdk-installation-guide)
+* [SDK Usage Guide](#SDK-Usage-Guide)
 * [Verifications](#verifications)
 * [Integration](#Integration)
 * [Request Object With OCR](#Request-Object-With-OCR)
@@ -35,6 +35,7 @@ Minimum requirements for SDK include:
 - Android 4.4 (API level 19) or higher
 - Internet connection
 - Camera
+- Migrate to AndroidX
 
 ## Permissions:
 The Shufti Pro application requires permission from your device to access the following:
@@ -42,13 +43,32 @@ The Shufti Pro application requires permission from your device to access the fo
 2. External Storage <br/>
 All permissions are handled in SDK.
 
-## SDK Installation Guide
-In your **Android Project** follow below steps.
-1. Select File → New → New Module → Import .aar package from the top menu of Android Studio.
-2. Select the provided 'shuftipro-sdk.aar' file.
-3. Right-click on 'app module' → Select 'Open Module setting'.
-4. Select 'Dependencies' from the right pane.
-5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
+## SDK Usage Guide
+1.  Add in your root bulid.gradle.
+```
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+} 
+```
+
+2. Add the dependency in app level bulid.gradle:
+```
+dependencies {
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.1'
+}
+```
+3. Enable multi dex in project level bulid.gradle:
+```
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+}
+```
 
 
 ## Verifications:
@@ -110,7 +130,7 @@ Make **Config** object
  JSONObject Config=new JSONObject();
 
         try {
-            Config.put("open_webview",false);
+            Config.put("openWebview",false);
             Config.put("asyncRequest",false);
         Config.put("captureEnabled",false);
         } catch (JSONException e) {
@@ -175,6 +195,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             documentObject.put("issue_date", "");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("nfc_verification", false);
             
         requestObject.put("document", documentObject);
             
@@ -203,6 +224,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "");
+            documentTwoObject.put("nfc_verification", false);
 
             requestObject.put("document_two", documentTwoObject);
             
@@ -228,6 +250,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             addressObject.put("full_address", "");
             addressObject.put("name", "");
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("nfc_verification", false);
 
             requestObject.put("address", addressObject);
 
@@ -336,6 +359,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             documentObject.put("issue_date", "1990-11-12");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("nfc_verification", false);
             
         requestObject.put("document", documentObject);
             
@@ -375,6 +399,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "M");
+            documentTwoObject.put("nfc_verification", false);
 
             requestObject.put("document_two", documentTwoObject);
             
@@ -410,6 +435,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
 
             addressObject.put("name", addressNameObject);
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("nfc_verification", false);
 
             requestObject.put("address", addressObject);
 
@@ -500,17 +526,17 @@ shuftipro.shuftiproVerification(JSONObject: "your-requested-json-object",
 
  In this object, we add extra configuration of verification that the user wants.
 
-* ## open_webview
+* ## openWebview
 
     Required: **No**  
     Type: **boolean** <br>
   Accepted Values: **true**, **false**  
 
     This boolean type of parameter is used to identify if you want to perform verification in its hybrid view.
-  If open_webview is true, it means that the user wants verification in **hybrid view**. If false, then the user wants verification with **OCR or Without OCR**. The value is false by default. 
+  If openWebview is true, it means that the user wants verification in **hybrid view**. If false, then the user wants verification with **OCR or Without OCR**. The value is false by default. 
 
 
- * ## AsyncRequest
+ * ## asyncRequest
 
     Required: **No**  
     Type: **boolean** <br>
@@ -525,9 +551,7 @@ shuftipro.shuftiproVerification(JSONObject: "your-requested-json-object",
   Accepted Values: **true**, **false**    
 
     This boolean type of parameter is used to identify whether the user wants to open native camera in Iframe or not. A true value means user wants to open native otherwise not. 
-
-  <br>
-
+    
 
 ## Request Object Parameters 
 
@@ -740,6 +764,14 @@ In case a key is given in document and address verification, and no value is pro
   Leave empty to perform data extraction from the proof which will be uploaded by end-users. Provide a valid date. Please note that the date should be after today. 
   Example 2025-12-31
   
+  * <h3>nfc_verification</h3>
+
+  Required: **No**  
+  Type: **boolean**  
+  Accepted values:  **true**, **false**  
+
+Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-id cards, e-passports, e-credit/ e-debit cards and e-driving licences under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
+  
   * <h3>fetch_enhanced_data</h3>
 
   Required: **No**  
@@ -842,6 +874,14 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
   Value Accepted: **1**
 
   Provide 1 for enabling a fuzzy match of the name. Enabling fuzzy matching attempts to find a match which is not a 100% accurate.
+  
+  * <h3>nfc_verification</h3>
+
+  Required: **No**  
+  Type: **boolean**  
+  Accepted values:  **true**, **false**  
+
+Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-id cards, e-passports, e-credit/ e-debit cards and e-driving licences under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
 
 <!-- -------------------------------------------------------------------------------- -->
 * ## consent
@@ -1088,3 +1128,5 @@ Date            | Description
 18 Jan 2021     | Added all verfications(verification with OCR, without OCR and restful API) in one sdk.
 09 Feb 2021     | Updated async parameter
 11 Feb 2021     | Updated responses
+13 Apr 2021     | NFC feature and sdk dependencies move to gradlle
+
