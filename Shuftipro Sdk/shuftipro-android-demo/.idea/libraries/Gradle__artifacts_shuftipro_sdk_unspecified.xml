@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:shuftipro-sdk:unspecified">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/0c69ce3bf58bcbe7689e30de1d8bd060/shuftipro-sdk/res" />
+      <root url="jar://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/0c69ce3bf58bcbe7689e30de1d8bd060/shuftipro-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/0c69ce3bf58bcbe7689e30de1d8bd060/shuftipro-sdk/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

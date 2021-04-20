@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.shufti.shuftipro.shuftipro_demo.activities.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/topLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/verification"
+            android:textColor="@color/charcol_blue"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="26dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/verification_method"
+            android:layout_above="@id/checkbox"
+            android:textColor="@color/charcol_blue"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="40dp" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topLayout"
+        android:layout_above="@id/belowLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:id="@+id/checkbox"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:id="@+id/faceRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borders"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/faceImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/face_selection_icon" />
+
+                <TextView
+                    android:id="@+id/faceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/faceImageView"
+                    android:layout_toLeftOf="@+id/faceCheckImageView"
+                    android:layout_toRightOf="@+id/faceImageView"
+                    android:layout_toStartOf="@+id/faceCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/face_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/faceCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/docRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/faceRelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/docImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/doc_selection_icon" />
+
+                <TextView
+                    android:id="@+id/docTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/docImageView"
+                    android:layout_toLeftOf="@+id/docCheckImageView"
+                    android:layout_toRightOf="@+id/docImageView"
+                    android:layout_toStartOf="@+id/docCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/document_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/docCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/doc2RelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/docRelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/doc2ImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/doc_selection_icon" />
+
+                <TextView
+                    android:id="@+id/doc2TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/doc2ImageView"
+                    android:layout_toLeftOf="@+id/doc2CheckImageView"
+                    android:layout_toRightOf="@+id/doc2ImageView"
+                    android:layout_toStartOf="@+id/doc2CheckImageView"
+                    android:gravity="start"
+                    android:text="@string/document_two_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/doc2CheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addressRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/doc2RelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/addressImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/address_selection_icon" />
+
+                <TextView
+                    android:id="@+id/addressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/addressImageView"
+                    android:layout_toLeftOf="@+id/addressCheckImageView"
+                    android:layout_toRightOf="@+id/addressImageView"
+                    android:layout_toStartOf="@+id/addressCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/address_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/addressCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/consentRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addressRelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/consentImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/consents" />
+
+                <TextView
+                    android:id="@+id/consentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/consentImageView"
+                    android:layout_toLeftOf="@+id/consentCheckImageView"
+                    android:layout_toRightOf="@+id/consentImageView"
+                    android:layout_toStartOf="@+id/consentCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/consent_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/consentCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/phoneRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/consentRelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/phoneImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/phone" />
+
+                <TextView
+                    android:id="@+id/phoneTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/phoneImageView"
+                    android:layout_toLeftOf="@+id/phoneCheckImageView"
+                    android:layout_toRightOf="@+id/phoneImageView"
+                    android:layout_toStartOf="@+id/phoneCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/phone_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/phoneCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bgRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneRelativeLayout"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/borders"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/bgImageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="8dp"
+                    android:src="@drawable/bgcheck" />
+
+                <TextView
+                    android:id="@+id/bgTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toEndOf="@+id/bgImageView"
+                    android:layout_toLeftOf="@+id/bgCheckImageView"
+                    android:layout_toRightOf="@+id/bgImageView"
+                    android:layout_toStartOf="@+id/bgCheckImageView"
+                    android:gravity="start"
+                    android:text="@string/background_verification"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/bgCheckImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/uncheck_radio_icon" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/belowLayout"
+        android:layout_alignParentBottom="true">
+
+
+            <Button
+                android:padding="10dp"
+                android:id="@+id/continueButton"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_above="@id/terms_and_condition_retake"
+                android:background="@drawable/blue_round_button"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/start_verification"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp"/>
+
+            <LinearLayout
+                android:id="@+id/terms_and_condition_retake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="©"
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="17sp"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:gravity="center_vertical"
+                    android:text="Powered by"
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/shufti_tm_retake"
+                    android:layout_width="90dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_shufti_tm" />
+            </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
