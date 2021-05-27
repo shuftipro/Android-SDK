@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shuftipro:shuftipro-android-sdk:1.0.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3875cbd4ed0f731f8e2c130c2574a6fd/jetified-shuftipro-android-sdk-1.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3875cbd4ed0f731f8e2c130c2574a6fd/jetified-shuftipro-android-sdk-1.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3875cbd4ed0f731f8e2c130c2574a6fd/jetified-shuftipro-android-sdk-1.0.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shuftipro/shuftipro-android-sdk/1.0.4/5572f59c05c3af789dd509201807cb9a94f97c00/shuftipro-android-sdk-1.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

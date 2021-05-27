@@ -350,7 +350,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         JSONObject consentObject = new JSONObject();
         ArrayList<String> consent_supported_types = new ArrayList<String>();
         consent_supported_types.add("handwritten");
-        consent_supported_types.add("printed");
+//        consent_supported_types.add("printed");
 
         try {
             consentObject.put("proof", "");

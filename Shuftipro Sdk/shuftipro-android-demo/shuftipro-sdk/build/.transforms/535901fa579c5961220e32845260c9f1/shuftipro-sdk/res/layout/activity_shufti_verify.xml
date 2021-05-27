@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    tools:context="com.shutipro.sdk.activities.ShuftiVerifyActivity">
+
+    <WebView
+        android:visibility="visible"
+        android:id="@+id/webViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/rl_progress_update"
+        android:background="@color/white_color"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:visibility="visible"
+            android:text="Verification"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/charcol_blue"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="22sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <WebView
+            android:id="@+id/extraction_preloader_gf"
+            android:layout_width="120dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_height="120dp"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            />
+
+        <LinearLayout
+            android:id="@+id/per_progress_section"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_below="@id/extraction_preloader_gf"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:visibility="visible"
+                android:id="@+id/progressTextView"
+                android:text="0%"
+                android:textColor="#EF5351"
+                android:textSize="22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginLeft="7dp"
+                android:visibility="visible"
+                android:text="@string/progress_completed"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:id="@+id/tv_title_verify_second"
+            android:textColor="@color/charcol_blue"
+            android:layout_below="@id/per_progress_section"
+            android:text="@string/Verification_video_uploading"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:id="@+id/tv_title_verify_first"
+            android:textColor="@color/charcol_blue"
+            android:layout_below="@id/tv_title_verify_second"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="@string/please_wait"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <LinearLayout
+            android:id="@+id/terms_and_condition_retake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="7dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="©"
+                android:textColor="@color/charcol_blue"
+                android:textSize="14sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:gravity="center_vertical"
+                android:text="Powered by"
+                android:textColor="@color/charcol_blue"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/shufti_tm_retake"
+                android:layout_width="70dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_shufti_tm" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+<!--    <RelativeLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="gone"-->
+<!--        android:id="@+id/rl_progress_update"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <TextView-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="7dp"-->
+<!--            android:visibility="visible"-->
+<!--            android:text="Verification"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/charcol_blue"-->
+<!--            android:fontFamily="@font/opensans_semibold"-->
+<!--            android:textSize="22sp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+
+
+<!--        <com.shutipro.sdk.utils.GIFView-->
+<!--            android:id="@+id/extraction_preloader_gfs"-->
+<!--            android:layout_width="109dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="2dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_height="120dp"-->
+<!--            android:adjustViewBounds="false"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/extraction_preloader"-->
+<!--            android:visibility="visible"-->
+<!--            />-->
+
+
+<!--        <TextView-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:visibility="visible"-->
+<!--            android:id="@+id/tv_title_verify_seconds"-->
+<!--            android:textColor="@color/charcol_blue"-->
+<!--            android:layout_below="@id/extraction_preloader_gfs"-->
+<!--            android:text="@string/identity_verify"-->
+<!--            android:textSize="20sp"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:visibility="visible"-->
+<!--            android:textColor="@color/charcol_blue"-->
+<!--            android:layout_below="@id/tv_title_verify_seconds"-->
+<!--            android:fontFamily="@font/opensans_semibold"-->
+<!--            android:text="@string/please_wait"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </TextView>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/terms_and_condition_retakes"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginBottom="7dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="©"-->
+<!--                android:textColor="@color/charcol_blue"-->
+<!--                android:textSize="14sp"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:layout_marginLeft="2dp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="Powered by"-->
+<!--                android:textColor="@color/charcol_blue"-->
+<!--                android:textSize="14sp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/shufti_tm_retakes"-->
+<!--                android:layout_width="70dp"-->
+<!--                android:layout_height="22dp"-->
+<!--                android:layout_marginLeft="2dp"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/ic_shufti_tm" />-->
+<!--        </LinearLayout>-->
+
+<!--    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

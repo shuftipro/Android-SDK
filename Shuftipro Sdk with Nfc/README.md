@@ -58,7 +58,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.3'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.4'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -1130,4 +1130,5 @@ Date            | Description
 11 Feb 2021     | Updated responses
 13 Apr 2021     | NFC feature and sdk dependencies move to gradlle
 19 Apr 2021     | Improve functionality
+27 May 2021     | Update content and improve user experience
 
