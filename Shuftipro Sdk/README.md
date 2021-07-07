@@ -22,7 +22,7 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 * [Initiate Request](#Initiate-Request)
 * [Request Object Parameters](#Request-Object-Parameters)
 * [Config Object Parameters ](#Config-Object-Parameters)
-* [AuthKey Object Parameters ](#AuthKey-Object-Parameters)
+* [Auth Key Object Parameters ](#Auth-Key-Object-Parameters)
 * [HTTP Codes](#HTTP-Codes)
 * [Response Logging](#response-logging)
 * [Status Response](#status-response)
@@ -44,11 +44,12 @@ All permissions are handled in SDK.
 
 ## SDK Installation Guide
 In your **Android Project** follow below steps.
-1. Select File → New → New Module → Import .aar package from the top menu of Android Studio.
-2. Select the provided 'shuftipro-sdk.aar' file.
-3. Right-click on 'app module' → Select 'Open Module setting'.
-4. Select 'Dependencies' from the right pane.
-5. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
+1. Download the 'shuftipro-sdk.aar' file from `Shuftipro Sdk` folder 
+2. Select File → New → New Module → Import .aar package from the top menu of Android Studio.
+3. Select the provided 'shuftipro-sdk.aar' file.
+4. Right-click on 'app module' → Select 'Open Module setting'.
+5. Select 'Dependencies' from the right pane.
+6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
 
 ## Verifications:
@@ -89,7 +90,7 @@ JSONObject AuthKeys = new JSONObject();
 ```
 <br>
 
-Or **AuthKeys** object using AccessToken
+Or **AuthKeys** object using Access Token
 ```
 JSONObject AuthKeys = new JSONObject();
 
@@ -101,7 +102,7 @@ JSONObject AuthKeys = new JSONObject();
         }
 ```
 
-AuthKeys object parameters are explained [here](#AuthKey-Object-Parameters).
+AuthKeys object parameters are explained [here](#auth-key-object-parameters).
 
 <br>
 
@@ -117,7 +118,7 @@ Make **Config** object
             e.printStackTrace();
         }
 ```
-Config object parameters are explained [here](#Config-Object-Parameters).
+Config object parameters are explained [here](#config-object-parameters).
 
 <br>
 
@@ -482,7 +483,7 @@ shuftipro.shuftiproVerification(JSONObject: "your-requested-json-object",
 
 
 
-## AuthKey Object Parameters 
+## Auth Key Object Parameters 
 
  In this object, we add authorization Key in verification request.
 
@@ -510,7 +511,7 @@ shuftipro.shuftiproVerification(JSONObject: "your-requested-json-object",
   If open_webview is true, it means that the user wants verification in **hybrid view**. If false, then the user wants verification with **OCR or Without OCR**. The value is false by default. 
 
 
- * ## AsyncRequest
+ * ## asyncRequest
 
     Required: **No**  
     Type: **boolean** <br>
@@ -552,7 +553,7 @@ In case a key is given in document and address verification, and no value is pro
   Type: **string**  
   Length: **2 characters**
 
-  Send the 2 characters long [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) country code of where your customer is from. Please consult [Supported Countries](countries.md) for country codes.
+  Send the 2 characters long [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) country code of where your customer is from. Please consult [Supported Countries](https://api.shuftipro.com/api/docs/#supported-countries) for country codes.
 
 * ## language
 
@@ -560,7 +561,7 @@ In case a key is given in document and address verification, and no value is pro
   Type: **string**  
   Length: **2 characters**
 
-  Send the 2 characters long language code of your preferred language to display the verification screens accordingly. Please consult [Supported Languages](languages.md) for language codes. Default language english will be selected if this key is missing in the request.
+  Send the 2 characters long language code of your preferred language to display the verification screens accordingly. Please consult [Supported Languages](https://api.shuftipro.com/api/docs/#supported-languages) for language codes. Default language english will be selected if this key is missing in the request.
 
 * ## email
 
@@ -619,7 +620,7 @@ In case a key is given in document and address verification, and no value is pro
   The easiest of all verifications is done by authenticating the face of the users. For this verification, user has to upload live image of their face for verification.
 
 <!-- ---------------------------------------------------------------------------------->
-* ## Document or Document 2
+* ## Document or Document Two
 
   Shufti Pro provides document verification through various types of documents. The supported formats are passports, ID Cards, driving licenses and debit/credit cards. You can opt for more than 1 document type as well. In that case, Shufti Pro will give an option to end-users to verify their data from any of the given document types.
 
@@ -996,7 +997,7 @@ HTTP code     | HTTP message         | Message        |
 
 ## Response Logging
 
-Response of verification can be logged via the code given below. You can see this in LogCat at runtime. Write this code in Response listener of SDK:
+Response of verification can be logged via the code given below. You can see this in LogCat at runtime. Write this code in response listener of SDK:
 
 
 ```sh
@@ -1031,7 +1032,7 @@ The Shufti Pro Verification API will send a JSON response if a status request is
 * <h3>event</h3>
 
     The request event shows the status of user’s request, and is different for every response. For more information, click
-    [here](status_codes.md)
+    [here](https://api.shuftipro.com/api/docs/#status-response)
 
 <aside class="notice">
 Note: <b>request.invalid</b> response with <b>HTTP status code 400</b> means the request is invalid.
@@ -1089,5 +1090,5 @@ Date            | Description
 09 Feb 2021     | Updated async parameter
 11 Feb 2021     | Updated responses
 19 Apr 2021     | Improve Functionality
+18 May 2021     | Improve user experience
 27 May 2021     | Update content and improve user experience
-
