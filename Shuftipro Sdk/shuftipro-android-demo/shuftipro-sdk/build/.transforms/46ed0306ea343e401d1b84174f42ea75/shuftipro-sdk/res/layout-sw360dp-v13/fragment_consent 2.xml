@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.25">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="Declaration of Consent"
+            android:gravity="center"
+            android:textColor="@color/charcol_blue"
+            android:textSize="17dp"
+            android:fontFamily="@font/opensans_semibold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="Help us to prove your identity"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:gravity="bottom"
+            android:textColor="@color/charcol_blue"
+            android:textSize="28dp"
+            android:fontFamily="@font/opensans_semibold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Identity Verification Consent"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_marginStart="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginTop="14dp"
+                android:text="@string/decleration_of_consent"
+                android:textColor="@color/charcol_blue"
+                android:fontFamily="@font/opensans_regular"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.4">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.2">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:src="@drawable/radio_icon_uncheck"
+                android:layout_height="22dp"
+                android:id="@+id/check"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp">
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="14dp"
+                android:fontFamily="@font/opensans_bold"
+                android:textColor="@color/charcol_blue"
+                android:id="@+id/link_tv"
+                android:textColorLink="@color/shuftipro_blue"
+                android:text="@string/agree">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.7">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:id="@+id/con_btn"
+                android:enabled="false"
+                android:background="@color/light_grey"
+                android:text="@string/yes_con"
+                android:fontFamily="@font/opensans_semibold"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:textColor="@color/white_color" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/stroke_border"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cancel_btn"
+                android:text="@string/no_cancel"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:fontFamily="@font/opensans_semibold"
+                android:textColor="@color/charcol_blue" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:id="@+id/terms_and_condition"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:text="©"
+                    android:textSize="11sp"
+                    android:textColor="@color/color_terms_conds"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content" >
+                </TextView>
+                <TextView
+                    android:layout_marginLeft="2dp"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Powered by"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/color_terms_conds"
+                    />
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="22dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_shufti_tm"
+                    android:layout_marginLeft="2dp"
+                    android:id="@+id/shufti_tm"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -58,7 +58,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.4'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.5'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -156,6 +156,7 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             requestObject.put("verification_mode", "image_only");
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
+            requestObject.put("show_consent","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -310,6 +311,8 @@ Config object parameters are explained [here](#Config-Object-Parameters).
             requestObject.put("verification_mode", "image_only");
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
+            requestObject.put("show_consent","1");
+
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1121,10 +1124,12 @@ If you have any queries regarding the implementation of SDK, please feel free to
 
 Date            | Description 
 --------------- | ------------
+12 Jul 2021     | Improved user experience
 18 Jan 2021     | Added all verfications(verification with OCR, without OCR and restful API) in one sdk.
 09 Feb 2021     | Updated async parameter
 11 Feb 2021     | Updated responses
 13 Apr 2021     | NFC feature and sdk dependencies move to gradlle
 19 Apr 2021     | Improve functionality
 27 May 2021     | Update content and improve user experience
+12 Jul 2021     | Improved user experience
 

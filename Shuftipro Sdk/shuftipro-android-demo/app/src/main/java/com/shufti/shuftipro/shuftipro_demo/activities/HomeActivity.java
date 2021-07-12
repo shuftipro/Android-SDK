@@ -229,6 +229,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             jsonObject.put("verification_mode", "image_only");
             jsonObject.put("show_privacy_policy","1");
             jsonObject.put("show_results", "1");
+            jsonObject.put("show_consent","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();

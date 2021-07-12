@@ -137,6 +137,7 @@ Config object parameters are explained [here](#config-object-parameters).
             requestObject.put("verification_mode", "image_only");
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
+            requestObject.put("show_consent","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -288,6 +289,7 @@ Config object parameters are explained [here](#config-object-parameters).
             requestObject.put("verification_mode", "image_only");
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
+            requestObject.put("show_consent","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1092,3 +1094,4 @@ Date            | Description
 19 Apr 2021     | Improve Functionality
 18 May 2021     | Improve user experience
 27 May 2021     | Update content and improve user experience
+12 Jul 2021     | Improved user experience
