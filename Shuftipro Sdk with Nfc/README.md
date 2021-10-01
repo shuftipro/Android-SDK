@@ -58,7 +58,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.0.9'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.0'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
