@@ -1095,3 +1095,4 @@ Date            | Description
 18 May 2021     | Improve user experience
 27 May 2021     | Update content and improve user experience
 12 Jul 2021     | Improved user experience
+01 Oct 2021     | Improved Functionality

@@ -307,7 +307,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             jsonObject.put("email", "");
             jsonObject.put("callback_url", "");
             jsonObject.put("redirect_url", "");
-            jsonObject.put("verification_mode", "video_only");
+            jsonObject.put("verification_mode", "image_only");
             jsonObject.put("show_privacy_policy","1");
             jsonObject.put("show_results", "1");
             jsonObject.put("show_consent", "1");
