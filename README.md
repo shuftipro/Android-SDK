@@ -643,6 +643,16 @@ In case a key is given in document and address verification, and no value is pro
   Video Format: MP4/MOV Maximum: 20MB
 
   Provide valid BASE64 encoded string. Leave empty for an on-site verification.
+  
+  
+    * <h3>backside_proof_required</h3>
+
+  Required: **No**  
+  Type: **string** <br>
+  Accepted values: **0,** **1** <br>
+  Default value: **0**
+
+  The 0 value means that the user has the option to skip backside proof of the document provided. 1 means that the user must capture the backside image of           document. In case of passport, 0 value means that the user would not be asked to provide backside proof, and in case of 1 value the user would have choice to     capture or skip the backside proof.
 
 
   * <h3>supported_types</h3>
@@ -714,6 +724,15 @@ In case a key is given in document and address verification, and no value is pro
 
   Leave empty to perform data extraction from uploaded proofs. Provide a valid date. Please note that the date should be before today. 
   Example 1990-12-31
+
+  * <h3>gender</h3>
+
+  Required: **No**  
+  Type: **string**  
+  Accepted values: **M,F,O,m,f,o**
+
+  Leave empty to perform data extraction from uploaded proofs. Provide the gender which is given on the document.
+  Example M
 
   * <h3>document_number</h3>
 
