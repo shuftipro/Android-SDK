@@ -24,10 +24,17 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            tools:ignore="WebViewLayout">
+
         <WebView
             android:id="@+id/extraction_preloader_gf"
-            android:layout_width="109dp"
-            android:layout_margin="2dp"
+            android:layout_width="120dp"
             android:layout_height="120dp"
             android:adjustViewBounds="false"
             android:layout_above="@id/main_tv"
@@ -57,6 +64,7 @@
             android:gravity="center"
             android:fontFamily="@font/opensans_semibold">
         </TextView>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/terms_and_condition_retake"

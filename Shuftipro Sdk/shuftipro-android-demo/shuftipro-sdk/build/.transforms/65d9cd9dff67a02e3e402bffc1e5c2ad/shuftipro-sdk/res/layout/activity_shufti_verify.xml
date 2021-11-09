@@ -37,6 +37,14 @@
         </TextView>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            tools:ignore="WebViewLayout">
+
         <WebView
             android:id="@+id/extraction_preloader_gf"
             android:layout_width="120dp"
@@ -45,8 +53,7 @@
             android:layout_height="120dp"
             android:adjustViewBounds="false"
             android:scaleType="centerCrop"
-            android:visibility="visible"
-            />
+            android:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/per_progress_section"
@@ -108,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </TextView>
+        </LinearLayout>
 
 
         <LinearLayout
@@ -127,7 +135,7 @@
                 android:gravity="center_vertical"
                 android:text="©"
                 android:textColor="@color/charcol_blue"
-                android:textSize="14sp"></TextView>
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
