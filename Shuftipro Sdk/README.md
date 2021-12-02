@@ -657,7 +657,7 @@ In case a key is given in document and address verification, and no value is pro
 
   * <h3>supported_types</h3>
 
-  Required: **Yes**  
+  Required: **No**  
   Type: **Array**
 
   You can provide anyone, two or more types of documents to verify the identity of the user. For example, if you opt for both passport and driving license, then your user will be given an opportunity to verify data from either of these two documents. All supported types are listed below.
@@ -791,7 +791,7 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
 
   * <h3>supported_types</h3>
 
-  Required: **Yes**  
+  Required: **No**  
   Type: **Array**
 
   Provide any one, two, or more document types in supported_types parameter in Address verification service. For example, if you choose id_card and utility_bill, then the user will be able to verify data using either of these two documents. Following is the list of supported types for address verification.
@@ -879,7 +879,7 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
   
   * <h3>supported_types</h3>
 
-  Required: **Yes**  
+  Required: **No**  
   Type: **array**
 
   Text provided in the consent verification can be verified by handwritten documents or printed documents.
