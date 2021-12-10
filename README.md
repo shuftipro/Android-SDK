@@ -1117,3 +1117,4 @@ Date            | Description
 01 Oct 2021     | Improved Functionality
 09 Nov 2021     | Bug fixes and improve user experience
 30 Nov 2021     | Android 12 support added
+10 Dec 2021     | Improved functionality
