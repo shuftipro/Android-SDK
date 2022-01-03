@@ -54,7 +54,7 @@ In your **Android Project** follow below steps.
 
 
 ## SDK Version:
-Currently our updated SDK version is 1.0.8.
+Currently our updated SDK version is 1.0.8
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
