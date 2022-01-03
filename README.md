@@ -15,6 +15,7 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 * [General Requirements](#general-requirements)
 * [Permissions](#permissions)
 * [SDK Installation Guide](#sdk-installation-guide)
+* [SDK Version](#sdk-version)
 * [Verifications](#verifications)
 * [Integration](#Integration)
 * [Request Object With OCR](#Request-Object-With-OCR)
@@ -50,6 +51,9 @@ In your **Android Project** follow below steps.
 4. Right-click on 'app module' → Select 'Open Module setting'.
 5. Select 'Dependencies' from the right pane.
 6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
+
+## SDK Version:
+Currently our updated SDK version is 1.0.8.
 
 
 ## Verifications:
