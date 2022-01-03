@@ -15,6 +15,7 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 * [General Requirements](#general-requirements)
 * [Permissions](#permissions)
 * [SDK Installation Guide](#sdk-installation-guide)
+* [SDK Version](#sdk-version)
 * [Verifications](#verifications)
 * [Integration](#Integration)
 * [Request Object With OCR](#Request-Object-With-OCR)
@@ -67,6 +68,9 @@ During verification without OCR, Shufti Pro customer or end-user is required to 
 * ### Verification through hybrid view
 If you opt for mobile verification with Shufti Pro’s hybrid view, a web-view built upon HTML 5 will be displayed to the end-user. All data points and fields are adequately defined in the hybrid view. The format for sending verification data will be a JSON object, similar to other mobile verification formats (OCR and Non-OCR). If your send true in [openWebView](#open_webview) parameter then verification through hybrid view will be started else verification with OCR or without OCR (based upon JSON object) will be triggered.
 
+
+## SDK Version:
+Currently our updated SDK version is 1.0.8.
 
 ## Integration: 
 Take a look at the sample project and learn the most common use of framework/SDK. Make sure to build on a real device.
