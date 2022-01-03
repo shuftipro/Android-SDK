@@ -53,6 +53,9 @@ In your **Android Project** follow below steps.
 6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
 
+## SDK Version:
+Currently our updated SDK version is 1.0.8.
+
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
 
@@ -68,9 +71,6 @@ During verification without OCR, Shufti Pro customer or end-user is required to 
 * ### Verification through hybrid view
 If you opt for mobile verification with Shufti Pro’s hybrid view, a web-view built upon HTML 5 will be displayed to the end-user. All data points and fields are adequately defined in the hybrid view. The format for sending verification data will be a JSON object, similar to other mobile verification formats (OCR and Non-OCR). If your send true in [openWebView](#open_webview) parameter then verification through hybrid view will be started else verification with OCR or without OCR (based upon JSON object) will be triggered.
 
-
-## SDK Version:
-Currently our updated SDK version is 1.0.8.
 
 ## Integration: 
 Take a look at the sample project and learn the most common use of framework/SDK. Make sure to build on a real device.
