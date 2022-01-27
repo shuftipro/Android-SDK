@@ -10,13 +10,12 @@
     </facet>
     <facet type="java-gradle" name="Java-Gradle">
       <configuration>
+        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/../../../shuftipro-sdk/build" />
         <option name="BUILDABLE" value="false" />
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../shuftipro-sdk/out/production/classes" />
-    <output-test url="file://$MODULE_DIR$/../../../shuftipro-sdk/out/test/classes" />
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../shuftipro-sdk">
       <excludeFolder url="file://$MODULE_DIR$/../../../shuftipro-sdk/.gradle" />

@@ -1115,7 +1115,7 @@ Note: These test IDs only be usefull in Iframe SDK.
 If you have any queries regarding the implementation of SDK, please feel free to contact Shufti Pro [tech support](mailto:tech@shuftipro.com).
 
 ## Copyright
-2017-21 © Shufti Pro Ltd.
+2017-22 © Shufti Pro Ltd.
 
 ## Revision History
 
@@ -1132,3 +1132,4 @@ Date            | Description
 09 Nov 2021     | Bug fixes and improve user experience
 30 Nov 2021     | Android 12 support added
 10 Dec 2021     | Improved functionality
+27 Jan 2022     | Bug fixes and improve user experience
