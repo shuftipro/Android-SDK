@@ -560,7 +560,7 @@
         <TextView
             android:text="©"
             android:textSize="11sp"
-            android:textColor="@color/color_terms_conds"
+            android:textColor="@color/charcol_blue"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
@@ -574,7 +574,7 @@
             android:text="Powered by"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/color_terms_conds"
+            android:textColor="@color/charcol_blue"
             />
         <ImageView
             android:layout_width="70dp"
