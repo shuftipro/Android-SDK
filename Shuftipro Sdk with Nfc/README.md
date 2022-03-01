@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.6'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.7'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -72,7 +72,7 @@ android {
 ```
 
 ## SDK Version:
-Currently our updated SDK version is 1.1.6
+Currently our updated SDK version is 1.1.7
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
@@ -793,7 +793,7 @@ In case a key is given in document and address verification, and no value is pro
   Type: **boolean**  
   Accepted values:  **true**, **false**  
 
-  Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-id cards, e-passports, e-credit/ e-debit cards and e-driving licences under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
+  Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-passports under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
   
   * <h3>fetch_enhanced_data</h3>
 
@@ -904,7 +904,7 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
   Type: **boolean**  
   Accepted values:  **true**, **false**  
 
-  Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-id cards, e-passports, e-credit/ e-debit cards and e-driving licences under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
+  Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPros's NFC verification feature detects MRZ from the document to authenticate NFC chip and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-passports under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
 
 <!-- -------------------------------------------------------------------------------- -->
 * ## consent
@@ -1159,4 +1159,5 @@ Date            | Description
 09 Nov 2021     | Bug fixes and improve user experience
 30 Nov 2021     | Android 12 support added
 10 Dec 2021     | Improved functionality
+01 Mar 2022     | Nfc with Passport
 
