@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTopBarTut1">
+
+    <RelativeLayout
+        android:id="@+id/headingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:textColor="@color/charcol_blue"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/detailsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headingTextView"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/charcol_blue"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="8px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingLayout"
+        tools:ignore="WebViewLayout">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:id="@+id/verification_image_border"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <WebView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_margin="2dp"
+                android:id="@+id/webView"
+                tools:ignore="WebViewLayout" />
+
+<!--            <com.shutipro.sdk.utils.GIFView-->
+<!--                android:id="@+id/iv_tut_video"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:layout_height="230dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:adjustViewBounds="false"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:visibility="gone"-->
+<!--                android:src="@drawable/new_video_face" />-->
+
+<!--            <ImageView-->
+<!--                android:visibility="gone"-->
+<!--                android:id="@+id/iv_tut_image"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="230dp"-->
+<!--                android:layout_marginBottom="1dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="1dp"-->
+<!--                android:adjustViewBounds="false"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/face_image_tutorial" />-->
+        </LinearLayout>
+        <TextView
+            android:id="@+id/instructionHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/verification_image_border"
+            android:text="Instructions"
+            android:layout_marginTop="25dp"
+            android:textAlignment="center"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/charcol_blue"
+            android:fontFamily="@font/opensans_semibold"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/all_instructions_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/instructionHeadingTextView"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/firstInstructionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="1 "
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/instructionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/secondInstructionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="2 "
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/secondInstructionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Make sure the light is not too low or too bright"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/thirdInstructionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="3 "
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/thirdInstructionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Video duration 10 seconds"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+
+                android:visibility="gone"
+                android:id="@+id/fourthInstructionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="4 "
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/fourthInstructionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Video duration 10 seconds"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+
+                android:visibility="gone"
+                android:id="@+id/fifthInstructionSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fifthPoint5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="5 "
+                    android:textColor="@color/charcol_blue"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/fiveInstructionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Video duration 10 seconds"
+                    android:textColor="@color/charcol_blue"
+                    android:fontFamily="@font/opensans_regular"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/terms_and_condition_retake"
+        android:background="@drawable/blue_round_button"
+        android:text="Continue"
+        android:fontFamily="@font/opensans_semibold"
+        android:textAllCaps="false"
+        android:textColor="@color/colorTopBarTut1" />
+
+    <LinearLayout
+        android:id="@+id/terms_and_condition_retake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="7dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="©"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:gravity="center_vertical"
+            android:text="Powered by"
+            android:textColor="@color/charcol_blue"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/shufti_tm_retake"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_shufti_tm" />
+    </LinearLayout>
+
+</RelativeLayout>

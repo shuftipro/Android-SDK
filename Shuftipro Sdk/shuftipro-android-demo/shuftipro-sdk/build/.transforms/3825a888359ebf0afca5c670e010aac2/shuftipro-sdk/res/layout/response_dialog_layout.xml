@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff" >
+    <ImageView
+        android:id="@+id/crossIconImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/cross"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:padding="4dp" />
+    <ImageView
+        android:id="@+id/responseImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/success_icon" />
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/tv_message_response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/responseImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:text="Are you sure to cancel Verification"
+        android:textColor="@color/color_dialog_heading"
+        android:textSize="19sp"
+        android:gravity="center" />
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/tv_verification_response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_message_response"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_error_red"
+        android:textSize="17sp"
+        android:gravity="center" />
+</RelativeLayout>
+
