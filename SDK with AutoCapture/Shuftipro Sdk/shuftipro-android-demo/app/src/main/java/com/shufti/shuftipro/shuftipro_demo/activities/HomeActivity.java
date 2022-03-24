@@ -226,7 +226,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         try {
             jsonObject.put("reference", reference);
-            jsonObject.put("country", "PK");
+            jsonObject.put("country", "GB");
             jsonObject.put("language", "EN");
             jsonObject.put("email", "");
             jsonObject.put("callback_url", "");
