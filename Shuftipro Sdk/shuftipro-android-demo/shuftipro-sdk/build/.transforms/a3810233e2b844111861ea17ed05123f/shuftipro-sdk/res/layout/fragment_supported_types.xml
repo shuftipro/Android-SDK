@@ -1,0 +1,115 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_color"
+    android:orientation="vertical"
+    tools:context="com.shutipro.sdk.fragments.SupportedTypesFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:visibility="visible"
+            android:textColor="@color/charcol_blue"
+            android:id="@+id/heading"
+            android:text="Document" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="31dp"
+            android:layout_marginEnd="31dp"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:visibility="visible"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/opensans_bold"
+            android:textColor="@color/charcol_blue"
+            android:id="@+id/tv"
+            android:text="@string/select_doc_type" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "0dp"
+        android:layout_weight="0.6">
+
+        <ListView
+            android:id = "@+id/list"
+            android:layout_width ="match_parent"
+            android:layout_height ="wrap_content"
+            android:divider="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal|bottom"
+        android:layout_weight="0.1">
+
+        <LinearLayout
+            android:id="@+id/terms_and_condition_retake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="©"
+                android:textColor="@color/charcol_blue"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:gravity="center_vertical"
+                android:text="Powered by"
+                android:textColor="@color/charcol_blue"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/shufti_tm_retake"
+                android:layout_width="70dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_shufti_tm" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
