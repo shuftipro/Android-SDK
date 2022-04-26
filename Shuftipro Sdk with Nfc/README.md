@@ -1132,11 +1132,9 @@ tax_bill |
 Shufti Pro provides users with a number of test documents. Customers may use these to test the demo, instead of presenting their actual information.  <br><br>
 Note: These test IDs only be usefull in Iframe SDK.
 
-[![](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1)](https://raw.githubusercontent.com/shuftipro/integration-guide/master/assets/realFace.jpg?v=1) 
+[![](https://api.shuftipro.com/api/docs/images/test_ids/real_ID_card-01.png)](https://api.shuftipro.com/api/docs/images/test_ids/real_ID_card-01.png) 
 
-[![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/real-id-card.jpg)](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/real-id-card.jpg)
-
-[![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.3/master/assets/fake-id-card.jpg)
+[![](https://api.shuftipro.com/api/docs/images/test_ids/fake_ID_card-02.png)](https://api.shuftipro.com/api/docs/images/test_ids/fake_ID_card-02.png)
 
 ## Contact
 If you have any queries regarding the implementation of SDK, please feel free to contact Shufti Pro [tech support](mailto:tech@shuftipro.com).
