@@ -11,6 +11,15 @@ An easy to integrate API allows smooth customer onboarding and establishes longs
 
 Shufti Pro is the go-to ID authentication solution for digital payment systems, FinTech firms, Cryptocurrency, banks, and trading platforms. Businesses can eradicate financial risk and digital ID theft, and boost operating efficiency all in a matter of seconds.
 
+<p float="center">
+  <img src="images/01.png" width="250" />
+  <img src="images/02.png" width="250" /> 
+  <img src="images/03.png" width="250" />
+  <img src="images/04.png" width="250" />
+  <img src="images/05.png" width="250" /> 
+  <img src="images/06.png" width="250" />
+</p>
+
 ## Table of contents
 * [General Requirements](#general-requirements)
 * [Permissions](#permissions)
@@ -52,9 +61,9 @@ In your **Android Project** follow below steps.
 5. Select 'Dependencies' from the right pane.
 6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
-
 ## SDK Version:
 Currently our updated SDK version is 1.1.1
+
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
@@ -142,6 +151,8 @@ Config object parameters are explained [here](#config-object-parameters).
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
             requestObject.put("show_consent","1");
+            requestObject.put("allow_online","1");
+            requestObject.put("allow_offline","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -153,7 +164,9 @@ Config object parameters are explained [here](#config-object-parameters).
 
         try {
 
-            faceObject.put("proof", "");
+            aceObject.put("proof", "");
+            faceObject.put("allow_online","1");
+            faceObject.put("allow_offline","1");
             requestObject.put("face", faceObject);
 
         } catch (Exception ex) {
@@ -181,6 +194,8 @@ Config object parameters are explained [here](#config-object-parameters).
             documentObject.put("issue_date", "");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("allow_online","1");
+            documentObject.put("allow_offline","1");
             
         requestObject.put("document", documentObject);
             
@@ -209,6 +224,8 @@ Config object parameters are explained [here](#config-object-parameters).
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "");
+            documentTwoObject.put("allow_online","1");
+            documentTwoObject.put("allow_offline","1");
 
             requestObject.put("document_two", documentTwoObject);
             
@@ -234,6 +251,8 @@ Config object parameters are explained [here](#config-object-parameters).
             addressObject.put("full_address", "");
             addressObject.put("name", "");
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("allow_online","1");
+            addressObject.put("allow_offline","1");
 
             requestObject.put("address", addressObject);
 
@@ -252,6 +271,8 @@ Config object parameters are explained [here](#config-object-parameters).
             consentObject.put("proof", "");
             consentObject.put("text", "This is my consent test");
             consentObject.put("supported_types",new JSONArray(consent_supported_types));
+            consentObject.put("allow_online","1");
+            consentObject.put("allow_offline","1");
             
             requestObject.put("consent", consentObject);
             
@@ -294,6 +315,8 @@ Config object parameters are explained [here](#config-object-parameters).
             requestObject.put("show_privacy_policy","1");
             requestObject.put("show_results", "1");
             requestObject.put("show_consent","1");
+            requestObject.put("allow_online","1");
+            requestObject.put("allow_offline","1");
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -306,6 +329,8 @@ Config object parameters are explained [here](#config-object-parameters).
         try {
 
             faceObject.put("proof", "");
+            faceObject.put("allow_online","1");
+            faceObject.put("allow_offline","1");
             requestObject.put("face", faceObject);
 
         } catch (Exception ex) {
@@ -329,7 +354,7 @@ Config object parameters are explained [here](#config-object-parameters).
 
           JSONObject docNameObject = new JSONObject();
             try {
-              docNameObject.put("first_name", "Johon");
+                docNameObject.put("first_name", "Johon");
                 docNameObject.put("middle_name", "Johsan");
                 docNameObject.put("last_name", "Livone");
             } catch (Exception ex) {
@@ -343,6 +368,8 @@ Config object parameters are explained [here](#config-object-parameters).
             documentObject.put("issue_date", "1990-11-12");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("allow_online","1");
+            documentObject.put("allow_offline","1");
             
         requestObject.put("document", documentObject);
             
@@ -382,6 +409,8 @@ Config object parameters are explained [here](#config-object-parameters).
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "M");
+            documentTwoObject.put("allow_online","1");
+            documentTwoObject.put("allow_offline","1");
 
             requestObject.put("document_two", documentTwoObject);
             
@@ -417,6 +446,8 @@ Config object parameters are explained [here](#config-object-parameters).
 
             addressObject.put("name", addressNameObject);
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("allow_online","1");
+            addressObject.put("allow_offline","1");
 
             requestObject.put("address", addressObject);
 
@@ -435,6 +466,8 @@ Config object parameters are explained [here](#config-object-parameters).
             consentObject.put("proof", "");
             consentObject.put("text", "This is my consent test");
             consentObject.put("supported_types",new JSONArray(consent_supported_types));
+            consentObject.put("allow_online","1");
+            consentObject.put("allow_offline","1");
             
             requestObject.put("consent", consentObject);
             
@@ -620,11 +653,52 @@ In case a key is given in document and address verification, and no value is pro
     
   This key specifies if the consent is shown to the user or not. If show_consent is 0, then consent screen is not shown to the user. If show_consent is 1, then consent is shown to the user at the start of the verification.
 
+* ## allow_online
+    
+    Required: **No**  
+    Type: **string**  
+    Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be captured. The 1 value means that the user must capture the proof for verification. This parameter also has priority over allow_offline parameter if both are set to 0.
+
+* ## allow_offline
+    
+    Required: **No**  
+    Type: **string**  
+    Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be uploaded. The 1 value means that the user must upload the proof for verification.
+
+
 <!-- ---------------------------------------------------------------------------------->
 * ## Face
 
   The easiest of all verifications is done by authenticating the face of the users. For this verification, user has to upload live image of their face for verification.
 
+  * <h3>proof</h3>
+
+  Required: **Yes**  
+  Type: **string** <br>
+  Image Format: JPG, JPEG, PNG, PDF Maximum: 16MB <br>
+  Video Format: MP4/MOV Maximum: 20MB
+
+  Provide valid BASE64 encoded string. Leave empty for an on-site verification.
+
+  * <h3> allow_online</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be captured. The 1 value means that the user must capture the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object. This parameter also has priority over allow_offline parameter if both are set to 0.
+
+  * <h3> allow_offline</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be uploaded. The 1 value means that the user must upload the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object.
 <!-- ---------------------------------------------------------------------------------->
 * ## Document or Document Two
 
@@ -647,8 +721,8 @@ In case a key is given in document and address verification, and no value is pro
   Video Format: MP4/MOV Maximum: 20MB
 
   Provide valid BASE64 encoded string. Leave empty for an on-site verification.
-
-
+  
+  
     * <h3>backside_proof_required</h3>
 
   Required: **No**  
@@ -765,6 +839,22 @@ In case a key is given in document and address verification, and no value is pro
 
   Leave empty to perform data extraction from the proof which will be uploaded by end-users. Provide a valid date. Please note that the date should be after today. 
   Example 2025-12-31
+
+  * <h3> allow_online</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be captured. The 1 value means that the user must capture the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object. This parameter also has priority over allow_offline parameter if both are set to 0.
+
+  * <h3> allow_offline</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be uploaded. The 1 value means that the user must upload the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object.
   
   * <h3>fetch_enhanced_data</h3>
 
@@ -861,6 +951,22 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
   Allowed Characters are alphabets, - (dash), comma, space, dot and single quotation mark. 
   Example **John, Huricane Jr.**
 
+  * <h3> allow_online</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be captured. The 1 value means that the user must capture the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object. This parameter also has priority over allow_offline parameter if both are set to 0.
+
+  * <h3> allow_offline</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be uploaded. The 1 value means that the user must upload the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object.
+
   * <h4>fuzzy_match</h4>
 
   Required: **No**  
@@ -913,6 +1019,22 @@ For Details on additional_data object go to [Additional Data](https://api.shufti
   Default Value: **1**
 
   This parameter is applicable if supported_type is handwritten and default value is 1. If value of with_face is 1 then hand written note will be accepted only with face which means your customer must need to show his/her face along with the consent on a paper. If value of with_face is 0 then hand written note is accepted with or without face.
+
+    * <h3> allow_online</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be captured. The 1 value means that the user must capture the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object. This parameter also has priority over allow_offline parameter if both are set to 0.
+
+  * <h3> allow_offline</h3>
+    
+  Required: **No**  
+  Type: **string**  
+  Accepted Values: **0**, **1**
+    
+  This key specifies if the proof needs to be uploaded. The 1 value means that the user must upload the proof for verification. This parameter, if included inside any verification, has priority over the parameter inside main object.
 
   <!-- -------------------------------------------------------------------------------- -->
 * ## phone
@@ -1123,4 +1245,4 @@ Date            | Description
 10 Dec 2021     | Improved functionality
 27 Jan 2022     | Bug fixes and improve user experience
 15 Mar 2022     | Bug fixes and improve user experience
-10 May 2022.    | Add missing functionality in SDK
+10 May 2022     | Added features and improved functionality
