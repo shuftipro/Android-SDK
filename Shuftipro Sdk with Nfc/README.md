@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.8'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.9'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -1158,4 +1158,5 @@ Date            | Description
 30 Nov 2021     | Android 12 support added
 10 Dec 2021     | Improved functionality
 01 Mar 2022     | Nfc with Passport
+10 May 2022.    | Add missing functionality in SDK
 
