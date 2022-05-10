@@ -42,7 +42,7 @@ Shufti Pro is the go-to ID authentication solution for digital payment systems, 
 
 ## General Requirements
 Minimum requirements for SDK include: 
-- Android 4.4 (API level 19) or higher
+- Android 5.0 (API level 21) or higher
 - Internet connection
 - Camera
 

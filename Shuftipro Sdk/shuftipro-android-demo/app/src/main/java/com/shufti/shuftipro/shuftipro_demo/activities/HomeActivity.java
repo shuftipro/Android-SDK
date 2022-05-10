@@ -3,7 +3,7 @@ package com.shufti.shuftipro.shuftipro_demo.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.shufti.shuftipro.shuftipro_demo.Helpers;
 import com.shufti.shuftipro.shuftipro_demo.R;

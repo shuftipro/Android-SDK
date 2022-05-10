@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:shuftipro-sdk:unspecified">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/21c5d66d662fd35b8aa3a1c8cacc8aa9/shuftipro-sdk/AndroidManifest.xml" />
-      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/21c5d66d662fd35b8aa3a1c8cacc8aa9/shuftipro-sdk/res" />
-      <root url="jar://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/21c5d66d662fd35b8aa3a1c8cacc8aa9/shuftipro-sdk/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/a3810233e2b844111861ea17ed05123f/shuftipro-sdk/AndroidManifest.xml" />
-      <root url="jar://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/a3810233e2b844111861ea17ed05123f/shuftipro-sdk/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/a3810233e2b844111861ea17ed05123f/shuftipro-sdk/res" />
+      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/02f83886b7d16af09cb541b50d88e711/jetified-shuftipro-sdk/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/02f83886b7d16af09cb541b50d88e711/jetified-shuftipro-sdk/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/shuftipro-sdk/build/.transforms/02f83886b7d16af09cb541b50d88e711/jetified-shuftipro-sdk/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
