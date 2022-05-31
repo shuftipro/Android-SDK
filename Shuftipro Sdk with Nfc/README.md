@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.1.9'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.2.0'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -72,7 +72,7 @@ android {
 ```
 
 ## SDK Version:
-Currently our updated SDK version is 1.1.9
+Currently our updated SDK version is 1.2.0
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
@@ -635,9 +635,9 @@ In case a key is given in document and address verification, and no value is pro
 
   Required: **No**  
   Type: **string**  
-  Accepted Values: **image_only, video_only**
+  Accepted Values: **image_only, video_only, any**
 
-  Verification mode defines what types of proofs are allowed for a verification. In case of **video_only** user will upload videos and if verification mode is **image_only**, user will upload images.   
+  Verification mode defines what types of proofs are allowed for a verification. In case of **video_only** user will upload videos and if verification mode is **image_only**, user will upload images. The **any** mode allows both types of proofs.  
 
 * ## show_privacy_policy
     
@@ -1272,4 +1272,4 @@ Date            | Description
 10 Dec 2021     | Improved functionality
 01 Mar 2022     | Nfc with Passport
 10 May 2022     | Added features and improved functionality
-
+31 May 2022     | Improved functionality

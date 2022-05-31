@@ -62,7 +62,7 @@ In your **Android Project** follow below steps.
 6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
 ## SDK Version:
-Currently our updated SDK version is 1.1.1
+Currently our updated SDK version is 1.1.2
 
 
 ## Verifications:
@@ -624,9 +624,9 @@ In case a key is given in document and address verification, and no value is pro
 
   Required: **No**  
   Type: **string**  
-  Accepted Values: **image_only, video_only**
+  Accepted Values: **image_only, video_only, any**
 
-  Verification mode defines what types of proofs are allowed for a verification. In case of **video_only** user will upload videos and if verification mode is **image_only**, user will upload images.   
+  Verification mode defines what types of proofs are allowed for a verification. In case of **video_only** user will upload videos and if verification mode is **image_only**, user will upload images. The **any** mode allows both types of proofs.  
 
 * ## show_privacy_policy
     
@@ -1246,3 +1246,4 @@ Date            | Description
 27 Jan 2022     | Bug fixes and improve user experience
 15 Mar 2022     | Bug fixes and improve user experience
 10 May 2022     | Added features and improved functionality
+31 May 2022     | Improved functionality

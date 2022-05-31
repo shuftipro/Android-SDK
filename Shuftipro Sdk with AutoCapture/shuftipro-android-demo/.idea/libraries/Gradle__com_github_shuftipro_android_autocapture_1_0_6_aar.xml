@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shuftipro:android-autocapture:1.0.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d04e39101bc1d6aabff65fb061581b8/jetified-android-autocapture-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d04e39101bc1d6aabff65fb061581b8/jetified-android-autocapture-1.0.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d04e39101bc1d6aabff65fb061581b8/jetified-android-autocapture-1.0.6/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shuftipro/android-autocapture/1.0.6/79195918aeb90592b4c50ea995efee39e3bf6be1/android-autocapture-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
