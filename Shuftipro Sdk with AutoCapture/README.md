@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:Android-AutoCapture:1.0.6'
+            implementation 'com.github.shuftipro:android-autocapture:1.0.6'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
