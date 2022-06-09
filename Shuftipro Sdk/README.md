@@ -62,7 +62,7 @@ In your **Android Project** follow below steps.
 6. Select '+' icon from the top right corner → select 'module dependency' → select 'shuftipro-sdk'.
 
 ## SDK Version:
-Currently our updated SDK version is 1.1.2
+Currently our updated SDK version is 1.1.3
 
 
 ## Verifications:
@@ -1247,3 +1247,4 @@ Date            | Description
 15 Mar 2022     | Bug fixes and improve user experience
 10 May 2022     | Added features and improved functionality
 31 May 2022     | Improved functionality
+09 Jun 2022     | Bug fixed

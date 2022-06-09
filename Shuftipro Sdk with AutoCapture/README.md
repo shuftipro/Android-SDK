@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:android-autocapture:1.0.6'
+            implementation 'com.github.shuftipro:android-autocapture:1.0.8'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -79,7 +79,7 @@ android {
 ```
 
 ## SDK Version:
-Currently our updated SDK version is 1.0.6
+Currently our updated SDK version is 1.0.8
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
@@ -1259,4 +1259,5 @@ Date            | Description
 --------------- | ------------
 26 Apr 2022     | Auto Capture added
 31 May 2022     | Improved functionality
+09 Jun 2022     | Bug fixed
 
