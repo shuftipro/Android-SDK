@@ -1248,3 +1248,4 @@ Date            | Description
 10 May 2022     | Added features and improved functionality
 31 May 2022     | Improved functionality
 09 Jun 2022     | Bug fixed
+28 Jun 2022     | Minor bug fixed
