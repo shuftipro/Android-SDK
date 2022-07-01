@@ -59,7 +59,7 @@ allprojects {
 2. Add the dependency in app level bulid.gradle:
 ```
 dependencies {
-            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.2.1'
+            implementation 'com.github.shuftipro:shuftipro-android-sdk:1.2.2'
 }
 ```
 3. Enable multi dex in project level bulid.gradle:
@@ -72,7 +72,7 @@ android {
 ```
 
 ## SDK Version:
-Currently our updated SDK version is 1.2.1
+Currently our updated SDK version is 1.2.2
 
 ## Verifications:
 Shufti Pro offers three Verification services. You have the option to choose either all three or any one of them for mobile verification of your end-users.
@@ -1274,3 +1274,4 @@ Date            | Description
 10 May 2022     | Added features and improved functionality
 31 May 2022     | Improved functionality
 09 Jun 2022     | Bug fixed
+01 Jul 2022     | Improved user experience
