@@ -1,4 +1,6 @@
 [![](https://raw.githubusercontent.com/shuftipro/RESTful-API-v1.2/master/assets/banner.jpg)](https://www.shuftipro.com/)
+# DEPRECATED
+This repository has been deprecated. Please visit [CORE-SDK](https://github.com/shuftipro/Android_Core_SDK) for further updates.
 
 # What is Shufti Pro?
 Shufti Pro is an AI-based identity verification SaaS (Software as a Service) provider that offers real-time global identity verifications for seamless KYC/AML and KYB compliance. 
