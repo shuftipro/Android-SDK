@@ -14,6 +14,7 @@ A user-friendly interface with an easy API integration procedure enables busines
 * [Auth Key Object Parameters ](#Auth-Key-Object-Parameters)
 * [Config Object Parameters ](#Config-Object-Parameters)
 * [Request Object Parameters](#Request-Object-Parameters)
+* [Integrating NFC SDK](#Integrating-NFC-SDK)
 * [Customisations ](#Customisations)
 * [HTTP Codes](#HTTP-Codes)
 * [Response Logging](#response-logging)
@@ -177,6 +178,7 @@ Config object parameters are explained [here](#config-object-parameters).
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
             documentObject.put("allow_online","1");
             documentObject.put("allow_offline","1");
+            documentObject.put("nfc_verification", false); // add "true" value for nfc verification along with nfc dependency
             
         requestObject.put("document", documentObject);
             
@@ -227,6 +229,7 @@ Config object parameters are explained [here](#config-object-parameters).
             addressObject.put("supported_types",new JSONArray(address_supported_types));
             addressObject.put("allow_online","1");
             addressObject.put("allow_offline","1");
+            addressObject.put("nfc_verification", false); // add "true" value for nfc verification along with nfc dependency
 
             requestObject.put("address", addressObject);
 
@@ -443,6 +446,7 @@ This key specifies if the proof needs to be uploaded.
         **Example 2** ["id_card", "credit_or_debit_card", "passport"]<br>
 
         For complete list visit [here](https://api.shuftipro.com/api/docs/#supported-types).
+
 
     * ### name
         Required: **No**<br>
@@ -725,6 +729,25 @@ This key specifies if the proof needs to be uploaded.
         Format: **yyyy-mm-dd**<br>
         Provide a valid date. Please note that the date should be before today.<br>
         **Example** 1990-12-31
+
+##   Integrating NFC SDK:
+If you have successfully integrated Core-SDK, now you can easily integrate our NFC SDK simply by following the instructions below:
+ 
+**Step 1:** Add the dependency in app level bulid.gradle along with main SDK's dependency:
+```
+dependencies {
+		implementation 'com.github.shuftipro:NFC:2.1.0'
+}
+```
+**Step 2:** Changes in Request Object<br>
+Simply add the nfc_verification parameter as **"true"** in the respective service-objects inside request object.
+
+## nfc_verification Parameter
+Required: **No**<br>
+Type: **boolean**<br>
+Accepted values: **true, false**<br>
+
+Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPro's NFC verification feature detects MRZ from the document to authenticate NFC chips and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-passports under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
 
 ## Customisations
 ShuftiPro supports a set of customisation options that will influence the appearance of the sdk. The color of buttons and font can be customised by changing the values of corresponding variables in [color.xml.](https://github.com/shuftipro/Android_Core_SDK/blob/main/Core%20SDK/ShuftiProCore/app/src/main/res/values/colors.xml)<br>

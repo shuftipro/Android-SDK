@@ -276,6 +276,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentObject.put("issue_date", "");
             documentObject.put("backside_proof_required", "0");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
+            documentObject.put("nfc_verification", false);
 
             if(isDocChecked)
             {
@@ -308,6 +309,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentTwoObject.put("backside_proof_required", "0");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "");
+            documentTwoObject.put("nfc_verification", false);
 
             if(isDoc2Checked)
             {
@@ -337,6 +339,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             addressObject.put("full_address", "");
             addressObject.put("name", "");
             addressObject.put("supported_types",new JSONArray(address_supported_types));
+            addressObject.put("nfc_verification", false);
 
             if(isAddressChecked)
             {
