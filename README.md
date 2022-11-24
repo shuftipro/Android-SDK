@@ -751,7 +751,6 @@ Near Field Communication (NFC) is a set of short-range wireless technologies. NF
 
 ## Customisations
 ShuftiPro supports a set of customisation options that will influence the appearance of the sdk. The color of buttons and font can be customised by changing the values of corresponding variables in [color.xml.](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/colors.xml)<br>
-The strings of SDK can also be customised through [strings.xml](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/strings.xml) class. Translations of choice can be added in the provided [strings.xml](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/strings.xml)<br>
 To apply and use dark theme/mode in SDK, initialise the SDK with provided parameter in config object.
 
         try {
