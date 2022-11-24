@@ -9,4 +9,15 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="borders">#EFF1F6</color>
+
+
+    <!--    Change the following colors to customise sdk UI-->
+
+<!--    <color name="light_button_color">#2B6AD8</color>-->
+<!--    <color name="light_text_color">#1D2C42</color>-->
+
+<!--    <color name="dark_button_color">#FF7A77</color>-->
+<!--    <color name="dark_text_color">#ffffff</color>-->
+<!--    -->
+<!--    <color  name="button_text_color">#FFFFFFFF</color>-->
 </resources>
