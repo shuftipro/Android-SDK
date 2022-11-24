@@ -26,7 +26,7 @@ A user-friendly interface with an easy API integration procedure enables busines
 
 ## General Requirements
 Minimum requirements for SDK include
-- Android 6.0 (API level 23) or higher
+- Android 5.0 (API level 21) or higher
 - Internet connection
 - Camera
 ## Permissions:
@@ -36,20 +36,14 @@ The Shufti Pro application requires permission to access the following:
 
 **Note:** All permissions are handled in the SDK.
 ## SDK Installation Guide
-To integrate Services follow the below steps;<br>
-**Step 1:** Go to root-level build.gradle in your project and add the following:
+To integrate Services follow the below steps;
+- Download the **shuftipro-sdk.aar** file from Core SDK folder.
+- Select **Project** from Android Studio package manager.
+- Make a new directory in project level named **libs**.
+- Paste **shuftipro-sdk.aar** in libs folder.
+- In **build.gradle(Module)** add the following implementation
 ```
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-**Step 2:** In **build.gradle(Module)** add the following implementation
-```
-implementation 'com.github.shuftipro:ShuftiPro_SDK:0.1.6'
+implementation files('../libs/shuftipro-sdk.aar') 
 ```
 
 ## Verification Types You Can Get:
@@ -433,7 +427,7 @@ This key specifies if the proof needs to be uploaded.
     * ### supported_types
         Required: **No**<br>
         Type: **Array**<br>
-    You can provide two or more types of documents to verify the identity of the user. Few supported types are listed below.
+    You can provide two or more types of documents to verify the identity of the user. All supported types are listed below.
         * passport
         * id_card
         * driving_license
@@ -441,8 +435,6 @@ This key specifies if the proof needs to be uploaded.
 
         **Example 1** ["driving_license"]<br>
         **Example 2** ["id_card", "credit_or_debit_card", "passport"]<br>
-
-        For complete list visit [here](https://api.shuftipro.com/api/docs/#supported-types).
 
     * ### name
         Required: **No**<br>
@@ -547,7 +539,7 @@ This key specifies if the proof needs to be uploaded.
     * ### supported_types
         Required: **No**<br>
 	    Type: **Array**<br>
-        Provide any one, two, or more document types in the supported_types parameter in the Address verification service. Following is the list of few supported types for address verification.
+        Provide any one, two, or more document types in the supported_types parameter in the Address verification service. Following is the list of supported types for address verification.
         * id_card
         * passport
         * driving_license
@@ -560,8 +552,6 @@ This key specifies if the proof needs to be uploaded.
 
         **Example 1** [ "utility_bill" ]<br>
         **Example 2** [ "id_card", "bank_statement" ]
-
-        For complete list visit [here](https://api.shuftipro.com/api/docs/#supported-types).
 
     * ### full_address
         Required: **No**<br>
@@ -780,26 +770,29 @@ if (event.equalsIgnoreCase("verification.accepted")) {
 
 ## Status Response
 The Shufti Pro Verification API will send a JSON response if a status request is made.
-<b>Reference:</b> This is the user’s unique request reference provided at the time of request, in order for the unique response to be identified.<br>
-<b>Event:</b> The request event shows the status of the user's request and is different for every response. For more information, [click here.](https://api.shuftipro.com/api/docs/#response-events)<br>
-<b>Note:</b> request.invalid response with HTTP status code 400 means the request is invalid.
+Reference: This is the user’s unique request reference provided at the time of request, in order for the unique response to be identified.
+Event: The request event shows the status of the user's request and is different for every response. For more information, click here
+Note: request.invalid response with HTTP status code 400 means the request is invalid.
 Sample Response
-```
 {
-    "reference": "17374217",
-    "event": "request.invalid",
-    "error": {
-        "service": "document",
-        "key": "dob",
-        "message": "The dob does not match the format Y-m-d."
-    },
-    "email": null,
-    "country": null
+  "reference": "17374217",
+  "event": "request.declined",
+  "error": "",
+  "verification_url": ""
 }
-```
  
 ## Supported Document Types
-For more information on supported types, please visit [supported types](https://api.shuftipro.com/api/docs/#supported-types).
+Address | Document | 
+--------------- | ------------ | 
+id_card | id_card 
+passport  | passport  
+driving_license | driving_lisence
+utility_bill | credit_or_debit_card 
+bank_statement |
+rent_agreement |
+employer_letter |
+insurance_agreement | 
+tax_bill |
 
 
 ## Test IDs
@@ -814,3 +807,9 @@ If you have any queries regarding the implementation of SDK, please feel free to
 
 ## Copyright
 2017-22 © Shufti Pro Ltd.
+
+## Revision History
+Date            | Description 
+--------------- | ------------
+10 Aug 2022     | Core SDK
+25 Aug 2022     | Improved functionality
