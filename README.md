@@ -50,7 +50,7 @@ allprojects {
 ```
 **Step 2:** In **build.gradle(Module)** add the following implementation
 ```
-implementation 'com.github.shuftipro:ShuftiPro_SDK:0.1.6'
+implementation 'com.github.shuftipro:ShuftiPro_SDK:0.1.7'
 ```
 
 ## Verification Types You Can Get:
