@@ -50,7 +50,7 @@ allprojects {
 ```
 **Step 2:** In **build.gradle(Module)** add the following implementation
 ```
-implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.3'
+implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.4'
 ```
 
 ## Verification Types You Can Get:
@@ -736,7 +736,7 @@ If you have successfully integrated Core-SDK, now you can easily integrate our N
 **Step 1:** Add the dependency in app level bulid.gradle along with main SDK's dependency:
 ```
 dependencies {
-		implementation 'com.github.shuftipro:NFC:2.1.0'
+		implementation 'com.github.shuftipro:NFC:2.1.8'
 }
 ```
 **Step 2:** Changes in Request Object<br>
@@ -750,8 +750,8 @@ Accepted values: **true, false**<br>
 Near Field Communication (NFC) is a set of short-range wireless technologies. NFC allows sharing small payloads of data between an NFC tag and an NFC-supported device. NFC Chips found in modern passports and similar identity documents contain additional encrypted information about the owner. This information is very useful in verifying the originality of a document. NFC technology helps make the verification process simple, quicker and more secure. This also provides the user with contactless and input less verification. ShuftiPro's NFC verification feature detects MRZ from the document to authenticate NFC chips and retrieve data from it, so the authenticity and originality of the provided document could be verified, if set to TRUE. nfc_verification parameter should be added into the service object(document, document_two, address) for which you want to perform nfc verification. Nfc verification is allowed only on e-passports under document, document_two and address service only. The nfc service is not available in hybrid webview for now.
 
 ## Customisations
-ShuftiPro supports a set of customisation options that will influence the appearance of the sdk. The color of buttons and font can be customised by changing the values of corresponding variables in [color.xml.](https://github.com/shuftipro/Android_Core_SDK/blob/main/Core%20SDK/ShuftiProCore/app/src/main/res/values/colors.xml)<br>
-The strings of SDK can also be customised through [strings.xml.](https://github.com/shuftipro/Android_Core_SDK/blob/main/Core%20SDK/ShuftiProCore/app/src/main/res/values/strings.xml) class. Translations of choice can be added in the provided [strings.xml.](https://github.com/shuftipro/Android_Core_SDK/blob/main/Core%20SDK/ShuftiProCore/app/src/main/res/values/strings.xml)
+ShuftiPro supports a set of customisation options that will influence the appearance of the sdk. The color of buttons and font can be customised by changing the values of corresponding variables in [color.xml.](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/colors.xml)<br>
+The strings of SDK can also be customised through [strings.xml.](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/strings.xml) class. Translations of choice can be added in the provided [strings.xml.](https://github.com/shuftipro/Android-SDK/blob/master/SDK/ShuftiProSDK/app/src/main/res/values/strings.xml)
 To apply and use dark theme/mode in SDK, initialise the SDK with provided parameter in config object.
 
         try {

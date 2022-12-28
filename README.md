@@ -50,7 +50,7 @@ allprojects {
 ```
 **Step 2:** In **build.gradle(Module)** add the following implementation
 ```
-implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.3'
+implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.4'
 ```
 
 ## Verification Types You Can Get:
@@ -736,7 +736,7 @@ If you have successfully integrated Core-SDK, now you can easily integrate our N
 **Step 1:** Add the dependency in app level bulid.gradle along with main SDK's dependency:
 ```
 dependencies {
-		implementation 'com.github.shuftipro:NFC:2.1.0'
+		implementation 'com.github.shuftipro:NFC:2.1.8'
 }
 ```
 **Step 2:** Changes in Request Object<br>
