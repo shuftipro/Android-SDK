@@ -736,7 +736,7 @@ If you have successfully integrated Core-SDK, now you can easily integrate our N
 **Step 1:** Add the dependency in app level bulid.gradle along with main SDK's dependency:
 ```
 dependencies {
-		implementation 'com.github.shuftipro:NFC:2.1.8'
+		implementation 'com.github.shuftipro:NFC:2.1.9'
 }
 ```
 **Step 2:** Changes in Request Object<br>
