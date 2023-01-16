@@ -21,6 +21,7 @@ A user-friendly interface with an easy API integration procedure enables busines
 * [Status Response](#status-response)
 * [Test IDs](#test-ids)
 * [Contact](#contact)
+* [Revision History](#revision-history)
 * [Copyright](#copyright)
 
 
