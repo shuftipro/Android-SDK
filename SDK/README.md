@@ -50,7 +50,7 @@ allprojects {
 ```
 **Step 2:** In **build.gradle(Module)** add the following implementation
 ```
-implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.5'
+implementation 'com.github.shuftipro:ShuftiPro_SDK:0.2.6'
 ```
 
 ## Verification Types You Can Get:
@@ -834,6 +834,11 @@ Shufti Pro provides users with a number of test documents. Customers may use the
 
 ## Contact
 If you have any queries regarding the implementation of SDK, please feel free to contact Shufti Pro [tech support](mailto:tech@shuftipro.com).
+
+## Revision History
+- **Version 0.2.6**
+    - **Tap to focus** functionality added
+    - Image pixelation issue resolved
 
 ## Copyright
 2017-22 © Shufti Pro Ltd.
