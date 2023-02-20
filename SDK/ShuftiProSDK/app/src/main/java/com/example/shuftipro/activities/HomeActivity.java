@@ -220,7 +220,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     {
         JSONObject jsonObject = new JSONObject();
 
-        final String reference = Utils.getUniqueReference(this);
+        final String reference = Utils.getUniqueReference();
 
         try {
             jsonObject.put("reference", reference);

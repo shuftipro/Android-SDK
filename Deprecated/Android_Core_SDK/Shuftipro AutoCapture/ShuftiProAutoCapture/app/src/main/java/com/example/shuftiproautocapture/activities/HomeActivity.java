@@ -37,8 +37,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isPhoneChecked = false;
     private boolean isBgChecked = false;
     private Button continueButton;
-    private String clientId = ""; //Set your client Id here
-    private String secretKey = ""; //Set your secret key here.
+    private String clientId = "client_id"; //Set your client Id here
+    private String secretKey = "secret_key"; //Set your secret key here.
     private String accessToken = "";
 
     @Override
