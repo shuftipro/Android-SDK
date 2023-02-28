@@ -275,7 +275,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentObject.put("document_number", "");
             documentObject.put("expiry_date", "");
             documentObject.put("issue_date", "");
-            documentObject.put("backside_proof_required", "0");
+            documentObject.put("backside_proof_required", "1");
             documentObject.put("supported_types",new JSONArray(doc_supported_types));
             documentObject.put("nfc_verification", false);
 
@@ -307,7 +307,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             documentTwoObject.put("document_number", "");
             documentTwoObject.put("expiry_date", "");
             documentTwoObject.put("issue_date", "");
-            documentTwoObject.put("backside_proof_required", "0");
+            documentTwoObject.put("backside_proof_required", "1");
             documentTwoObject.put("supported_types",new JSONArray(doc_two_supported_types));
             documentTwoObject.put("gender", "");
             documentTwoObject.put("nfc_verification", false);
