@@ -13,7 +13,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     private val clientId = ""
     private val secretKey = ""
@@ -47,122 +47,137 @@ class MainActivity : AppCompatActivity() {
 
 
         val authObject = JSONObject()
-        authObject.put("auth_type", "basic_auth")
-        authObject.put("client_id", clientId)
-        authObject.put("secret_key", secretKey)
-//        authObject.put("access_token", "")
+        authObject.apply {
+            put("auth_type", "basic_auth")
+            put("client_id", clientId)
+            put("secret_key", secretKey)
+//            put("access_token", "")
+        }
 
 
-        val shuftiPro = Shuftipro()
-        mainBinding.startVerification.setOnClickListener {
-            shuftiPro
-                .shuftiproVerification(getRequestObject(),
-                    authObject,
-                    getConfigObject(),
-                    this@MainActivity,
+
+            val shuftiPro = Shuftipro()
+            mainBinding.startVerification.setOnClickListener {
+                shuftiPro
+                    .shuftiproVerification(getRequestObject(),
+                        authObject,
+                        getConfigObject(),
+                        this@MainActivity,
                         ShuftiVerifyListener { responseSet: HashMap<String?, String?> ->
                             Log.e("Response", responseSet.toString())
                             resetParameters()
                             Toast.makeText(this@MainActivity, responseSet.toString(), Toast.LENGTH_SHORT).show()
-                    })
-        }
+                        })
+            }
     }
 
     private fun getConfigObject(): JSONObject {
         val configObject = JSONObject()
-        configObject.put("async", false)
-        configObject.put("captureEnabled", false)
-        configObject.put("open_webview", false)
+
+        configObject.apply { put("async", false)
+            put("captureEnabled", false)
+            put("open_webview", false)
+            put("dark_mode", false)
+        }
         return configObject
     }
 
 
     private fun getRequestObject(): JSONObject {
-        val jsonObject = JSONObject()
-
-        jsonObject.put("reference", Utils.getUniqueReference())
-        jsonObject.put("show_consent", "1")
-        jsonObject.put("allow_retry", "1")
-        jsonObject.put("allow_na_ocr_inputs", "1")
-        jsonObject.put("decline_on_single_step", "1")
-        jsonObject.put("show_privacy_policy", "1")
-        jsonObject.put("show_results", "1")
-        jsonObject.put("country", "GB")
-        jsonObject.put("verification_mode", "image_only")
-        jsonObject.put("email", "")
-        jsonObject.put("callback_url", "https://www.yourdomain.com")
+        val jsonObject = JSONObject().apply {
+            put("reference", Utils.getUniqueReference())
+            put("show_consent", "1")
+            put("allow_retry", "1")
+            put("allow_na_ocr_inputs", "1")
+            put("decline_on_single_step", "1")
+            put("show_privacy_policy", "1")
+            put("show_results", "1")
+            put("country", "GB")
+            put("verification_mode", "image_only")
+            put("email", "")
+            put("callback_url", "https://www.yourdomain.com")
+        }
 
 
         //Creating face object
-        val faceObject = JSONObject()
-        faceObject.put("proof", "")
+        val faceObject = JSONObject().put("proof", "")
+        if (mainBinding.faceCheck.isChecked) jsonObject.put("face", faceObject)
 
 
         //Creating document object
-        val documentObject = JSONObject()
-        val docSupportedTypes = ArrayList<String?>()
-        docSupportedTypes.add("id_card")
-        docSupportedTypes.add("passport")
-        docSupportedTypes.add("driving_license")
-        docSupportedTypes.add("credit_or_debit_card")
+        val documentObject = JSONObject().apply {
+            put("proof", "")
+            put("supported_types", JSONArray().apply {
+                put("id_card")
+                put("passport")
+                put("driving_license")
+                put("credit_or_debit_card")
+            })
+        }
 
-        documentObject.put("proof", "")
-        documentObject.put("supported_types", JSONArray(docSupportedTypes))
         if (mainBinding.docCheck.isChecked) jsonObject.put("document", documentObject)
 
 
         //Creating document TWO object
-        val documentTwoObject = JSONObject()
-        documentTwoObject.put("proof", "");
-        val docTwoSupportedTypes = ArrayList<String?>()
+        val documentTwoObject = JSONObject().apply {
+            put("proof", "")
+            put("backside_proof_required", "0")
+            put("supported_types", JSONArray().apply {
+                put("id_card")
+                put("passport")
+                put("driving_license")
+                put("credit_or_debit_card")
+            })
+        }
 
-        docTwoSupportedTypes.add("id_card")
-        docTwoSupportedTypes.add("passport")
-        docTwoSupportedTypes.add("driving_license")
-        docTwoSupportedTypes.add("credit_or_debit_card")
-        documentTwoObject.put("supported_types", JSONArray(docTwoSupportedTypes))
-        documentTwoObject.put("backside_proof_required", "0")
         if (mainBinding.doc2Check.isChecked) jsonObject.put("document_two", documentTwoObject)
 
 
         //Creating consent object
-        val consentObject = JSONObject()
-        val consentSupportedTypes = ArrayList<String?>()
-        consentSupportedTypes.add("handwritten")
-        consentSupportedTypes.add("printed")
-        consentObject.put("proof", "")
-        consentObject.put("text", "This is my consent.")
-        consentObject.put("supported_types", JSONArray(consentSupportedTypes))
+        val consentObject = JSONObject().apply {
+            put("proof", "")
+            put("text", "This is my consent.")
+            put("supported_types", JSONArray().apply {
+                put("handwritten")
+                put("printed")
+            })
+        }
+
+
         if (mainBinding.consentCheck.isChecked) jsonObject.put("consent", consentObject)
 
 
         //Creating Address object
-        val addressObject = JSONObject()
-        val addressSupportedTypes = ArrayList<String?>()
-        addressSupportedTypes.add("id_card")
-        addressSupportedTypes.add("passport")
-        addressSupportedTypes.add("driving_license")
-        addressSupportedTypes.add("utility_bill")
-        addressSupportedTypes.add("bank_statement")
-        addressSupportedTypes.add("rent_agreement")
-        addressSupportedTypes.add("employer_letter")
-        addressSupportedTypes.add("insurance_agreement")
-        addressSupportedTypes.add("tax_bill")
-        addressSupportedTypes.add("envelope")
-        addressSupportedTypes.add("cpr_smart_card_reader_copy")
-        addressSupportedTypes.add("property_tax")
-        addressSupportedTypes.add("lease_agreement")
-        addressSupportedTypes.add("insurance_card")
-        addressSupportedTypes.add("permanent_residence_permit")
-        addressSupportedTypes.add("credit_card_statement")
-        addressSupportedTypes.add("insurance_policy")
-        addressSupportedTypes.add("e_commerce_receipt")
-        addressSupportedTypes.add("bank_letter_receipt")
-        addressSupportedTypes.add("birth_certificate")
-        addressSupportedTypes.add("salary_slip")
-        addressSupportedTypes.add("any")
-        addressObject.put("supported_types", JSONArray(addressSupportedTypes))
-        addressObject.put("backside_proof_required", "0")
+        val addressSupportedTypes = JSONArray().apply { put("id_card")
+            put("passport")
+            put("driving_license")
+            put("utility_bill")
+            put("bank_statement")
+            put("rent_agreement")
+            put("employer_letter")
+            put("insurance_agreement")
+            put("tax_bill")
+            put("envelope")
+            put("cpr_smart_card_reader_copy")
+            put("property_tax")
+            put("lease_agreement")
+            put("insurance_card")
+            put("permanent_residence_permit")
+            put("credit_card_statement")
+            put("insurance_policy")
+            put("e_commerce_receipt")
+            put("bank_letter_receipt")
+            put("birth_certificate")
+            put("salary_slip")
+            put("any")
+        }
+
+        val addressObject = JSONObject().apply {
+            put("supported_types", addressSupportedTypes)
+            put("backside_proof_required", "0")
+            put("proof", "")
+        }
+
         if (mainBinding.addressCheck.isChecked) jsonObject.put("address", addressObject)
 
         //Creating Bg checks object
