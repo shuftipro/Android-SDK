@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.kotlindemoapp.databinding.ActivityMainBinding
 import com.shutipro.sdk.Shuftipro
 import com.shutipro.sdk.listeners.ShuftiVerifyListener
-import com.shutipro.sdk.utils.Utils
+import com.shutipro.sdk.utils.SPUtils
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity(){
 
     private fun getRequestObject(): JSONObject {
         val jsonObject = JSONObject().apply {
-            put("reference", Utils.getUniqueReference())
+            put("reference", SPUtils.getUniqueReference())
             put("show_consent", "1")
             put("allow_retry", "1")
             put("allow_na_ocr_inputs", "1")

@@ -17,7 +17,7 @@ import com.example.shuftipro.Helpers;
 import com.example.shuftipro.R;
 import com.shutipro.sdk.Shuftipro;
 import com.shutipro.sdk.listeners.ShuftiVerifyListener;
-import com.shutipro.sdk.utils.Utils;
+import com.shutipro.sdk.utils.SPUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -220,7 +220,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     {
         JSONObject jsonObject = new JSONObject();
 
-        final String reference = Utils.getUniqueReference();
+        final String reference = SPUtils.getUniqueReference();
 
         try {
             jsonObject.put("reference", reference);
